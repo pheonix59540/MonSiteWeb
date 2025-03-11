@@ -4,6 +4,7 @@
             background-image: url('../images/01 Back.jpeg'); /* Remplace par le chemin de ton image */
             background-size: cover;
             background-attachment: fixed; /* L'image de fond reste fixe */
+			overflow-x: hidden; /* Évite le débordement horizontal */
         }
         header {
             width: 100%;
@@ -13,15 +14,18 @@
 			background-position: center;
         }
 	
-        .sidebar {
+        .sidebar /* SIDEBAR principale */{
             display: flex;
             justify-content: space-around;
             padding: 10px 0;
+			flex-wrap: wrap; /* Permet aux images de passer à la ligne si nécessaire */
+			gap: 5px; /* Espace entre les images */
+			row-gap: 70px; /* Espacement uniquement entre les lignes */
             position: sticky;
             top: 0;
 			z-index: 1000;
         }
-        .sidebar a {
+        .sidebar a /* sidebar secondaire (catégorie) */{
             display: flex;
 			align-items: center;
 			justify-content: center;
@@ -29,13 +33,17 @@
 			padding: 0; /* Supprime l'espace inutile */
         }
 		.sidebar img {
-			width: auto; /* Ajuste la largeur des icônes */
-			height: 15vh; /* Garde le ratio */
-			transition: transform 0.2s ease; /* Ajoute un effet de zoom au survol */
+			width: 100%; /* Ajuste la largeur des icônes */
+			height: 18vh; /* Garde le ratio */
+			object-fit: cover; /* Évite la déformation */
+			transition: transform 0.4s ease; /* Ajoute un effet de zoom au survol */
             border-radius: 10px;
 			display: block;
-}
-        .sidebar a:hover {
+		}
+			
+		
+
+        .sidebar a:hover /* effet pour		survol */ {
             transform: scale(1.1); /* Zoom léger au survol */
         }
         .dropdown {
@@ -209,3 +217,4 @@
 .gallery-description .gallery-details {
     margin-top: 20px; /* Ajoute de l'espace au-dessus de la galerie */
 }
+
