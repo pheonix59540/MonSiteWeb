@@ -41,6 +41,26 @@
 			display: block;
 		}
 			
+			
+			@media screen and (max-width: 768px) { /* SPECIAL SMARTPHONE */
+		.sidebar {
+			display: flex;
+			flex-direction: row; /* Garde les icônes alignées en ligne */
+			justify-content: center; /* Centre le contenu */
+			width: 100%; /* Ajuste à la largeur de l'écran */
+			padding: 5px 0; /* Ajuste l’espacement */
+		}
+
+		.sidebar a {
+			font-size: 12px; /* Réduit la taille du texte si nécessaire */
+			padding: 5px; /* Réduit l'espacement pour éviter le chevauchement */
+		}
+
+		.sidebar img {
+			width: 100%; /* Réduit la taille des icônes */
+			height: 40px; /* Garde une taille proportionnée */
+		}
+		}
 		
 
         .sidebar a:hover /* effet pour		survol */ {
