@@ -8,11 +8,29 @@
         }
         header {
             width: 100%;
-			height: 800px;
+			height: 100vh;
 			background-image: url('../images/0 Header.jpg');
 			background-size: cover;
 			background-position: center;
         }
+		
+			@media screen and (max-width: 650px) {/* Ajustement du header */
+		header {
+			
+            width: 100%;
+			height: 50vh; /* Réduit la hauteur du header */
+			font-size: 14px; /* Ajuste la taille du texte */
+			padding: 5px 10px; /* Réduit l’espace autour */
+		}
+
+							/* Ajustement du fond */
+		body {
+			
+            width: 100%;
+			background-size: cover; /* Assure que l’image de fond couvre bien */
+			background-position: center; /* Centre l’image */
+		}
+		}
 	
         .sidebar /* SIDEBAR principale */{
             display: flex;
@@ -42,7 +60,7 @@
 		}
 			
 			
-			@media screen and (max-width: 768px) { /* SPECIAL SMARTPHONE */
+			@media screen and (max-width: 650px) { /* SPECIAL SMARTPHONE */
 		.sidebar {
 			display: flex;
 			flex-direction: row; /* Garde les icônes alignées en ligne */
