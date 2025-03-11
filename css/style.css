@@ -67,6 +67,7 @@
 			justify-content: center; /* Centre le contenu */
 			width: 100%; /* Ajuste à la largeur de l'écran */
 			padding: 5px 0; /* Ajuste l’espacement */
+			gap: 5px; /* Espace entre les images */
 		}
 
 		.sidebar a {
