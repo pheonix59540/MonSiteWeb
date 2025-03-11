@@ -1,0 +1,211 @@
+ body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('../images/01 Back.jpeg'); /* Remplace par le chemin de ton image */
+            background-size: cover;
+            background-attachment: fixed; /* L'image de fond reste fixe */
+        }
+        header {
+            width: 100%;
+			height: 800px;
+			background-image: url('../images/0 Header.jpg');
+			background-size: cover;
+			background-position: center;
+        }
+	
+        .sidebar {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+			z-index: 1000;
+        }
+        .sidebar a {
+            display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 50px;
+			padding: 0; /* Supprime l'espace inutile */
+        }
+		.sidebar img {
+			width: auto; /* Ajuste la largeur des icônes */
+			height: 15vh; /* Garde le ratio */
+			transition: transform 0.2s ease; /* Ajoute un effet de zoom au survol */
+            border-radius: 10px;
+			display: block;
+}
+        .sidebar a:hover {
+            transform: scale(1.1); /* Zoom léger au survol */
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #666;
+            min-width: 150px;
+            z-index: 1;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .dropdown-content a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+		/*sous menu Socle début*/
+		.dropdown-content .dropdown {
+			position: relative;
+		}
+		.dropdown-content .dropdown .dropdown-content{
+			position: absolute;
+			top: 0;
+			left: 100%;
+			display: none;
+		}
+		.dropdown-content .dropdown:hover .dropdown-content{
+			display: block;
+		}
+		/*sous menu Socle fin*/
+		
+		
+		
+        main {
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .icons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .icon {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .gallery img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px;
+            border-radius: 8px;
+        }
+        .partners {
+            text-align: center;
+            font-style: italic;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        input, textarea, button {
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #444;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #666;
+        }
+		
+		.gallery-Figurines{
+			display: flex; /*positionne les items en ligne*/
+			justify-content: space-evenly; /*espace égale entre les items*/
+			flex-wrap: wrap; /*permet de passer à la ligne suivante au besoin*/
+			gap: 20px; /*espace entre item*/
+			margin: 20px;	
+		}
+		.gallery-Figurines .item {
+    text-align: center; /* Centre le contenu à l'intérieur */
+    width: 30%; /* Chaque item occupe environ un tiers */
+    background: rgba(255, 255, 255, 0.7); /* Fond blanc semi-transparent */
+    padding: 10px;
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
+}
+
+.gallery-Figurines .item img {
+    max-width: 100%; /* L'image s'adapte à la largeur du conteneur */
+    height: auto; /* Conserve le ratio de l'image */
+    border-radius: 8px; /* Coins arrondis pour l'image */
+    margin-bottom: 10px; /* Espace entre l'image et le texte */
+}
+
+.gallery-Figurines .item h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.gallery-Figurines .item p {
+    font-size: 1rem;
+    color: #444;
+}
+
+.gallery-details {
+    display: flex; /* Positionne les images en ligne */
+    justify-content: space-evenly; /* Espaces égaux entre les images */
+    flex-wrap: wrap; /* Permet de passer à une nouvelle ligne si nécessaire */
+    gap: 15px; /* Espace entre les images */
+    margin: 20px 0; /* Espacement autour de la galerie */
+}
+
+.gallery-details img {
+    width: 40%; /* Chaque image prend 40% de la largeur */
+    height: auto; /* Conserve le ratio de l'image */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
+    transition: transform 0.2s ease; /* Effet de zoom au survol */
+}
+
+.gallery-details img:hover {
+    transform: scale(1.05); /* Agrandit légèrement l'image au survol */
+}
+		
+.gallery-description {
+    text-align: center; /* Centre le texte horizontalement */
+    margin: 20px auto; /* Ajoute de l'espace autour de la section */
+    max-width: 1200px; /* Limite la largeur pour un rendu plus esthétique */
+	background: rgba(255, 255, 255, 0.7); /* Fond blanc semi-transparent */
+    padding: 20px; /* Ajoute de l'espace intérieur */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
+}
+
+.gallery-description h1 {
+    font-size: 2rem; /* Ajuste la taille du titre */
+    margin-bottom: 10px; /* Espace sous le titre */
+	color: #222; /* Couleur du titre */
+}
+
+.gallery-description p {
+    font-size: 1.1rem; /* Taille du texte */
+	color: #444; /* Couleur du titre */
+    margin-bottom: 15px; /* Espace sous chaque paragraphe */
+}
+
+.gallery-description .gallery-details {
+    margin-top: 20px; /* Ajoute de l'espace au-dessus de la galerie */
+}
