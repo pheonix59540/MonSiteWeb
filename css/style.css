@@ -14,7 +14,7 @@
 			background-position: center;
         }
 		
-			@media screen and (max-width: 650px) {/* Ajustement du header */
+			@media screen and (max-width: 420px) {/* Ajustement du header */
 		header {
 			
             width: 100%;
@@ -60,7 +60,7 @@
 		}
 			
 			
-			@media screen and (max-width: 650px) { /* SPECIAL SMARTPHONE */
+			@media screen and (max-width: 420px) { /* SPECIAL SMARTPHONE */
 		.sidebar {
 			display: flex;
 			flex-direction: row; /* Garde les icônes alignées en ligne */
