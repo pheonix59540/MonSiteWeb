@@ -7,6 +7,15 @@
   <link rel="stylesheet" href="css/style.css"> <!-- Lien vers ton CSS -->
 </head>
 
+<script>
+		fetch("includes/carousel_figurines.html")
+			.then(response => response.text())
+			.then(data => {
+				document.getElementById("carousel-container").innerHTML = data;
+			})
+			.catch(error => console.error("Erreur lors du chargement du carrousel :", error));
+</script>
+
 <body>
   <header></header>
   <nav class="sidebar">
@@ -47,14 +56,15 @@
              <a href="#"><img src="images/4LogoAccessoires.png" alt="Accessoires"></a>
             <div class="dropdown-content">
 			<div class="dropdown">
-                <a href="4 Socles rond.html">Socles rond</a>
-                <a href="4 Socles carré.html">Socles carré</a>
+                <a href="4 Socle rond.html">Socles rond</a>
+                <a href="4 Socle carré.html">Socles carré</a>
 				<a href="4 Rabiots.html">Rabiots</a>
-				<a href="4 Plateaux de mouvement.html">Plateaux de mouvement</a>
-				<a href="4 Réglettes.html">Réglettes</a>
+				<a href="4 Plateau de mouvement carré.html">Plateau de mouvement Carré</a>
+				<a href="4 Plateau de mouvement rond.html">Plateau de mouvement Rond</a>
+				<a href="4 Réglette.html">Réglette</a>
 				<a href="4 Marqueurs.html">Marqueurs</a>
-                <a href="4 Accessoires.html">Accessoires</a>
-				<a href="4 Rangements.html">Rangements</a>
+                <a href="4 Accessoire.html">Accessoire</a>
+				<a href="4 Rangement.html">Rangemens</a>
 				</div>
             </div>
         </div>
@@ -67,13 +77,13 @@
             <h1>Bienvenue sur Infinity3D</h1>
             <p>Nous proposons des figurines et décors médiévaux fantastiques pour vos jeux de plateau et vos collections.</p>
         </section>
-        <section id="figurines" class="section">
-            <h2>Nos Figurines</h2>
-            <div class="icons">
-                <div class="icon">Figurine 1</div>
-                <div class="icon">Figurine 2</div>
-            </div>
-        </section>
+		
+		<section id="figurines" class="section">
+			<h2>Nos Figurines</h2>
+			<div id="carousel-container"></div>
+		</section>
+
+	
         <section id="decors" class="section">
             <h2>Nos Décors</h2>
             <div class="icons">

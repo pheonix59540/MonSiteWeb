@@ -257,3 +257,27 @@
     margin-top: 20px; /* Ajoute de l'espace au-dessus de la galerie */
 }
 
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  animation: scroll-horizontal 60s linear infinite;
+  width: max-content;
+}
+
+.carousel-track img {
+  height: 200px;
+  width: auto;
+  flex-shrink: 0;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.carousel-track img:hover {
+  transform: scale(1.08);
+}
+
+@keyframes scroll-horizontal {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
