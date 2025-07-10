@@ -6,6 +6,9 @@
             background-attachment: fixed; /* L'image de fond reste fixe */
 			overflow-x: hidden; /* Évite le débordement horizontal */
         }
+		* {
+			box-sizing: border-box;
+		}
         header {
             width: 100%;
 			height: 100vh;
@@ -30,6 +33,9 @@
 			background-size: cover; /* Assure que l’image de fond couvre bien */
 			background-position: center; /* Centre l’image */
 		}
+		
+		
+
 		}
 	
         .sidebar /* SIDEBAR principale */{
@@ -125,14 +131,18 @@
 		
         main {
             padding: 20px;
+			 max-width: 1200px;
+			margin: 0 auto; /* Centre l’ensemble du contenu */
         }
         .section {
             margin-bottom: 40px;
+			margin: 40px auto;
             background: rgba(255, 255, 255, 0.7);
             padding: 20px;
             border-radius: 8px;
-			max-width: 1200px; /* Limite la largeur du bloc */
+			max-width: 1000px; /* ou 90%, ou la taille que tu préfères */
 			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Plus de profondeur */
+			width: 80%; /* Ajouté pour assurer la centration même en grand écran */
         }
         .icons {
             display: flex;
@@ -184,20 +194,20 @@
 			display: flex; /*positionne les items en ligne*/
 			justify-content: space-evenly; /*espace égale entre les items*/
 			flex-wrap: wrap; /*permet de passer à la ligne suivante au besoin*/
-			gap: 20px; /*espace entre item*/
+			gap: 200px; /*espace entre item*/
 			margin: 20px;	
 		}
 		.gallery-Figurines .item {
-    text-align: center; /* Centre le contenu à l'intérieur */
-    width: 30%; /* Chaque item occupe environ un tiers */
-    background: rgba(255, 255, 255, 0.7); /* Fond blanc semi-transparent */
-    padding: 10px;
-    border-radius: 8px; /* Coins arrondis */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
+		text-align: center; /* Centre le contenu à l'intérieur */
+		width: 30%; /* Chaque item occupe environ un tiers */
+		background: rgba(255, 255, 255, 0.7); /* Fond blanc semi-transparent */
+		padding: 10px;
+		border-radius: 8px; /* Coins arrondis */
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
 }
 
 .gallery-Figurines .item img {
-    max-width: 100%; /* L'image s'adapte à la largeur du conteneur */
+    max-width: 800%; /* L'image s'adapte à la largeur du conteneur */
     height: auto; /* Conserve le ratio de l'image */
     border-radius: 8px; /* Coins arrondis pour l'image */
     margin-bottom: 10px; /* Espace entre l'image et le texte */
@@ -263,7 +273,7 @@
   display: flex;
   gap: 20px;
   align-items: center;
-  animation: scroll-horizontal 300s linear infinite;
+  animation: scroll-horizontal 1200s linear infinite;
   width: max-content;
 }
 
@@ -284,12 +294,12 @@
   100% { transform: translateX(-50%); }
 }
 .carousel-wrapper {
-  overflow: hidden;
-  max-width: 80%; /* Réduction à 90% du site */
-  margin: 0 auto;  /* Centre la bande blanche */
-  background: rgba(255, 255, 255, 0.8); /* Bande blanche semi-transparente */
-  border-radius: 10px;
+  max-width: 1000px;
+  width: 90%;
+  margin: 20px auto;
   padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre */
+  background: rgba(255,255,255,0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
