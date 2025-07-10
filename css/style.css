@@ -194,23 +194,29 @@
 			display: flex; /*positionne les items en ligne*/
 			justify-content: space-evenly; /*espace égale entre les items*/
 			flex-wrap: wrap; /*permet de passer à la ligne suivante au besoin*/
-			gap: 200px; /*espace entre item*/
+			gap: 20px; /*espace entre item*/
 			margin: 20px;	
 		}
 		.gallery-Figurines .item {
-		text-align: center; /* Centre le contenu à l'intérieur */
-		width: 30%; /* Chaque item occupe environ un tiers */
-		background: rgba(255, 255, 255, 0.7); /* Fond blanc semi-transparent */
-		padding: 10px;
-		border-radius: 8px; /* Coins arrondis */
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
+    text-align: center;
+    width: 30%;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* ✅ Empêche l’image de déborder */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .gallery-Figurines .item img {
-    max-width: 800%; /* L'image s'adapte à la largeur du conteneur */
-    height: auto; /* Conserve le ratio de l'image */
-    border-radius: 8px; /* Coins arrondis pour l'image */
-    margin-bottom: 10px; /* Espace entre l'image et le texte */
+    max-width: 100%;
+    width: 100%; /* ✅ Assure que l’image suit la largeur du conteneur */
+    height: auto;
+    object-fit: contain; /* ✅ Garde les proportions sans déborder */
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
 .gallery-Figurines .item h3 {
