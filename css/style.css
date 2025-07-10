@@ -131,6 +131,8 @@
             background: rgba(255, 255, 255, 0.7);
             padding: 20px;
             border-radius: 8px;
+			max-width: 1200px; /* Limite la largeur du bloc */
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Plus de profondeur */
         }
         .icons {
             display: flex;
@@ -261,7 +263,7 @@
   display: flex;
   gap: 20px;
   align-items: center;
-  animation: scroll-horizontal 60s linear infinite;
+  animation: scroll-horizontal 300s linear infinite;
   width: max-content;
 }
 
@@ -283,6 +285,11 @@
 }
 .carousel-wrapper {
   overflow: hidden;
-  max-width: 100%;
-  margin: auto;
+  max-width: 80%; /* Réduction à 90% du site */
+  margin: 0 auto;  /* Centre la bande blanche */
+  background: rgba(255, 255, 255, 0.8); /* Bande blanche semi-transparente */
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre */
 }
+
