@@ -58,12 +58,20 @@
   
      <section id="contact" class="section">
             <h2>Contactez-nous</h2>
-            <form action="mailto:ton_adresse@mail.com" method="post" enctype="text/plain">
-                <input type="text" name="nom" placeholder="Votre nom" required>
-                <input type="email" name="email" placeholder="Votre email" required>
-                <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
-                <button type="submit">Envoyer</button>
-            </form>
+            <form action="https://formsubmit.co/pheonix59540@gmail.com" method="POST">
+				<input type="text" name="nom" placeholder="Votre nom" required>
+				<input type="email" name="email" placeholder="Votre email" required>
+				<textarea name="message" placeholder="Votre message" rows="5" required></textarea>
+
+				<!-- Optionnel : rediriger après envoi -->
+				<input type="hidden" name="_next" value="https://tonsite.com/merci.html">
+  
+				<!-- Optionnel : éviter les robots -->
+				<input type="hidden" name="_captcha" value="false">
+
+				<button type="submit">Envoyer</button>
+			</form>
+
         </section>
 
   </main>
