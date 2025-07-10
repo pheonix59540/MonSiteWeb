@@ -8,12 +8,19 @@
 </head>
 
 <script>
-		fetch("includes/carousel_figurines.html")
-			.then(response => response.text())
-			.then(data => {
-				document.getElementById("carousel-container").innerHTML = data;
-			})
-			.catch(error => console.error("Erreur lors du chargement du carrousel :", error));
+  fetch("includes/carousel_figurines.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("carousel-container").innerHTML = data;
+    })
+    .catch(error => console.error("Erreur lors du chargement du carrousel des figurines :", error));
+
+  fetch("includes/carousel_decors.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("carousel-decors-container").innerHTML = data;
+    })
+    .catch(error => console.error("Erreur lors du chargement du carrousel des décors :", error));
 </script>
 
 <body>
@@ -80,17 +87,16 @@
 		
 		<section id="figurines" class="section">
 			<h2>Nos Figurines</h2>
-			<div id="carousel-container"></div>
+			<div id="carousel-container" class="carousel-wrapper"></div>
 		</section>
 
 	
         <section id="decors" class="section">
             <h2>Nos Décors</h2>
-            <div class="icons">
-                <div class="icon">Décor 1</div>
-                <div class="icon">Décor 2</div>
+            <div id="carousel-decors-container" class="carousel-wrapper"></div>
             </div>
         </section>
+		
         <section id="galerie" class="section gallery">
             <h2>Galerie</h2>
             <img src="image1.jpg" alt="Image 1">
