@@ -32,11 +32,9 @@
             width: 100%;
 			background-size: cover; /* Assure que l’image de fond couvre bien */
 			background-position: center; /* Centre l’image */
+		}	
 		}
 		
-		
-
-		}
 	
         .sidebar /* SIDEBAR principale */{
             display: flex;
@@ -275,14 +273,23 @@
     margin-top: 20px; /* Ajoute de l'espace au-dessus de la galerie */
 }
 
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1000px; /* largeur de ta section */
+  height: 200px;
+  margin: 0 auto;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
 .carousel-track {
   display: flex;
   gap: 20px;
   align-items: center;
-  animation: scroll-horizontal 1200s linear infinite;
+  animation: scroll-horizontal 1000s linear infinite;
   width: max-content;
 }
-
 .carousel-track img {
   height: 200px;
   width: auto;
@@ -304,7 +311,6 @@
   width: 90%;
   margin: 20px auto;
   padding: 20px;
-  background: rgba(255,255,255,0.8);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
