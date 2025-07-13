@@ -1,6 +1,13 @@
+ @font-face {
+    font-family: 'Cinzel-Bold';
+    src: url('../images/Cinzel-Bold.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
  body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Cinzel-Bold',Arial, sans-serif;
             background-image: url('../images/01 Back.jpeg'); /* Remplace par le chemin de ton image */
             background-size: cover;
             background-attachment: fixed; /* L'image de fond reste fixe */
@@ -314,4 +321,83 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
+ /* Styles pour rendre la page plus attrayante (tu peux les intégrer dans style.css) */
+    .product-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .product-header h1 {
+      font-size: 2.8em; /* Plus grand pour le titre */
+      color: #333;
+      margin-bottom: 10px;
+    }
+	.gallery-article {
+    text-align: center; /* Centre le texte horizontalement */
+    margin: 20px auto; /* Ajoute de l'espace autour de la section */
+    max-width: 1200px; /* Limite la largeur pour un rendu plus esthétique */
+	background: rgba(255, 255, 255, 0.7); /* Fond blanc semi-transparent */
+    padding: 20px; /* Ajoute de l'espace intérieur */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
+}
+    .price-article {
+      font-size: 2.5em; /* Grande taille pour le prix */
+      color: #FFFFFF; /* Un joli Vert foncé pour le prix */
+      font-weight: bold;
+      background-color: #2F4F4F; /* Un fond très sombre pour le prix pour le faire ressortir */
+      padding: 10px 20px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-top: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    .descriptionSection {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #2F4F4F;
+      color: #FFFFFF; /* Un joli Vert foncé pour le prix */
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    .compatibilitySection {
+      background-color: #191970; /* Fond légèrement coloré pour la section compatibilité */
+      color: #FFFFFF; /* Un joli Vert foncé pour le prix */
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 8px;
+      border-left: 5px solid #4B0082; /* Bordure colorée */
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    .compatibilitySection h3 {
+      color: #FFFFFF;
+      margin-bottom: 15px;
+    }
+    .contact-cta {
+      background-color: #dff0d8; /* Vert clair pour le CTA */
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 1.1em;
+      color: #3c763d;
+      border: 1px solid #d6e9c6;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    .contact-cta a {
+      color: #3c763d;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .contact-cta a:hover {
+      text-decoration: underline;
+    }
+    .legal-notes {
+      font-size: 0.9em;
+      color: #777;
+      margin-top: 20px;
+      text-align: center;
+      padding-top: 10px;
+      border-top: 1px solid #eee;
+    }
 
