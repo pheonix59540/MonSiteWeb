@@ -1,0 +1,15 @@
+1. Dans OpenOffice, quand tu exportes ton fichier CSV :
+Choisis :
+
+Jeu de caractères : UTF-8
+
+Séparateur de champ : ;
+
+Encadrement des champs : "
+
+👉 Cela protège les cellules qui contiennent des virgules ,, des sauts de ligne ou des points-virgules.
+
+
+
+Lance le script "LienPhoto" pour crééer une page html par photo dans le dossier "LienPhoto"
+Lance le script "0 creation_articles" pour générer à la racine, une page html par article.
