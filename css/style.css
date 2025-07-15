@@ -1,13 +1,13 @@
  @font-face {
-    font-family: 'Cinzel-Bold';
-    src: url('../images/Cinzel-Bold.otf') format('truetype');
+    font-family: 'Cinzel-Regular';
+    src: url('../images/Cinzel-Regular.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
  body {
             margin: 0;
-            font-family: 'Cinzel-Bold',Arial, sans-serif;
+            font-family: 'Cinzel-Regular',Arial, sans-serif;
             background-image: url('../images/01 Back.jpeg'); /* Remplace par le chemin de ton image */
             background-size: cover;
             background-attachment: fixed; /* L'image de fond reste fixe */
