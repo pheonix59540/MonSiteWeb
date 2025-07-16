@@ -18,7 +18,7 @@ with open("0 export_articles.csv", newline='', encoding='utf-8') as csvfile:
 
             # Génération du bloc HTML
             bloc = f"""<div class="item">
-  <a href="3 Les anciens sauriens (Cuetzpal)/{titre}.html" target="_blank"><img src="3 Les anciens sauriens (Cuetzpal)/{photo1}.jpg" alt="{titre}"></a>
+  <a href="3 Nains Infernaux (Magmhorin)/{titre}.html" target="_blank"><img src="3 Nains Infernaux (Magmhorin)/{photo1}.jpg" alt="{titre}"></a>
   <h3>{titre}</h3>
   <p><strong>Prix : {prix}</strong></p>
 </div>

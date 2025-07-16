@@ -39,9 +39,9 @@ def generate_html(data):
                 </div>
 
                <div class="descriptionSection">
-        <h2>Donnez Vie à Vos Armées Cuetzpal avec <strong>{titre}</strong> !</h2>
-        <p>Plongez au cœur de la puissance primordiale des Anciens Sauriens avec <strong>{titre}</strong>, une pièce maîtresse de notre gamme <strong>Les Anciens Sauriens (Cuetzpal)</strong>, conçue pour les passionnés de jeux fantastiques comme <strong>Warhammer Age of Sigmar, The Old World, 9th Age, Kings of War </strong>, et bien d'autres !</p>
-        <p>Réalisée avec une qualité d'impression 3D exceptionnelle, ce décor détaillé, déssiné par <strong>The Lost Kingdom Miniatures</strong> ajoutera une dimension unique à vos champs de bataille. Que vous souhaitiez donner vie à une jungle grouillante de créatures ancestrales, créer un point stratégique pour vos armées de lézards ou simplement enrichir votre collection, <strong>{titre}</strong> est le complément idéal.</p>
+        <h2>Donnez Vie à Vos Légions Magmhorin avec <strong>{titre}</strong> !</h2>
+        <p>Plongez au cœur de la puissance ardente des Nains Infernaux avec <strong>{titre}</strong>, une pièce maîtresse de notre gamme <strong>Nains Infernaux (Magmhorin)</strong>, conçue pour les passionnés de jeux fantastiques comme <strong>Warhammer Age of Sigmar, The Old World, 9th Age, Kings of War </strong>, et bien d'autres !</p>
+        <p>Réalisée avec une qualité d'impression 3D exceptionnelle, ce décor détaillé, déssiné par <strong>The Lost Kingdom Miniatures</strong> ajoutera une dimension unique à vos champs de bataille. Que vous souhaitiez donner vie à une forteresse naine grouillante d'activité démoniaque, créer un point stratégique pour vos armées de chaînes et de flammes ou simplement enrichir votre collection, <strong>{titre}</strong> est le complément idéal.</p>
         <p>Veuillez noter que le décor vous sera livrée non assemblée et non peinte, vous offrant la liberté de la personnaliser entièrement pour qu'elle corresponde parfaitement à votre vision et à l'esthétique de vos armées !</p>
 		
       </div>
