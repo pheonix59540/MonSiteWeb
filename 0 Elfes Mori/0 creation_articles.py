@@ -66,7 +66,13 @@ def generate_html(data):
             html += f'        <a href="LienPhoto/{nom_image}.html" target="_blank"><img src="{nom_image}.jpg" alt="{nom_image}"></a>\n'
         html += '      </div>\n'
 
-    html += """    </section>
+    html += """    
+    
+        <div class="legal-notes">
+        <p><em>Photo non contractuelle. Figurine à monter et sans socle autre que celui proposé.</em></p>
+        </div>
+        
+        </section>
         </main>
         </body>
         </html>
