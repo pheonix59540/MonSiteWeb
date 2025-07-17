@@ -1,19 +1,23 @@
- @font-face {
-    font-family: 'Cinzel-Regular';
-    src: url('../images/Cinzel-Regular.otf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+ {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  overflow-x: hidden;
 }
 
  body {
             margin: 0;
+			padding: 0;
             font-family: 'Cinzel-Regular',Arial, sans-serif;
             background-image: url('../images/01 Back.jpeg'); /* Remplace par le chemin de ton image */
             background-size: cover;
             background-attachment: fixed; /* L'image de fond reste fixe */
 			overflow-x: hidden; /* Évite le débordement horizontal */
         }
-		* {
+		 {
 			box-sizing: border-box;
 		}
         header {
@@ -21,43 +25,41 @@
 			height: 100vh;
 			background-image: url('../images/0 Header.jpg');
 			background-size: cover;
-			background-position: center;
+			background-position: center top;
+			position: relative;
         }
 		
+		
 			@media screen and (max-width: 420px) {
-  header {
-    width: 100%;
-    height: 100vh;
-    background-image: url('../images/0 Header.jpg');
-    background-size: contain;         /* Montre toute l’image sans la couper */
-    background-repeat: no-repeat;     /* Pas de répétition */
-    background-position: center top;  /* Centrage horizontal */
-  }
+		.sidebar nav {
+			flex-direction: column;
+			align-items: center;
+			}
 
-  body {
-    margin: 0;
-    font-family: 'Cinzel-Regular', Arial, sans-serif;
-    background-image: url('../images/01 Back.jpeg');
-    background-size: contain;         /* Affiche toute l’image */
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-attachment: fixed;
-    overflow-x: hidden;
-  }
-}	
+		header {
+			height: 60vh; /* facultatif si tu veux un header plus petit sur mobile */
+			}
+
+		.page-wrapper {
+			padding: 1rem;
+			}
 		}
+
+ 
+
 		
 	
         .sidebar /* SIDEBAR principale */{
-            display: flex;
-            justify-content: space-around;
-            padding: 10px 0;
-			flex-wrap: wrap; /* Permet aux images de passer à la ligne si nécessaire */
-			gap: 5px; /* Espace entre les images */
-			row-gap: 70px; /* Espacement uniquement entre les lignes */
-            position: sticky;
-            top: 0;
-			z-index: 1000;
+			position: sticky;
+			top: 0;
+            width: 100vw;
+			background-color: rgba(0, 0, 0, 0.7); /* ou transparent si tu veux voir l’image */
+			display: flex;
+			justify-content: center; /* centre le contenu */
+			padding: 10px 0;
+			position: relative;
+			z-index: 10;
+			flex-wrap: wrap;
         }
         .sidebar a /* sidebar secondaire (catégorie) */{
             display: flex;
@@ -67,35 +69,20 @@
 			padding: 0; /* Supprime l'espace inutile */
         }
 		.sidebar img {
-			width: 100%; /* Ajuste la largeur des icônes */
+			width: auto; /* Ajuste la largeur des icônes */
 			height: 18vh; /* Garde le ratio */
 			object-fit: cover; /* Évite la déformation */
 			transition: transform 0.4s ease; /* Ajoute un effet de zoom au survol */
             border-radius: 10px;
 			display: block;
 		}
-			
-			
-			@media screen and (max-width: 420px) { /* SPECIAL SMARTPHONE */
-		.sidebar {
+		.sidebar nav {
 			display: flex;
-			flex-direction: row; /* Garde les icônes alignées en ligne */
-			justify-content: center; /* Centre le contenu */
-			width: 100%; /* Ajuste à la largeur de l'écran */
-			padding: 5px 0; /* Ajuste l’espacement */
-			gap: 5px; /* Espace entre les images */
+			gap: 15px;
+			flex-wrap: wrap;
 		}
+			
 
-		.sidebar a {
-			font-size: 12px; /* Réduit la taille du texte si nécessaire */
-			padding: 5px; /* Réduit l'espacement pour éviter le chevauchement */
-		}
-
-		.sidebar img {
-			width: 100%; /* Réduit la taille des icônes */
-			height: 40px; /* Garde une taille proportionnée */
-		}
-		}
 		
 
         .sidebar a:hover /* effet pour		survol */ {
