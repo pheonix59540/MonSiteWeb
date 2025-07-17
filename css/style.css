@@ -54,6 +54,7 @@ footer {
 			@media screen and (max-width: 420px) {
 
   body {
+	background-image: url('../images/01 Back.jpeg'); /* Ou une autre image spécifique mobile */
     background-size: contain;
     background-position: top center;
     background-attachment: scroll;
@@ -68,7 +69,7 @@ footer {
     width: 100vw;
     height: 100vh;
     margin: 0 auto;
-    background-image: url('../images/0 Header.jpg');
+    background-image: url('../images/0 Header.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top center;
