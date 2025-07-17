@@ -37,7 +37,9 @@
 
 							/* Ajustement du fond */
 		body {
-			margin: 0;
+			margin: 0 auto;           /* Centrer horizontalement */
+			width: 100%;
+			max-width: 1200px;        /* Limiter largeur comme le header */
 			font-family: 'Cinzel-Regular', Arial, sans-serif;
 			background-image: url('../images/01 Back.jpeg');
 			background-size: cover;
@@ -283,6 +285,29 @@
 .gallery-description .gallery-details {
     margin-top: 20px; /* Ajoute de l'espace au-dessus de la galerie */
 }
+
+#partenaires {
+	background: rgba(255, 255, 255, 0.7); /* Fond blanc semi-transparent */
+  padding: 20px;           /* Un peu d'espace intérieur */
+  display: flex;           /* Pour aligner les images côte à côte */
+  justify-content: center; /* Centrer horizontalement */
+  gap: 20px;               /* Espace entre les images */
+  flex-wrap: wrap;         /* Pour que les images passent à la ligne si trop petites */
+  max-width: 1200px;        /* Largeur max de la section */
+  margin: 0 auto 40px;     /* Centrer la section avec marge dessous */
+  border-radius: 10px;     /* Optionnel : coins arrondis */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Optionnel : ombre légère */
+}
+
+#partenaires img {
+  max-height: 250px;    /* Limite la hauteur */
+  max-width: 45%;       /* Limite la largeur à 45% (deux images côte à côte) */
+  height: auto;         /* Garde le ratio */
+  width: auto;
+  object-fit: contain;  /* Image bien contenue */
+  border-radius: 5px;   /* Optionnel : coins arrondis sur images */
+}
+
 
 .carousel-container {
   position: relative;
