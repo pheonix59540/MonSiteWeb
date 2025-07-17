@@ -401,5 +401,33 @@
       border-top: 1px solid #eee;
     }
 	
-	
+	.site-footer {
+    background-color: #000; /* Noir */
+    color: #aaa; /* Gris clair pour le texte */
+    font-size: 0.75rem; /* Petite taille mais lisible */
+    padding: 30px 20px;
+    margin-top: 40px;
+}
+
+.site-footer a {
+    color: #ccc;
+    text-decoration: underline;
+}
+
+.site-footer a:hover {
+    color: #fff;
+}
+
+.site-footer .footer-content {
+    max-width: 1000px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+.site-footer h4, .site-footer h5 {
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
 
