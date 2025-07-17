@@ -26,19 +26,23 @@
 		
 			@media screen and (max-width: 420px) {/* Ajustement du header */
 		header {
-			
-            width: 100%;
-			height: 50vh; /* Réduit la hauteur du header */
-			font-size: 14px; /* Ajuste la taille du texte */
-			padding: 5px 10px; /* Réduit l’espace autour */
+			max-width: 1200px;  /* largeur fixe max */
+			width: 100%;        /* plein largeur jusqu'à max-width */
+			height: 100vh;
+			margin: 0 auto;     /* centre horizontalement */
+			background-image: url('../images/0 Header.jpg');
+			background-size: cover;
+			background-position: center;
 		}
 
 							/* Ajustement du fond */
 		body {
-			
-            width: 100%;
-			background-size: cover; /* Assure que l’image de fond couvre bien */
-			background-position: center; /* Centre l’image */
+			margin: 0;
+			font-family: 'Cinzel-Regular', Arial, sans-serif;
+			background-image: url('../images/01 Back.jpeg');
+			background-size: cover;
+			background-attachment: fixed;
+			overflow-x: hidden;
 		}	
 		}
 		
