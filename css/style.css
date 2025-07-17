@@ -30,20 +30,40 @@ html, body {
         }
 		
 		
-			@media screen and (max-width: 420px) {
-		.sidebar nav {
-			flex-direction: column;
-			align-items: center;
-			}
+		@media screen and (max-width: 420px) {
 
-		header {
-			height: 60vh; /* facultatif si tu veux un header plus petit sur mobile */
-			}
-
-		.page-wrapper {
-			padding: 1rem;
-			}
+			body {
+				margin: 0;
+				font-family: 'Cinzel-Regular', Arial, sans-serif;
+				background-image: url('../images/01 Back.jpeg');
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: top center;
+				background-attachment: scroll; /* évite les bugs mobiles */
+				overflow-x: hidden;
 		}
+
+			header {
+				width: 100vw;
+				height: 100vh;
+				margin: 0 auto;
+				background-image: url('../images/0 Header.jpg');
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: top center;
+		}
+
+			.page-wrapper {
+				max-width: 100%;
+				padding: 1rem;
+		}
+
+			.sidebar nav {
+				flex-direction: column;
+				align-items: center;
+		}
+	}
+
 
  
 
