@@ -42,6 +42,9 @@ footer {
 			@media screen and (max-width: 420px) {
 
   body {
+	  
+	width: 100vw;
+	height: 100vh;
     margin: 0;
     font-family: 'Cinzel-Regular', Arial, sans-serif;
     background-image: url('../images/01 Back.jpeg');
@@ -63,8 +66,10 @@ footer {
   }
 
   .page-wrapper {
-    max-width: 100%;
-    padding: 1rem;
+  width: 100vw;      /* toute la largeur visible */
+  max-width: 100%;   /* empêche de se limiter à une taille fixe */
+  margin: 0;
+  padding: 0;
   }
 
   .sidebar nav {
