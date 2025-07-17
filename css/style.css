@@ -8,6 +8,7 @@
 /* 🌍 Page entière */
 html, body {
   width: 100%;
+  height: 100%;
   overflow-x: hidden;
   font-family: 'Cinzel-Regular', Arial, sans-serif;
   background-image: url('../images/01 Back.jpeg');
@@ -53,20 +54,10 @@ footer {
 			@media screen and (max-width: 420px) {
 
   body {
-	  
-	width: 100vw;
-	height: 100vh;
-    margin: 0;
-    font-family: 'Cinzel-Regular', Arial, sans-serif;
-    background-image: url('../images/01 Back.jpeg');
     background-size: contain;
-    background-repeat: no-repeat;
     background-position: top center;
-    background-attachment: scroll; /* évite les bugs mobiles */width: 100vw;
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto; /* ou scroll, selon si tu veux forcer le scroll vertical */
-    position: relative;
+    background-attachment: scroll;
+    overflow-y: auto;
   }
   html {
     height: 100%;
@@ -359,7 +350,7 @@ footer {
   display: flex;
   gap: 20px;
   align-items: center;
-  animation: scroll-horizontal 1000s linear infinite;
+  animation: scroll-horizontal 500s linear infinite;
   width: max-content;
 }
 .carousel-track img {
