@@ -62,7 +62,14 @@ footer {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top center;
-    background-attachment: scroll; /* évite les bugs mobiles */
+    background-attachment: scroll; /* évite les bugs mobiles */width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto; /* ou scroll, selon si tu veux forcer le scroll vertical */
+    position: relative;
+  }
+  html {
+    height: 100%;
     overflow-x: hidden;
   }
 
@@ -77,10 +84,8 @@ footer {
   }
 
   .page-wrapper {
-  width: 100vw;      /* toute la largeur visible */
-  max-width: 100%;   /* empêche de se limiter à une taille fixe */
-  margin: 0;
-  padding: 0;
+    max-width: 100vw;
+    overflow: hidden;
   }
 
   .sidebar nav {
