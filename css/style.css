@@ -1,40 +1,51 @@
- {
+/* 🔧 Reset */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* 🌍 Page entière */
 html, body {
   width: 100%;
-  overflow-x: hidden; 
+  overflow-x: hidden;
   font-family: 'Cinzel-Regular', Arial, sans-serif;
+  background-image: url('../images/01 Back.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
-		/* 🖼️ Fond général */
-body {
-			background-image: url('../images/01 Back.jpeg'); /* Ton image de fond */
-			background-size: cover;
-			background-attachment: fixed;
-			background-position: center top;
-			background-repeat: no-repeat;
-}
-        /* 🧢 Header */
+/* 🧢 Header (plein écran) */
 header {
-			width: 100vw;
-			height: 100vh;
-			background-image: url('../images/0 Header.jpg');
-			background-size: cover;
-			background-position: center top;
-			background-repeat: no-repeat;
-			position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../images/0 Header.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
-		/* 🦶 Footer */
+/* 🧱 Contenu centré avec limites */
+.page-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* 🦶 Footer */
 footer {
-			width: 100vw;
-			background-color: #000; /* à adapter à ton design */
-			color: #fff;
-			text-align: center;
-			padding: 1rem;
+  width: 100vw;
+  padding: 20px;
+  text-align: center;
+  background-color: #222;
+  color: #fff;
 }
 
 		
