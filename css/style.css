@@ -92,7 +92,7 @@ footer {
   padding: 0 30px; /* 👉 espace intérieur gauche/droite */
   color: white;
   text-decoration: none;
-  font-size: 18px; /* 👉 taille du texte */
+  font-size: 20px; /* 👉 taille du texte */
   transition: transform 0.3s ease;
   font-family: inherit; /* 👉 hérite de .sidebar */
 }
@@ -504,11 +504,13 @@ footer {
   }
   .sidebar {
     position: sticky;
-    top: 0; /* reste collée en haut */
-    z-index: 10;
+	top: 100vh; /* colle-la juste après le header mobile */
+	width: 100vw;
+	left: 0;
+	z-index: 10;
 }
 	.sidebar a {
-    font-size: 14px;
+    font-size: 10px;
     padding: 0 15px;
   }
 
