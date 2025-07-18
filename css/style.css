@@ -460,60 +460,81 @@ footer {
 }
 
 
-			@media screen and (max-width: 420px) {
-
+@media screen and (max-width: 420px) {
+  
   body {
+    background: none; /* désactive le fond PC */
     margin: 0;
     padding: 0;
-    background: none;
   }
-
-.mobile-background {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100dvh;
-  background: url('../images/01 Back.jpeg') no-repeat top center;
-  background-size: cover;
-  z-index: -1; /* envoie le fond derrière tout */
-}
 
   html {
     height: 100%;
     overflow-x: hidden;
   }
 
+  .mobile-background {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('../images/01 Back.jpeg') no-repeat top center;
+    background-size: cover;
+    z-index: -1;
+  }
+
   header {
-	margin-bottom: 0;
-	padding-bottom: 0;
-	display: flex;
     width: 100vw;
     height: auto;
-	padding: 0;
-    margin: 0 auto;
     background-image: url('../images/0 Header.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100vw;
+    background-color: rgba(30, 30, 30, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: 'Cinzel-Bold', sans-serif;
+  }
+
+  .sidebar nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .sidebar a {
+    font-size: 14px; /* Police plus petite pour mobile */
+    padding: 0 15px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
   }
 
   .page-wrapper {
     max-width: 100vw;
     overflow: hidden;
-  }
-  .sidebar {
-    position: sticky;
-	top: 0; /* colle-la juste après le header mobile */
-	width: 100vw;
-	z-index: 10;
-}
-	.sidebar a {
-    font-size: 10px;
-    padding: 0 15px;
+    padding: 10px;
   }
 
-  .sidebar nav {
+  footer {
+    padding: 15px;
+    font-size: 14px;
   }
 }
