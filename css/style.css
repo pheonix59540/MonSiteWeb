@@ -496,7 +496,7 @@ footer {
 
   .sidebar {
     position: sticky;
-    top: 0;
+    top: 100%;
     z-index: 10;
     width: 100vw;
     background-color: rgba(30, 30, 30, 1);
