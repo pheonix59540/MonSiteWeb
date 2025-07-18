@@ -490,7 +490,8 @@ footer {
 	padding-bottom: 0;
 	display: flex;
     width: 100vw;
-    height: 100dvh;
+    height: auto;
+	padding: 0;
     margin: 0 auto;
     background-image: url('../images/0 Header.png');
     background-size: contain;
@@ -504,9 +505,8 @@ footer {
   }
   .sidebar {
     position: sticky;
-	top: 100vh; /* colle-la juste après le header mobile */
+	top: 0; /* colle-la juste après le header mobile */
 	width: 100vw;
-	left: 0;
 	z-index: 10;
 }
 	.sidebar a {
