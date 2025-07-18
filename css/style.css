@@ -486,9 +486,9 @@ footer {
   }
 
   header {
+    background-image: url('../images/0 Header.png');
     width: 100vw;
     height: 100vh;
-    background-image: url('../images/0 Header.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top center;
