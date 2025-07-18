@@ -1,3 +1,13 @@
+@font-face { /* Police d'écriture 1 */
+  font-family: 'Cinzel-Regular';
+  src: url('../images/Cinzel-Regular.otf') format('truetype');  
+}
+@font-face { /* Police d'écriture 2 */
+  font-family: 'Cinzel-Bold';
+  src: url('../images/Cinzel-Bold.otf') format('truetype');
+}
+
+
 /* 🔧 Reset */
 * {
   margin: 0;
@@ -11,7 +21,7 @@ html, body {
   height: 100%;
   overflow-x: hidden;
   src: url('../images/Cinzel-Regular.otf') format('truetype');
-  font-family: 'Cinzel-Regular', Arial, sans-serif;
+  font-family: 'Cinzel-Regular', sans-serif;
   background-image: url('../images/01 Back.jpeg');
   background-size: cover;
   background-position: center;
@@ -91,8 +101,6 @@ footer {
   }
 
   .sidebar nav {
-    flex-direction: column;
-    align-items: center;
   }
 }
 
@@ -101,45 +109,48 @@ footer {
 
 		
 	
-        .sidebar /* SIDEBAR principale */{
-			position: sticky;
-			top: 0;
-            width: 100vw;
-			background-color: rgba(30, 30, 30, 1); /* ou transparent si tu veux voir l’image */
-			display: flex;
-			justify-content: center; /* centre le contenu */
-			padding: 10px 0;
-			position: relative;
-			z-index: 10;
-			flex-wrap: wrap;
-        }
-        .sidebar a /* sidebar secondaire (catégorie) */{
-            display: flex;
-			align-items: center;
-			justify-content: center;
-			height: 50px;
-			padding: 0; /* Supprime l'espace inutile */
-        }
-		.sidebar img {
-			width: auto; /* Ajuste la largeur des icônes */
-			height: 18vh; /* Garde le ratio */
-			object-fit: cover; /* Évite la déformation */
-			transition: transform 0.4s ease; /* Ajoute un effet de zoom au survol */
-            border-radius: 10px;
-			display: block;
-		}
-		.sidebar nav {
-			display: flex;
-			gap: 15px;
-			flex-wrap: wrap;
-		}
-			
+        .sidebar {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  background-color: rgba(30, 30, 30, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  z-index: 10;
+  flex-wrap: wrap;
+  font-family: 'Cinzel-Bold', sans-serif; /* 👉 applique ta police */
+}
 
-		
+/* Conteneur de liens */
+.sidebar nav {
+  display: flex;
+  justify-content: space-evenly; /* répartit l’espace uniformément entre TOUS les éléments */
+  width: 100%; /* important pour que le "space-evenly" prenne effet */
+  flex-wrap: wrap;
+}
 
-        .sidebar a:hover /* effet pour		survol */ {
-            transform: scale(1.1); /* Zoom léger au survol */
-        }
+/* Liens individuels */
+.sidebar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 0 30px; /* 👉 espace intérieur gauche/droite */
+  color: white;
+  text-decoration: none;
+  font-size: 18px; /* 👉 taille du texte */
+  transition: transform 0.3s ease;
+  font-family: inherit; /* 👉 hérite de .sidebar */
+}
+
+/* Effet au survol */
+.sidebar a:hover {
+  transform: scale(1.1);
+  color: #ccc;
+}
+
         .dropdown {
             position: relative;
             display: inline-block;
