@@ -466,7 +466,6 @@ footer {
     margin: 0;
     padding: 0;
     background: none;
-    background-color: red !important;
   }
 
 .mobile-background {
@@ -504,9 +503,9 @@ footer {
     overflow: hidden;
   }
   .sidebar {
-  position: relative; /* plus de sticky */
-  top: auto;
-  margin-top: 0; /* au cas où */
+    position: sticky;
+    top: 0; /* reste collée en haut */
+    z-index: 10;
 }
 	.sidebar a {
     font-size: 14px;
