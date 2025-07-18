@@ -104,8 +104,9 @@ footer {
     overflow: hidden;
   }
   .sidebar {
-  margin: 0;
-  padding: 0;
+  position: relative; /* plus de sticky */
+  top: auto;
+  margin-top: 0; /* au cas où */
 }
 	.sidebar a {
     font-size: 14px;
