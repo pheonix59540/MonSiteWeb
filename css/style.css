@@ -64,7 +64,9 @@ footer {
 			@media screen and (max-width: 420px) {
 
   body {
-	background: none; /* désactive le fond "PC" */
+    margin: 0;
+    padding: 0;
+    background: none;
   }
 
 .mobile-background {
@@ -102,11 +104,12 @@ footer {
     overflow: hidden;
   }
   .sidebar {
-  margin-top: 0;
-  padding-top: 0;
+  margin: 0;
+  padding: 0;
 }
-  .sidebar a {
-    font-size: 10px;
+	.sidebar a {
+    font-size: 14px;
+    padding: 0 15px;
   }
 
   .sidebar nav {
