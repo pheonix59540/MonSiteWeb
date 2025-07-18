@@ -487,13 +487,11 @@ footer {
 
   header {
     width: 100vw;
-    height: auto;
+    height: 100vh;
     background-image: url('../images/0 Header.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top center;
-    margin: 0;
-    padding: 0;
   }
 
   .sidebar {
@@ -517,7 +515,7 @@ footer {
   }
 
   .sidebar a {
-    font-size: 14px; /* Police plus petite pour mobile */
+    font-size: 10px; /* Police plus petite pour mobile */
     padding: 0 15px;
     height: 40px;
     display: flex;
@@ -534,7 +532,7 @@ footer {
   }
 
   footer {
-    padding: 15px;
+    padding: 8px;
     font-size: 14px;
   }
 }
