@@ -60,67 +60,6 @@ footer {
 }
 
 		
-		
-			@media screen and (max-width: 420px) {
-
-  body {
-    margin: 0;
-    padding: 0;
-    background: none;
-  }
-
-.mobile-background {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100dvh;
-  background: url('../images/01 Back.jpeg') no-repeat top center;
-  background-size: cover;
-  z-index: -1; /* envoie le fond derrière tout */
-}
-
-  html {
-    height: 100%;
-    overflow-x: hidden;
-  }
-
-  header {
-	margin-bottom: 0;
-	padding-bottom: 0;
-	display: flex;
-    width: 100vw;
-    height: 100dvh;
-    margin: 0 auto;
-    background-image: url('../images/0 Header.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: top center;
-  }
-
-  .page-wrapper {
-    max-width: 100vw;
-    overflow: hidden;
-  }
-  .sidebar {
-  position: relative; /* plus de sticky */
-  top: auto;
-  margin-top: 0; /* au cas où */
-}
-	.sidebar a {
-    font-size: 14px;
-    padding: 0 15px;
-  }
-
-  .sidebar nav {
-  }
-}
-
-
- 
-
-		
 	
         .sidebar {
   position: sticky;
@@ -521,3 +460,59 @@ footer {
 }
 
 
+			@media screen and (max-width: 420px) {
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: none;
+    background-color: red !important;
+  }
+
+.mobile-background {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  background: url('../images/01 Back.jpeg') no-repeat top center;
+  background-size: cover;
+  z-index: -1; /* envoie le fond derrière tout */
+}
+
+  html {
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  header {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	display: flex;
+    width: 100vw;
+    height: 100dvh;
+    margin: 0 auto;
+    background-image: url('../images/0 Header.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+
+  .page-wrapper {
+    max-width: 100vw;
+    overflow: hidden;
+  }
+  .sidebar {
+  position: relative; /* plus de sticky */
+  top: auto;
+  margin-top: 0; /* au cas où */
+}
+	.sidebar a {
+    font-size: 14px;
+    padding: 0 15px;
+  }
+
+  .sidebar nav {
+  }
+}
