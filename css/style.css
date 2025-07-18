@@ -98,6 +98,13 @@ footer {
     max-width: 100vw;
     overflow: hidden;
   }
+  .sidebar {
+  margin-top: 0;
+  padding-top: 0;
+}
+  .sidebar a {
+    font-size: 14px;
+  }
 
   .sidebar nav {
   }
@@ -371,7 +378,7 @@ footer {
   display: flex;
   gap: 20px;
   align-items: center;
-  animation: scroll-horizontal 500s linear infinite;
+  animation: scroll-horizontal 300s linear infinite;
   width: max-content;
 }
 .carousel-track img {
@@ -396,7 +403,6 @@ footer {
   margin: 20px auto;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
  /* Styles pour rendre la page plus attrayante (tu peux les intégrer dans style.css) */
