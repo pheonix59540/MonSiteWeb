@@ -488,7 +488,7 @@ footer {
   header {
     background-image: url('../images/0 Header.png');
     width: 100vw;
-    height: 100vh;
+    height: 100svh;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top center;
@@ -496,7 +496,7 @@ footer {
 
   .sidebar {
     position: sticky;
-    top: 20%;
+    top: 0;
     z-index: 10;
     width: 100vw;
     background-color: rgba(30, 30, 30, 1);
