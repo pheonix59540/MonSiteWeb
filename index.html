@@ -7,47 +7,6 @@
   <link rel="stylesheet" href="css/style.css"> <!-- Lien vers ton CSS -->
 </head>
 
-<script>
-  function adjustHeaderHeight() {
-    const header = document.querySelector("header");
-    if (header) {
-      header.style.height = window.innerHeight + "px";
-    }
-  }
-
-  // Appelle au chargement
-  window.addEventListener("load", adjustHeaderHeight);
-
-  // Appelle si l'utilisateur change l’orientation de l’écran
-  window.addEventListener("resize", adjustHeaderHeight);
-</script>
-
-<script>
-  // Carrousel des figurines
-  fetch("includes/carousel_figurines.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("carousel-container").innerHTML = data;
-    })
-    .catch(error => console.error("Erreur lors du chargement du carrousel des figurines :", error));
-
-  // Carrousel des décors
-  fetch("includes/carousel_decors.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("carousel-decors-container").innerHTML = data;
-    })
-    .catch(error => console.error("Erreur lors du chargement du carrousel des décors :", error));
-
-  // Carrousel de la galerie
-  fetch("includes/carousel_galerie.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("carousel-galerie-container").innerHTML = data;
-    })
-    .catch(error => console.error("Erreur lors du chargement du carrousel de la galerie :", error));
-</script>
-
 <body>
 	<div class="mobile-background"></div>
   <header></header>
@@ -165,16 +124,40 @@
 	</div>
 	
 	<div id="footer-container"></div>
+	
 		<script>
+  // Carrousel des figurines
+  fetch("includes/carousel_figurines.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("carousel-container").innerHTML = data;
+    })
+    .catch(error => console.error("Erreur lors du chargement du carrousel des figurines :", error));
+
+  // Carrousel des décors
+  fetch("includes/carousel_decors.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("carousel-decors-container").innerHTML = data;
+    })
+    .catch(error => console.error("Erreur lors du chargement du carrousel des décors :", error));
+
+  // Carrousel de la galerie
+  fetch("includes/carousel_galerie.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("carousel-galerie-container").innerHTML = data;
+    })
+    .catch(error => console.error("Erreur lors du chargement du carrousel de la galerie :", error));
+
 			fetch("includes/footer.html")
 			.then(response => response.text())
 			.then(data => {
 			document.getElementById("footer-container").innerHTML = data;
 			})
 			.catch(error => console.error("Erreur lors du chargement du pied de page :", error));
-		</script>
-		
-
+	</script>
 
 </body>
+
 </html>
