@@ -8,6 +8,21 @@
 </head>
 
 <script>
+  function adjustHeaderHeight() {
+    const header = document.querySelector("header");
+    if (header) {
+      header.style.height = window.innerHeight + "px";
+    }
+  }
+
+  // Appelle au chargement
+  window.addEventListener("load", adjustHeaderHeight);
+
+  // Appelle si l'utilisateur change l’orientation de l’écran
+  window.addEventListener("resize", adjustHeaderHeight);
+</script>
+
+<script>
   // Carrousel des figurines
   fetch("includes/carousel_figurines.html")
     .then(response => response.text())
