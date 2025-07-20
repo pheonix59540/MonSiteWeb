@@ -7,6 +7,17 @@
   <link rel="stylesheet" href="css/style.css"> <!-- Lien vers ton CSS -->
 </head>
 
+<script>
+  function adjustHeaderHeight() {
+    const header = document.querySelector("header");
+    if (header) {
+      header.style.height = window.innerHeight + "px";
+    }
+  }
+
+  window.addEventListener("load", adjustHeaderHeight);
+  window.addEventListener("resize", adjustHeaderHeight);
+</script>
 <body>	
   <header></header>
   <nav class="sidebar">
