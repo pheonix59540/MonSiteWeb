@@ -504,6 +504,8 @@ footer {
   }
 
   header {
+	margin-bottom: 0;
+	padding-bottom: 0;
     background-image: url('../images/0 Header.png');
     width: 100vw;
     background-size: contain;
@@ -512,6 +514,7 @@ footer {
   }
 
   .sidebar {
+	margin-top: 0;
     position: relative;
     top: 0;
     z-index: 10;
