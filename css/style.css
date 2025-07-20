@@ -503,7 +503,8 @@ footer {
     z-index: -1;
   }
 
-  header {
+  header {	  
+	border: 2px solid red;
 	margin-bottom: 0;
 	padding-bottom: 0;
     background-image: url('../images/0 Header.png');
@@ -514,6 +515,7 @@ footer {
   }
 
   .sidebar {
+	border: 2px solid blue;
 	margin-top: 0;
     position: relative;
     top: 0;
