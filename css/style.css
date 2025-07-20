@@ -84,6 +84,7 @@ footer {
   max-width: 1536px;  /* ou la largeur exacte de ton header */
   margin: 0 auto;
   overflow: hidden;
+  width: 100%;
 }
 	
         .sidebar {
@@ -511,11 +512,13 @@ footer {
 
   header {	  
 	border: 2px solid red;
+	height: auto;
+    aspect-ratio: 16 / 9; /* ou une autre proportion selon ton image */
 	margin-bottom: 0;
 	padding-bottom: 0;
     background-image: url('../images/0 Header.png');
     width: 100vw;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
   }
