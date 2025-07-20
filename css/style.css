@@ -79,6 +79,12 @@ footer {
   color: #fff;
 }
 
+/* Limiter la largeur globale */
+.site-container {
+  max-width: 1536px;  /* ou la largeur exacte de ton header */
+  margin: 0 auto;
+  overflow: hidden;
+}
 	
         .sidebar {
   position: sticky;
