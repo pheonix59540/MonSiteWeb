@@ -489,6 +489,9 @@ footer {
   
 header {
   background-image: url('../images/0 HeaderPortrait.png');
+  width: 1024px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 body {
