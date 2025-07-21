@@ -172,7 +172,7 @@ footer {
             margin-bottom: 40px;
 			margin: 40px auto;
             background: rgba(255, 255, 255, 0.7);
-            padding: 20px;
+            padding: 18px;
             border-radius: 8px;
 			max-width: 1000px; /* ou 90%, ou la taille que tu préfères */
 			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Plus de profondeur */
@@ -480,6 +480,7 @@ footer {
     margin-top: 20px;
     margin-bottom: 10px;
 }
+/* Footer en colonne */
 .footer-columns {
   display: flex;
   justify-content: space-between;
@@ -514,12 +515,27 @@ header {
   width: 1024px;
   max-width: 100%;
   margin: 0 auto;
+   height: 100vh;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 body {
   width: 1024px;
   max-width: 100%;
   margin: 0 auto;
+  min-height: 100vh; /* s'étend au moins à la hauteur de l'écran */
+  display: flex;
+  flex-direction: column; /* empile header / sidebar / main / footer */
+  font-family: 'Cinzel-Regular', sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 
@@ -535,6 +551,11 @@ body {
     font-size: 10px; /* Police plus petite pour mobile */
     padding: 0 15px;
   }
+  .section{
+	  
+   padding: 8px;
+   font-size: 14px;
+ }
 
   .page-wrapper {
     max-width: 100vw;
