@@ -123,38 +123,28 @@ footer {
         .dropdown {
             position: relative;
             display: inline-block;
+			margin: 0 10px; /* ajoute un petit espacement horizontal entre les menus */
         }
         .dropdown-content {
             display: none;
             position: absolute;
+			top: 100%; /* place le menu déroulant sous le titre */
             background-color: #666;
             min-width: 150px;
             z-index: 1;
 			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .dropdown-content a {
+			padding: 10px 15px; /* espace autour du lien principal */
             display: block;
             color: white;
             padding: 10px;
             text-decoration: none;
+			white-space: nowrap; /* empêche le retour à la ligne dans le texte */
         }
         .dropdown:hover .dropdown-content {
             display: block;
         }
-		/*sous menu Socle début*/
-		.dropdown-content .dropdown {
-			position: relative;
-		}
-		.dropdown-content .dropdown .dropdown-content{
-			position: absolute;
-			top: 0;
-			left: 100%;
-			display: none;
-		}
-		.dropdown-content .dropdown:hover .dropdown-content{
-			display: block;
-		}
-		/*sous menu Socle fin*/
 		
 		
 		
