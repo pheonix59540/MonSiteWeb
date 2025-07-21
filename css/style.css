@@ -491,20 +491,11 @@ header {
 
   .sidebar nav {
     display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    flex-wrap: wrap;
   }
 
   .sidebar a {
     font-size: 10px; /* Police plus petite pour mobile */
     padding: 0 15px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-decoration: none;
   }
 
   .page-wrapper {
