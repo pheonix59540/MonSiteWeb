@@ -479,7 +479,12 @@ footer {
 
 
 @media screen and (max-width: 420px) {
+	
+	
   
+header {
+  background-image: url('../images/0 HeaderPortrait.png');
+}
 
   .sidebar {
     font-family: 'Cinzel-Bold', sans-serif;
