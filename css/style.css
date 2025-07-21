@@ -59,6 +59,10 @@ header {
   z-index: 10;
   flex-wrap: wrap;
   font-family: 'Cinzel-Bold', sans-serif;
+  background-image: url('../images/sidebar.png'); /* ou .png selon ton fichier */
+  background-repeat: repeat;          /* la texture se répète si elle est petite */
+  background-size: auto;              /* ou try 'cover' / 'contain' selon le rendu souhaité */
+  background-position: center center; /* optionnel : centre la texture */
 }
 
 /* 🧱 Contenu centré avec limites */
@@ -75,8 +79,10 @@ footer {
   width: 100vw;
   padding: 20px;
   text-align: center;
-  background-color: #222;
-  color: #fff;
+  background-image: url('../images/sidebar.png'); /* ou .png selon ton fichier */
+  background-repeat: repeat;          /* la texture se répète si elle est petite */
+  background-size: auto;              /* ou try 'cover' / 'contain' selon le rendu souhaité */
+  background-position: center center; /* optionnel : centre la texture */
 }
 	
         .sidebar {
@@ -484,6 +490,13 @@ footer {
 header {
   background-image: url('../images/0 HeaderPortrait.png');
 }
+
+body {
+  width: 1024px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
 
   .sidebar {
     font-family: 'Cinzel-Bold', sans-serif;
