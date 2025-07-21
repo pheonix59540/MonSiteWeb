@@ -126,13 +126,19 @@ footer {
 			margin: 0 10px; /* ajoute un petit espacement horizontal entre les menus */
         }
         .dropdown-content {
-            display: none;
             position: absolute;
 			top: 100%; /* place le menu déroulant sous le titre */
             background-color: #666;
             min-width: 150px;
             z-index: 1;
 			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+			/* Animation */
+			opacity: 0;
+			transform: translateY(10px);
+			transition: opacity 0.5s ease, transform 0.3s ease;
+			pointer-events: none;
+			visibility: hidden;
         }
         .dropdown-content a {
 			padding: 10px 15px; /* espace autour du lien principal */
@@ -143,7 +149,10 @@ footer {
 			white-space: nowrap; /* empêche le retour à la ligne dans le texte */
         }
         .dropdown:hover .dropdown-content {
-            display: block;
+			opacity: 1;
+			transform: translateY(0);
+			pointer-events: auto;
+			visibility: visible;
         }
 		
 		
