@@ -128,48 +128,55 @@ footer {
   color: #ccc;
 }
 
-        .dropdown {
-            position: relative;
-            display: inline-block;
-			margin: 0 10px; /* ajoute un petit espacement horizontal entre les menus */
-        }
-        .dropdown-content {
-			/* propriétés existantes */
-			position: absolute;
-			top: calc(100% + 5px);
-			background-color: #666;
-			min-width: 140px;
-			z-index: 1;
-			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-			opacity: 0;
-			transform: translateY(10px);
-			transition: opacity 0.5s ease, transform 0.3s ease;
-			pointer-events: none;
-			visibility: hidden;
+    .dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 0 10px; /* ajoute un petit espacement horizontal entre les menus */
+}
 
-			/* ✅ Ajout pour espacement vertical adaptatif */
-			display: flex;
-			flex-direction: column;
-			gap: 10px; /* espace vertical entre les liens */
-			max-width: 120vw;
-			box-sizing: border-box;
-			overflow-x: auto;
-        }
-        .dropdown-content a {
-			white-space: normal; /* Permet le retour à la ligne */
-			word-wrap: break-word; /* Coupe les longs mots si besoin */
-			max-width: 100%; /* Empêche le lien de dépasser le menu */
-			padding: 10px 15px; /* espace autour du lien principal */
-			color: white;
-            text-decoration: none;
-			font-size: 16px; /* 👉 taille du texte */
-        }
-        .dropdown:hover .dropdown-content {
-			opacity: 1;
-			transform: translateY(0);
-			pointer-events: auto;
-			visibility: visible;
-        }
+.dropdown-content {
+    position: absolute;
+    top: calc(100% + 5px);
+    background-color: #666;
+    min-width: 140px;
+    z-index: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.3s ease;
+    pointer-events: none;
+    visibility: hidden;
+
+    /* ✅ Espacement vertical adaptatif */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow-x: auto;
+}
+
+.dropdown-content a {
+    display: block; /* ✅ remplace flex */
+    white-space: normal;
+    word-wrap: break-word;
+    max-width: 100%;
+    padding: 100px 15px;
+    line-height: 1.3; /* ✅ plus confortable en lecture */
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: left;
+    /* ✅ on retire justify-content, align-items et min-height */
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    visibility: visible;
+}
+
 		
 		
 		
