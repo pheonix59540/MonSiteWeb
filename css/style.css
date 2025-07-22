@@ -38,7 +38,7 @@ body {
 /* 🧢 Header (plein écran) */
 header {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   background-image: url('../images/0 Header.png');
   background-size: cover;
   background-position: center top;
