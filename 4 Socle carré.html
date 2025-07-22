@@ -1,23 +1,24 @@
-<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Socles carré</title>
-  <link rel="stylesheet" href="css/style.css"> <!-- Lien vers le CSS global -->
-
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<title>Infinity3D - Accueil</title>
+<link href="css/style.css" rel="stylesheet"/> <!-- Lien vers ton CSS -->
+</head>
 <script>
   function adjustHeaderHeight() {
     const header = document.querySelector("header");
     if (header) {
       header.style.height = window.innerHeight + "px";
+      header.style.width = "100%"; // 🔥 Évite les bandes horizontales
+      header.style.overflowX = "hidden"; // bonus : empêche les scrolls horizontaux
     }
   }
 
   window.addEventListener("load", adjustHeaderHeight);
   window.addEventListener("resize", adjustHeaderHeight);
 </script>
-	<script>
+<script>
   document.querySelectorAll('.sidebar a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
@@ -31,219 +32,201 @@
     });
   });
 </script>
-
-</head>
-  
-  
 <body>
-  <header></header>
-  
-  <nav class="sidebar">
-    <a href="index.html">Accueil</a>
-    <div class="dropdown">
-        <a href="#figurines">Figurines</a>
-        <div class="dropdown-content">
-            <a href="0 Les anciens sauriens (Cuetzpal).html">Les anciens sauriens (Cuetzpal)</a>
-				<a href="0 Elfes Mori.html">Elfes Mori</a>
-				<a href="0 Royaume de Mercia.html">Royaume de Mercia</a>
-				<a href="0 Les nains de Niavellir.html">Les nains de Niavellir</a>
-				<a href="1 Nains Infernaux (Magmhorin).html">Nains Infernaux (Magmhorin)</a>
-				<a href="1 Elfes de la Nuit.html">Elfes de la nuit</a>
-				<a href="1 Dynasties immortelles.html">Dynasties immortelles</a>
-				<a href="1 Morts-vivants de l'île brumeuse.html">Morts-vivants de l'île brumeuse</a>
-				<a href="1 Guerriers des Dieux Sombres.html"> Guerriers des Dieux Sombres</a>
-				<a href="1 Mongobbo Alliés.html"> Mongobbo Alliés</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <a href="#decors">Decors</a>
-            <div class="dropdown-content">
-                <a href="3 Les anciens sauriens (Cuetzpal).html">Les anciens sauriens (Cuetzpal)</a>
-				<a href="3 Nains Infernaux (Magmhorin).html">Nains Infernaux (Magmhorin)</a>
-				<a href="3 Ruines de la ville.html">Ruines de la ville</a>
-				<a href="3 Ville en ruine.html">Ville en ruine</a>
-				<a href="3 Église en ruine.html">Église en ruine</a>
-				<a href="3 Village des pêcheurs.html">Village des pêcheurs</a>
-				<a href="3 Forteresse.html">Forteresse</a>
-				<a href="3 Colonie Naine.html">Colonie Naine</a>
-				<a href="3 La Cité des Intrigues.html">La Cité des Intrigues</a>
-				<a href="3 Camp d'orques.html">Camp d'orques</a>
-				<a href="3 Forêt Magique.html">Forêt Magique</a>
-				<a href="3 Scéniques.html">Scéniques</a>
-            </div>
-        </div>
-        <div class="dropdown">
-             <a href="#Figurines">Accessoires</a>
-            <div class="dropdown-content">
-			<div class="dropdown">
-                <a href="4 Socle rond.html">Socles rond</a>
-                <a href="4 Socle carré.html">Socles carré</a>
-				<a href="4 Plateau de mouvement rond.html">Plateau de mouvement Rond</a>
-				<a href="4 Plateau de mouvement carré.html">Plateau de mouvement Carré</a>
-				<a href="4 Marqueurs.html">Marqueurs</a>
-                <a href="4 Accessoire.html">Accessoires</a>
-				<a href="4 Rangement.html">Rangemens</a>
-				</div>
-            </div>
-        </div>
-    <a href="5 Galerie.html">Galerie</a>
-    <a href="6 Contact.html">Contact</a>
-  </nav>
-  
-  <main>
-  <section id="Socles carrés" class="gallery-Figurines">
-  <div class="item">
-    <a href="4 Socles carré/socles-20x20mm - Simple.html" target="_blank"><img src="4 Socles carré/socles-20x20mm - Simple.jpg" alt="socles-20x20mm - Simple"></a>
-    <h3>socles-20x20mm - Simple</h3>
-    <p><strong>Prix : 0,10€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-20x20mm - Aimanté.html" target="_blank"><img src="4 Socles carré/socles-20x20mm - Aimanté.jpg" alt="socles-20x20mm - Aimanté"></a>
-    <h3>socles-20x20mm - Aimanté</h3>
-    <p><strong>Prix : 0,31€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-25x25mm - Simple.html" target="_blank"><img src="4 Socles carré/socles-25x25mm - Simple.jpg" alt="socles-25x25mm - Simple"></a>
-    <h3>socles-25x25mm - Simple</h3>
-    <p><strong>Prix : 0,14€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-25x25mm - Aimanté.html" target="_blank"><img src="4 Socles carré/socles-25x25mm - Aimanté.jpg" alt="socles-25x25mm - Aimanté"></a>
-    <h3>socles-25x25mm - Aimanté</h3>
-    <p><strong>Prix : 0,35€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-30x30mm - Simple.html" target="_blank"><img src="4 Socles carré/socles-30x30mm - Simple.jpg" alt="socles-30x30mm - Simple"></a>
-    <h3>socles-30x30mm - Simple</h3>
-    <p><strong>Prix : 0,16€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-30x30mm - Aimanté.html" target="_blank"><img src="4 Socles carré/socles-30x30mm - Aimanté.jpg" alt="socles-30x30mm - Aimanté"></a>
-    <h3>socles-30x30mm - Aimanté</h3>
-    <p><strong>Prix : 0,39€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-40x40mm - Simple.html" target="_blank"><img src="4 Socles carré/socles-40x40mm - Simple.jpg" alt="socles-40x40mm - Simple"></a>
-    <h3>socles-40x40mm - Simple</h3>
-    <p><strong>Prix : 0,24€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-40x40mm - Aimanté.html" target="_blank"><img src="4 Socles carré/socles-40x40mm - Aimanté.jpg" alt="socles-40x40mm - Aimanté"></a>
-    <h3>socles-40x40mm - Aimanté</h3>
-    <p><strong>Prix : 0,45€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-50x50mm - Simple.html" target="_blank"><img src="4 Socles carré/socles-50x50mm - Simple.jpg" alt="socles-50x50mm - Simple"></a>
-    <h3>socles-50x50mm - Simple</h3>
-    <p><strong>Prix : 0,33€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-50x50mm - Aimanté.html" target="_blank"><img src="4 Socles carré/socles-50x50mm - Aimanté.jpg" alt="socles-50x50mm - Aimanté"></a>
-    <h3>socles-50x50mm - Aimanté</h3>
-    <p><strong>Prix : 0,58€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-25x50mm - Simple.html" target="_blank"><img src="4 Socles carré/socles-25x50mm - Simple.jpg" alt="socles-25x50mm - Simple"></a>
-    <h3>socles-25x50mm - Simple</h3>
-    <p><strong>Prix : 0,22€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-25x50mm - Aimanté.html" target="_blank"><img src="4 Socles carré/socles-25x50mm - Aimanté.jpg" alt="socles-25x50mm - Aimanté"></a>
-    <h3>socles-25x50mm - Aimanté</h3>
-    <p><strong>Prix : 0,43€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-30x60mm - Simple.html" target="_blank"><img src="4 Socles carré/socles-30x60mm - Simple.jpg" alt="socles-30x60mm - Simple"></a>
-    <h3>socles-30x60mm - Simple</h3>
-    <p><strong>Prix : 0,26€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-30x60mm - Aimanté.html" target="_blank"><img src="4 Socles carré/socles-30x60mm - Aimanté.jpg" alt="socles-30x60mm - Aimanté"></a>
-    <h3>socles-30x60mm - Aimanté</h3>
-    <p><strong>Prix : 0,65€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-40x60mm - Simple.html" target="_blank"><img src="4 Socles carré/socles-40x60mm - Simple.jpg" alt="socles-40x60mm - Simple"></a>
-    <h3>socles-40x60mm - Simple</h3>
-    <p><strong>Prix : 0,29€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-40x60mm - Aimanté.html" target="_blank"><img src="4 Socles carré/socles-40x60mm - Aimanté.jpg" alt="socles-40x60mm - Aimanté"></a>
-    <h3>socles-40x60mm - Aimanté</h3>
-    <p><strong>Prix : 0,53€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-50x75mm - Simple.html" target="_blank"><img src="4 Socles carré/socles-50x75mm - Simple.jpg" alt="socles-50x75mm - Simple"></a>
-    <h3>socles-50x75mm - Simple</h3>
-    <p><strong>Prix : 0,36€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-50x75mm - Aimanté.html" target="_blank"><img src="4 Socles carré/socles-50x75mm - Aimanté.jpg" alt="socles-50x75mm - Aimanté"></a>
-    <h3>socles-50x75mm - Aimanté</h3>
-    <p><strong>Prix : 0,60€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-50x100mm - Simple.html" target="_blank"><img src="4 Socles carré/socles-50x100mm - Simple.jpg" alt="socles-50x100mm - Simple"></a>
-    <h3>socles-50x100mm - Simple</h3>
-    <p><strong>Prix : 0,47€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-50x100mm - Aimanté.html" target="_blank"><img src="4 Socles carré/socles-50x100mm - Aimanté.jpg" alt="socles-50x100mm - Aimanté"></a>
-    <h3>socles-50x100mm - Aimanté</h3>
-    <p><strong>Prix : 0,97€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-60x100mm - Simple.html" target="_blank"><img src="4 Socles carré/socles-60x100mm - Simple.jpg" alt="socles-60x100mm - Simple"></a>
-    <h3>socles-60x100mm - Simple</h3>
-    <p><strong>Prix : 0,50€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-60x100mm - Aimanté.html" target="_blank"><img src="4 Socles carré/socles-60x100mm - Aimanté.jpg" alt="socles-60x100mm - Aimanté"></a>
-    <h3>socles-60x100mm - Aimanté</h3>
-    <p><strong>Prix : 1,00€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-100x100mm - Simple.html" target="_blank"><img src="4 Socles carré/socles-100x100mm - Simple.jpg" alt="socles-100x100mm - Simple"></a>
-    <h3>socles-100x100mm - Simple</h3>
-    <p><strong>Prix : 0,75€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-100x100mm - Aimanté.html" target="_blank"><img src="4 Socles carré/socles-100x100mm - Aimanté.jpg" alt="socles-100x100mm - Aimanté"></a>
-    <h3>socles-100x100mm - Aimanté</h3>
-    <p><strong>Prix : 1,30€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-150x100mm - Simple.html" target="_blank"><img src="4 Socles carré/socles-150x100mm - Simple.jpg" alt="socles-150x100mm - Simple"></a>
-    <h3>socles-150x100mm - Simple</h3>
-    <p><strong>Prix : 0,90€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-150x100mm - Aimanté.html" target="_blank"><img src="4 Socles carré/socles-150x100mm - Aimanté.jpg" alt="socles-150x100mm - Aimanté"></a>
-    <h3>socles-150x100mm - Aimanté</h3>
-    <p><strong>Prix : 1,40€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-200x100mm - Simple.html" target="_blank"><img src="4 Socles carré/socles-200x100mm - Simple.jpg" alt="socles-200x100mm - Simple"></a>
-    <h3>socles-200x100mm - Simple</h3>
-    <p><strong>Prix : 1,14€</strong></p>
-  </div>
-  <div class="item">
-    <a href="4 Socles carré/socles-200x100mm - Aimanté.html" target="_blank"><img src="4 Socles carré/socles-200x100mm - Aimanté.jpg" alt="socles-200x100mm - Aimanté"></a>
-    <h3>socles-200x100mm - Aimanté</h3>
-    <p><strong>Prix : 2,00€</strong></p>
-  </div>
-</section>
-</main>
-
+<header></header>
+<nav class="sidebar">
+<a href="index.html">Accueil</a>
+<div class="dropdown">
+<a href="#figurines">Figurines</a>
+<div class="dropdown-content">
+<a href="0 Les anciens sauriens (Cuetzpal).html">Les anciens sauriens (Cuetzpal)</a>
+<a href="0 Elfes Mori.html">Elfes Mori</a>
+<a href="0 Royaume de Mercia.html">Royaume de Mercia</a>
+<a href="0 Les nains de Niavellir.html">Les nains de Niavellir</a>
+<a href="1 Nains Infernaux (Magmhorin).html">Nains Infernaux (Magmhorin)</a>
+<a href="1 Elfes de la Nuit.html">Elfes de la nuit</a>
+<a href="1 Dynasties immortelles.html">Dynasties immortelles</a>
+<a href="1 Morts-vivants de l'île brumeuse.html">Morts-vivants de l'île brumeuse</a>
+<a href="1 Guerriers des Dieux Sombres.html"> Guerriers des Dieux Sombres</a>
+<a href="1 Mongobbo Alliés.html"> Mongobbo Alliés</a>
+</div>
+</div>
+<div class="dropdown">
+<a href="#decors">Decors</a>
+<div class="dropdown-content">
+<a href="3 Les anciens sauriens (Cuetzpal).html">Les anciens sauriens (Cuetzpal)</a>
+<a href="3 Nains Infernaux (Magmhorin).html">Nains Infernaux (Magmhorin)</a>
+<a href="3 Ruines de la ville.html">Ruines de la ville</a>
+<a href="3 Ville en ruine.html">Ville en ruine</a>
+<a href="3 Église en ruine.html">Église en ruine</a>
+<a href="3 Village des pêcheurs.html">Village des pêcheurs</a>
+<a href="3 Forteresse.html">Forteresse</a>
+<a href="3 Colonie Naine.html">Colonie Naine</a>
+<a href="3 La Cité des Intrigues.html">La Cité des Intrigues</a>
+<a href="3 Camp d'orques.html">Camp d'orques</a>
+<a href="3 Forêt Magique.html">Forêt Magique</a>
+<a href="3 Scéniques.html">Scéniques</a>
+</div>
+</div>
+<div class="dropdown">
+<a href="#Figurines">Accessoires</a>
+<div class="dropdown-content">
+<a href="4 Socle rond.html">Socles rond</a>
+<a href="4 Socle carré.html">Socles carré</a>
+<a href="4 Plateau de mouvement rond.html">Plateau de mouvement Rond</a>
+<a href="4 Plateau de mouvement carré.html">Plateau de mouvement Carré</a>
+<a href="4 Marqueurs.html">Marqueurs</a>
+<a href="4 Accessoire.html">Accessoires</a>
+<a href="4 Rangement.html">Rangemens</a>
+</div>
+</div>
+<a href="5 Galerie.html">Galerie</a>
+<a href="6 Contact.html">Contact</a>
+</nav>
 <div id="footer-container"></div>
-<script>
-  fetch("includes/footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footer-container").innerHTML = data;
-    })
-    .catch(error => console.error("Erreur lors du chargement du pied de page :", error));
-</script>
-
-</body>
+<div id="footer-container"></div>
+<main>
+<section class="gallery-Figurines" id="Socles carrés">
+<div class="item">
+<a href="4 Socles carré/socles-20x20mm - Simple.html" target="_blank"><img alt="socles-20x20mm - Simple" src="4 Socles carré/socles-20x20mm - Simple.jpg"/></a>
+<h3>socles-20x20mm - Simple</h3>
+<p><strong>Prix : 0,10€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-20x20mm - Aimanté.html" target="_blank"><img alt="socles-20x20mm - Aimanté" src="4 Socles carré/socles-20x20mm - Aimanté.jpg"/></a>
+<h3>socles-20x20mm - Aimanté</h3>
+<p><strong>Prix : 0,31€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-25x25mm - Simple.html" target="_blank"><img alt="socles-25x25mm - Simple" src="4 Socles carré/socles-25x25mm - Simple.jpg"/></a>
+<h3>socles-25x25mm - Simple</h3>
+<p><strong>Prix : 0,14€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-25x25mm - Aimanté.html" target="_blank"><img alt="socles-25x25mm - Aimanté" src="4 Socles carré/socles-25x25mm - Aimanté.jpg"/></a>
+<h3>socles-25x25mm - Aimanté</h3>
+<p><strong>Prix : 0,35€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-30x30mm - Simple.html" target="_blank"><img alt="socles-30x30mm - Simple" src="4 Socles carré/socles-30x30mm - Simple.jpg"/></a>
+<h3>socles-30x30mm - Simple</h3>
+<p><strong>Prix : 0,16€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-30x30mm - Aimanté.html" target="_blank"><img alt="socles-30x30mm - Aimanté" src="4 Socles carré/socles-30x30mm - Aimanté.jpg"/></a>
+<h3>socles-30x30mm - Aimanté</h3>
+<p><strong>Prix : 0,39€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-40x40mm - Simple.html" target="_blank"><img alt="socles-40x40mm - Simple" src="4 Socles carré/socles-40x40mm - Simple.jpg"/></a>
+<h3>socles-40x40mm - Simple</h3>
+<p><strong>Prix : 0,24€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-40x40mm - Aimanté.html" target="_blank"><img alt="socles-40x40mm - Aimanté" src="4 Socles carré/socles-40x40mm - Aimanté.jpg"/></a>
+<h3>socles-40x40mm - Aimanté</h3>
+<p><strong>Prix : 0,45€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-50x50mm - Simple.html" target="_blank"><img alt="socles-50x50mm - Simple" src="4 Socles carré/socles-50x50mm - Simple.jpg"/></a>
+<h3>socles-50x50mm - Simple</h3>
+<p><strong>Prix : 0,33€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-50x50mm - Aimanté.html" target="_blank"><img alt="socles-50x50mm - Aimanté" src="4 Socles carré/socles-50x50mm - Aimanté.jpg"/></a>
+<h3>socles-50x50mm - Aimanté</h3>
+<p><strong>Prix : 0,58€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-25x50mm - Simple.html" target="_blank"><img alt="socles-25x50mm - Simple" src="4 Socles carré/socles-25x50mm - Simple.jpg"/></a>
+<h3>socles-25x50mm - Simple</h3>
+<p><strong>Prix : 0,22€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-25x50mm - Aimanté.html" target="_blank"><img alt="socles-25x50mm - Aimanté" src="4 Socles carré/socles-25x50mm - Aimanté.jpg"/></a>
+<h3>socles-25x50mm - Aimanté</h3>
+<p><strong>Prix : 0,43€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-30x60mm - Simple.html" target="_blank"><img alt="socles-30x60mm - Simple" src="4 Socles carré/socles-30x60mm - Simple.jpg"/></a>
+<h3>socles-30x60mm - Simple</h3>
+<p><strong>Prix : 0,26€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-30x60mm - Aimanté.html" target="_blank"><img alt="socles-30x60mm - Aimanté" src="4 Socles carré/socles-30x60mm - Aimanté.jpg"/></a>
+<h3>socles-30x60mm - Aimanté</h3>
+<p><strong>Prix : 0,65€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-40x60mm - Simple.html" target="_blank"><img alt="socles-40x60mm - Simple" src="4 Socles carré/socles-40x60mm - Simple.jpg"/></a>
+<h3>socles-40x60mm - Simple</h3>
+<p><strong>Prix : 0,29€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-40x60mm - Aimanté.html" target="_blank"><img alt="socles-40x60mm - Aimanté" src="4 Socles carré/socles-40x60mm - Aimanté.jpg"/></a>
+<h3>socles-40x60mm - Aimanté</h3>
+<p><strong>Prix : 0,53€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-50x75mm - Simple.html" target="_blank"><img alt="socles-50x75mm - Simple" src="4 Socles carré/socles-50x75mm - Simple.jpg"/></a>
+<h3>socles-50x75mm - Simple</h3>
+<p><strong>Prix : 0,36€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-50x75mm - Aimanté.html" target="_blank"><img alt="socles-50x75mm - Aimanté" src="4 Socles carré/socles-50x75mm - Aimanté.jpg"/></a>
+<h3>socles-50x75mm - Aimanté</h3>
+<p><strong>Prix : 0,60€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-50x100mm - Simple.html" target="_blank"><img alt="socles-50x100mm - Simple" src="4 Socles carré/socles-50x100mm - Simple.jpg"/></a>
+<h3>socles-50x100mm - Simple</h3>
+<p><strong>Prix : 0,47€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-50x100mm - Aimanté.html" target="_blank"><img alt="socles-50x100mm - Aimanté" src="4 Socles carré/socles-50x100mm - Aimanté.jpg"/></a>
+<h3>socles-50x100mm - Aimanté</h3>
+<p><strong>Prix : 0,97€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-60x100mm - Simple.html" target="_blank"><img alt="socles-60x100mm - Simple" src="4 Socles carré/socles-60x100mm - Simple.jpg"/></a>
+<h3>socles-60x100mm - Simple</h3>
+<p><strong>Prix : 0,50€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-60x100mm - Aimanté.html" target="_blank"><img alt="socles-60x100mm - Aimanté" src="4 Socles carré/socles-60x100mm - Aimanté.jpg"/></a>
+<h3>socles-60x100mm - Aimanté</h3>
+<p><strong>Prix : 1,00€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-100x100mm - Simple.html" target="_blank"><img alt="socles-100x100mm - Simple" src="4 Socles carré/socles-100x100mm - Simple.jpg"/></a>
+<h3>socles-100x100mm - Simple</h3>
+<p><strong>Prix : 0,75€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-100x100mm - Aimanté.html" target="_blank"><img alt="socles-100x100mm - Aimanté" src="4 Socles carré/socles-100x100mm - Aimanté.jpg"/></a>
+<h3>socles-100x100mm - Aimanté</h3>
+<p><strong>Prix : 1,30€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-150x100mm - Simple.html" target="_blank"><img alt="socles-150x100mm - Simple" src="4 Socles carré/socles-150x100mm - Simple.jpg"/></a>
+<h3>socles-150x100mm - Simple</h3>
+<p><strong>Prix : 0,90€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-150x100mm - Aimanté.html" target="_blank"><img alt="socles-150x100mm - Aimanté" src="4 Socles carré/socles-150x100mm - Aimanté.jpg"/></a>
+<h3>socles-150x100mm - Aimanté</h3>
+<p><strong>Prix : 1,40€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-200x100mm - Simple.html" target="_blank"><img alt="socles-200x100mm - Simple" src="4 Socles carré/socles-200x100mm - Simple.jpg"/></a>
+<h3>socles-200x100mm - Simple</h3>
+<p><strong>Prix : 1,14€</strong></p>
+</div>
+<div class="item">
+<a href="4 Socles carré/socles-200x100mm - Aimanté.html" target="_blank"><img alt="socles-200x100mm - Aimanté" src="4 Socles carré/socles-200x100mm - Aimanté.jpg"/></a>
+<h3>socles-200x100mm - Aimanté</h3>
+<p><strong>Prix : 2,00€</strong></p>
+</div>
+</section>
+</main><div id="footer-container"></div></body>
 </html>

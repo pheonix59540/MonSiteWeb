@@ -1,315 +1,22 @@
-<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Morts-vivants de l'île brumeuse</title>
-  <link rel="stylesheet" href="css/style.css"> <!-- Lien vers le CSS global -->
-
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<title>Infinity3D - Accueil</title>
+<link href="css/style.css" rel="stylesheet"/> <!-- Lien vers ton CSS -->
+</head>
 <script>
   function adjustHeaderHeight() {
     const header = document.querySelector("header");
     if (header) {
       header.style.height = window.innerHeight + "px";
+      header.style.width = "100%"; // 🔥 Évite les bandes horizontales
+      header.style.overflowX = "hidden"; // bonus : empêche les scrolls horizontaux
     }
   }
 
   window.addEventListener("load", adjustHeaderHeight);
   window.addEventListener("resize", adjustHeaderHeight);
-</script>
-
-</head>
-<body>
-  <header></header>
-  
-  <nav class="sidebar">
-    <a href="index.html">Accueil</a>
-    <div class="dropdown">
-        <a href="#figurines">Figurines</a>
-        <div class="dropdown-content">
-            <a href="0 Les anciens sauriens (Cuetzpal).html">Les anciens sauriens (Cuetzpal)</a>
-				<a href="0 Elfes Mori.html">Elfes Mori</a>
-				<a href="0 Royaume de Mercia.html">Royaume de Mercia</a>
-				<a href="0 Les nains de Niavellir.html">Les nains de Niavellir</a>
-				<a href="1 Nains Infernaux (Magmhorin).html">Nains Infernaux (Magmhorin)</a>
-				<a href="1 Elfes de la Nuit.html">Elfes de la nuit</a>
-				<a href="1 Dynasties immortelles.html">Dynasties immortelles</a>
-				<a href="1 Morts-vivants de l'île brumeuse.html">Morts-vivants de l'île brumeuse</a>
-				<a href="1 Guerriers des Dieux Sombres.html"> Guerriers des Dieux Sombres</a>
-				<a href="1 Mongobbo Alliés.html"> Mongobbo Alliés</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <a href="#decors">Decors</a>
-            <div class="dropdown-content">
-                <a href="3 Les anciens sauriens (Cuetzpal).html">Les anciens sauriens (Cuetzpal)</a>
-				<a href="3 Nains Infernaux (Magmhorin).html">Nains Infernaux (Magmhorin)</a>
-				<a href="3 Ruines de la ville.html">Ruines de la ville</a>
-				<a href="3 Ville en ruine.html">Ville en ruine</a>
-				<a href="3 Église en ruine.html">Église en ruine</a>
-				<a href="3 Village des pêcheurs.html">Village des pêcheurs</a>
-				<a href="3 Forteresse.html">Forteresse</a>
-				<a href="3 Colonie Naine.html">Colonie Naine</a>
-				<a href="3 La Cité des Intrigues.html">La Cité des Intrigues</a>
-				<a href="3 Camp d'orques.html">Camp d'orques</a>
-				<a href="3 Forêt Magique.html">Forêt Magique</a>
-				<a href="3 Scéniques.html">Scéniques</a>
-            </div>
-        </div>
-        <div class="dropdown">
-             <a href="#Figurines">Accessoires</a>
-            <div class="dropdown-content">
-			<div class="dropdown">
-                <a href="4 Socle rond.html">Socles rond</a>
-                <a href="4 Socle carré.html">Socles carré</a>
-				<a href="4 Plateau de mouvement rond.html">Plateau de mouvement Rond</a>
-				<a href="4 Plateau de mouvement carré.html">Plateau de mouvement Carré</a>
-				<a href="4 Marqueurs.html">Marqueurs</a>
-                <a href="4 Accessoire.html">Accessoires</a>
-				<a href="4 Rangement.html">Rangemens</a>
-				</div>
-            </div>
-        </div>
-    <a href="5 Galerie.html">Galerie</a>
-    <a href="6 Contact.html">Contact</a>
-  </nav>
-  
-  <main>
-    <section id="figurines-cuetzpal" class="gallery-Figurines">
-	
-  <div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Abyssal Golem.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Abyssal Golem 1.jpg" alt="Abyssal Golem"></a>
-  <h3>Abyssal Golem</h3>
-  <p><strong>Prix : 75,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Abyssal Mortar.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Abyssal Mortar 1.jpg" alt="Abyssal Mortar"></a>
-  <h3>Abyssal Mortar</h3>
-  <p><strong>Prix : 12,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Alucard On Zombie Dragon.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Alucard On Zombie Dragon 1.jpg" alt="Alucard On Zombie Dragon"></a>
-  <h3>Alucard On Zombie Dragon</h3>
-  <p><strong>Prix : 85,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Alucard The Deep Acheron.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Alucard The Deep Acheron 1.jpg" alt="Alucard The Deep Acheron"></a>
-  <h3>Alucard The Deep Acheron</h3>
-  <p><strong>Prix : 10,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Antonette, the Headligh & Trench collector.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Antonette, the Headligh & Trench collector 1.jpg" alt="Antonette, the Headligh & Trench collector"></a>
-  <h3>Antonette, the Headligh & Trench collector</h3>
-  <p><strong>Prix : 40,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Averill & Leonora, the Conjoined Twins.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Averill & Leonora, the Conjoined Twins 1.jpg" alt="Averill & Leonora, the Conjoined Twins"></a>
-  <h3>Averill & Leonora, the Conjoined Twins</h3>
-  <p><strong>Prix : 4,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Bat Manta Swarms x3.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Bat Manta Swarms x3 1.jpg" alt="Bat Manta Swarms x3"></a>
-  <h3>Bat Manta Swarms x3</h3>
-  <p><strong>Prix : 24,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Bernadine Shadowless Corvinus.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Bernadine Shadowless Corvinus 1.jpg" alt="Bernadine Shadowless Corvinus"></a>
-  <h3>Bernadine Shadowless Corvinus</h3>
-  <p><strong>Prix : 39,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Captain Saw Leg & Mr Boom.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Captain Saw Leg & Mr Boom 1.jpg" alt="Captain Saw Leg & Mr Boom"></a>
-  <h3>Captain Saw Leg & Mr Boom</h3>
-  <p><strong>Prix : 4,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Captain “Smoke”, Undead Ogre hero.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Captain “Smoke”, Undead Ogre hero 1.jpg" alt="Captain “Smoke”, Undead Ogre hero"></a>
-  <h3>Captain “Smoke”, Undead Ogre hero</h3>
-  <p><strong>Prix : 10,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Corpse Hermit Crab.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Corpse Hermit Crab 1.jpg" alt="Corpse Hermit Crab"></a>
-  <h3>Corpse Hermit Crab</h3>
-  <p><strong>Prix : 70,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Deep Chariot.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Deep Chariot 1.jpg" alt="Deep Chariot"></a>
-  <h3>Deep Chariot</h3>
-  <p><strong>Prix : 76,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Deep Sea Diver & Small Beauty.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Deep Sea Diver & Small Beauty 1.jpg" alt="Deep Sea Diver & Small Beauty"></a>
-  <h3>Deep Sea Diver & Small Beauty</h3>
-  <p><strong>Prix : 22,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Deep Sea Zombies Etat-Major.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Deep Sea Zombies Etat-Major 1.jpg" alt="Deep Sea Zombies Etat-Major"></a>
-  <h3>Deep Sea Zombies Etat-Major</h3>
-  <p><strong>Prix : 8,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Deep Sea Zombies x10.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Deep Sea Zombies x10 1.jpg" alt="Deep Sea Zombies x10"></a>
-  <h3>Deep Sea Zombies x10</h3>
-  <p><strong>Prix : 15,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Dregan Bones Acheron, the Necromancer.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Dregan Bones Acheron, the Necromancer 1.jpg" alt="Dregan Bones Acheron, the Necromancer"></a>
-  <h3>Dregan Bones Acheron, the Necromancer</h3>
-  <p><strong>Prix : 5,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Earla, Queen of Shipwrecks.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Earla, Queen of Shipwrecks 1.jpg" alt="Earla, Queen of Shipwrecks"></a>
-  <h3>Earla, Queen of Shipwrecks</h3>
-  <p><strong>Prix : 24,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Eldritch The Claw, Vycanthrope Hero.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Eldritch The Claw, Vycanthrope Hero 1.jpg" alt="Eldritch The Claw, Vycanthrope Hero"></a>
-  <h3>Eldritch The Claw, Vycanthrope Hero</h3>
-  <p><strong>Prix : 12,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Elnora Nightwind Acheron on Undead Vamp Ray.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Elnora Nightwind Acheron on Undead Vamp Ray 1.jpg" alt="Elnora Nightwind Acheron on Undead Vamp Ray"></a>
-  <h3>Elnora Nightwind Acheron on Undead Vamp Ray</h3>
-  <p><strong>Prix : 45,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Ghūl Etat-Major.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Ghūl Etat-Major 1.jpg" alt="Ghūl Etat-Major"></a>
-  <h3>Ghūl Etat-Major</h3>
-  <p><strong>Prix : 9,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Ghūl x10.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Ghūl x10 1.jpg" alt="Ghūl x10"></a>
-  <h3>Ghūl x10</h3>
-  <p><strong>Prix : 20,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Misty Island Gunners Etat-Major.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Misty Island Gunners Etat-Major 1.jpg" alt="Misty Island Gunners Etat-Major"></a>
-  <h3>Misty Island Gunners Etat-Major</h3>
-  <p><strong>Prix : 5,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Misty Island Gunners x10.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Misty Island Gunners x10 1.jpg" alt="Misty Island Gunners x10"></a>
-  <h3>Misty Island Gunners x10</h3>
-  <p><strong>Prix : 12,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Ozul, Ghūl King.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Ozul, Ghūl King 1.jpg" alt="Ozul, Ghūl King"></a>
-  <h3>Ozul, Ghūl King</h3>
-  <p><strong>Prix : 8,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Red Knights Etat-Major.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Red Knights Etat-Major 1.jpg" alt="Red Knights Etat-Major"></a>
-  <h3>Red Knights Etat-Major</h3>
-  <p><strong>Prix : 47,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Red Knights x5.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Red Knights x5 1.jpg" alt="Red Knights x5"></a>
-  <h3>Red Knights x5</h3>
-  <p><strong>Prix : 49,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Shipwreck Maker.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Shipwreck Maker 1.jpg" alt="Shipwreck Maker"></a>
-  <h3>Shipwreck Maker</h3>
-  <p><strong>Prix : 75,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Shipwreck screamers x3.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Shipwreck screamers x3 1.jpg" alt="Shipwreck screamers x3"></a>
-  <h3>Shipwreck screamers x3</h3>
-  <p><strong>Prix : 24,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Skeleton Buccaneers Etat-Major.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Skeleton Buccaneers Etat-Major 1.jpg" alt="Skeleton Buccaneers Etat-Major"></a>
-  <h3>Skeleton Buccaneers Etat-Major</h3>
-  <p><strong>Prix : 6,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Skeleton Buccaneers x10.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Skeleton Buccaneers x10 1.jpg" alt="Skeleton Buccaneers x10"></a>
-  <h3>Skeleton Buccaneers x10</h3>
-  <p><strong>Prix : 4,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Skull Crab Swarms x3.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Skull Crab Swarms x3 1.jpg" alt="Skull Crab Swarms x3"></a>
-  <h3>Skull Crab Swarms x3</h3>
-  <p><strong>Prix : 20,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Sunken Giant.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Sunken Giant 1.jpg" alt="Sunken Giant"></a>
-  <h3>Sunken Giant</h3>
-  <p><strong>Prix : 32,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Trench Cannon.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Trench Cannon 1.jpg" alt="Trench Cannon"></a>
-  <h3>Trench Cannon</h3>
-  <p><strong>Prix : 15,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Undead Ogre Etat-Major.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Undead Ogre Etat-Major 1.jpg" alt="Undead Ogre Etat-Major"></a>
-  <h3>Undead Ogre Etat-Major</h3>
-  <p><strong>Prix : 15,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Undead Ogre x3.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Undead Ogre x3 1.jpg" alt="Undead Ogre x3"></a>
-  <h3>Undead Ogre x3</h3>
-  <p><strong>Prix : 16,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Vycanthropes Looters x3.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Vycanthropes Looters x3 1.jpg" alt="Vycanthropes Looters x3"></a>
-  <h3>Vycanthropes Looters x3</h3>
-  <p><strong>Prix : 12,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="1 Morts-vivants de l'île brumeuse/Wigor “The bomber” Acheron.html" target="_blank"><img src="1 Morts-vivants de l'île brumeuse/Wigor “The bomber” Acheron 1.jpg" alt="Wigor “The bomber” Acheron"></a>
-  <h3>Wigor “The bomber” Acheron</h3>
-  <p><strong>Prix : 4,00€</strong></p>
-</div>
-
-</section>
-  </main>
-
-<div id="footer-container"></div>
-<script>
-  fetch("includes/footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footer-container").innerHTML = data;
-    })
-    .catch(error => console.error("Erreur lors du chargement du pied de page :", error));
 </script>
 <script>
   document.querySelectorAll('.sidebar a[href^="#"]').forEach(anchor => {
@@ -325,5 +32,246 @@
     });
   });
 </script>
-</body>
+<body>
+<header></header>
+<nav class="sidebar">
+<a href="index.html">Accueil</a>
+<div class="dropdown">
+<a href="#figurines">Figurines</a>
+<div class="dropdown-content">
+<a href="0 Les anciens sauriens (Cuetzpal).html">Les anciens sauriens (Cuetzpal)</a>
+<a href="0 Elfes Mori.html">Elfes Mori</a>
+<a href="0 Royaume de Mercia.html">Royaume de Mercia</a>
+<a href="0 Les nains de Niavellir.html">Les nains de Niavellir</a>
+<a href="1 Nains Infernaux (Magmhorin).html">Nains Infernaux (Magmhorin)</a>
+<a href="1 Elfes de la Nuit.html">Elfes de la nuit</a>
+<a href="1 Dynasties immortelles.html">Dynasties immortelles</a>
+<a href="1 Morts-vivants de l'île brumeuse.html">Morts-vivants de l'île brumeuse</a>
+<a href="1 Guerriers des Dieux Sombres.html"> Guerriers des Dieux Sombres</a>
+<a href="1 Mongobbo Alliés.html"> Mongobbo Alliés</a>
+</div>
+</div>
+<div class="dropdown">
+<a href="#decors">Decors</a>
+<div class="dropdown-content">
+<a href="3 Les anciens sauriens (Cuetzpal).html">Les anciens sauriens (Cuetzpal)</a>
+<a href="3 Nains Infernaux (Magmhorin).html">Nains Infernaux (Magmhorin)</a>
+<a href="3 Ruines de la ville.html">Ruines de la ville</a>
+<a href="3 Ville en ruine.html">Ville en ruine</a>
+<a href="3 Église en ruine.html">Église en ruine</a>
+<a href="3 Village des pêcheurs.html">Village des pêcheurs</a>
+<a href="3 Forteresse.html">Forteresse</a>
+<a href="3 Colonie Naine.html">Colonie Naine</a>
+<a href="3 La Cité des Intrigues.html">La Cité des Intrigues</a>
+<a href="3 Camp d'orques.html">Camp d'orques</a>
+<a href="3 Forêt Magique.html">Forêt Magique</a>
+<a href="3 Scéniques.html">Scéniques</a>
+</div>
+</div>
+<div class="dropdown">
+<a href="#Figurines">Accessoires</a>
+<div class="dropdown-content">
+<a href="4 Socle rond.html">Socles rond</a>
+<a href="4 Socle carré.html">Socles carré</a>
+<a href="4 Plateau de mouvement rond.html">Plateau de mouvement Rond</a>
+<a href="4 Plateau de mouvement carré.html">Plateau de mouvement Carré</a>
+<a href="4 Marqueurs.html">Marqueurs</a>
+<a href="4 Accessoire.html">Accessoires</a>
+<a href="4 Rangement.html">Rangemens</a>
+</div>
+</div>
+<a href="5 Galerie.html">Galerie</a>
+<a href="6 Contact.html">Contact</a>
+</nav>
+<div id="footer-container"></div>
+<div id="footer-container"></div>
+<main>
+<section class="gallery-Figurines" id="figurines-cuetzpal">
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Abyssal Golem.html" target="_blank"><img alt="Abyssal Golem" src="1 Morts-vivants de l'île brumeuse/Abyssal Golem 1.jpg"/></a>
+<h3>Abyssal Golem</h3>
+<p><strong>Prix : 75,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Abyssal Mortar.html" target="_blank"><img alt="Abyssal Mortar" src="1 Morts-vivants de l'île brumeuse/Abyssal Mortar 1.jpg"/></a>
+<h3>Abyssal Mortar</h3>
+<p><strong>Prix : 12,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Alucard On Zombie Dragon.html" target="_blank"><img alt="Alucard On Zombie Dragon" src="1 Morts-vivants de l'île brumeuse/Alucard On Zombie Dragon 1.jpg"/></a>
+<h3>Alucard On Zombie Dragon</h3>
+<p><strong>Prix : 85,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Alucard The Deep Acheron.html" target="_blank"><img alt="Alucard The Deep Acheron" src="1 Morts-vivants de l'île brumeuse/Alucard The Deep Acheron 1.jpg"/></a>
+<h3>Alucard The Deep Acheron</h3>
+<p><strong>Prix : 10,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Antonette, the Headligh &amp; Trench collector.html" target="_blank"><img alt="Antonette, the Headligh &amp; Trench collector" src="1 Morts-vivants de l'île brumeuse/Antonette, the Headligh &amp; Trench collector 1.jpg"/></a>
+<h3>Antonette, the Headligh &amp; Trench collector</h3>
+<p><strong>Prix : 40,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Averill &amp; Leonora, the Conjoined Twins.html" target="_blank"><img alt="Averill &amp; Leonora, the Conjoined Twins" src="1 Morts-vivants de l'île brumeuse/Averill &amp; Leonora, the Conjoined Twins 1.jpg"/></a>
+<h3>Averill &amp; Leonora, the Conjoined Twins</h3>
+<p><strong>Prix : 4,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Bat Manta Swarms x3.html" target="_blank"><img alt="Bat Manta Swarms x3" src="1 Morts-vivants de l'île brumeuse/Bat Manta Swarms x3 1.jpg"/></a>
+<h3>Bat Manta Swarms x3</h3>
+<p><strong>Prix : 24,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Bernadine Shadowless Corvinus.html" target="_blank"><img alt="Bernadine Shadowless Corvinus" src="1 Morts-vivants de l'île brumeuse/Bernadine Shadowless Corvinus 1.jpg"/></a>
+<h3>Bernadine Shadowless Corvinus</h3>
+<p><strong>Prix : 39,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Captain Saw Leg &amp; Mr Boom.html" target="_blank"><img alt="Captain Saw Leg &amp; Mr Boom" src="1 Morts-vivants de l'île brumeuse/Captain Saw Leg &amp; Mr Boom 1.jpg"/></a>
+<h3>Captain Saw Leg &amp; Mr Boom</h3>
+<p><strong>Prix : 4,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Captain “Smoke”, Undead Ogre hero.html" target="_blank"><img alt="Captain “Smoke”, Undead Ogre hero" src="1 Morts-vivants de l'île brumeuse/Captain “Smoke”, Undead Ogre hero 1.jpg"/></a>
+<h3>Captain “Smoke”, Undead Ogre hero</h3>
+<p><strong>Prix : 10,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Corpse Hermit Crab.html" target="_blank"><img alt="Corpse Hermit Crab" src="1 Morts-vivants de l'île brumeuse/Corpse Hermit Crab 1.jpg"/></a>
+<h3>Corpse Hermit Crab</h3>
+<p><strong>Prix : 70,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Deep Chariot.html" target="_blank"><img alt="Deep Chariot" src="1 Morts-vivants de l'île brumeuse/Deep Chariot 1.jpg"/></a>
+<h3>Deep Chariot</h3>
+<p><strong>Prix : 76,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Deep Sea Diver &amp; Small Beauty.html" target="_blank"><img alt="Deep Sea Diver &amp; Small Beauty" src="1 Morts-vivants de l'île brumeuse/Deep Sea Diver &amp; Small Beauty 1.jpg"/></a>
+<h3>Deep Sea Diver &amp; Small Beauty</h3>
+<p><strong>Prix : 22,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Deep Sea Zombies Etat-Major.html" target="_blank"><img alt="Deep Sea Zombies Etat-Major" src="1 Morts-vivants de l'île brumeuse/Deep Sea Zombies Etat-Major 1.jpg"/></a>
+<h3>Deep Sea Zombies Etat-Major</h3>
+<p><strong>Prix : 8,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Deep Sea Zombies x10.html" target="_blank"><img alt="Deep Sea Zombies x10" src="1 Morts-vivants de l'île brumeuse/Deep Sea Zombies x10 1.jpg"/></a>
+<h3>Deep Sea Zombies x10</h3>
+<p><strong>Prix : 15,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Dregan Bones Acheron, the Necromancer.html" target="_blank"><img alt="Dregan Bones Acheron, the Necromancer" src="1 Morts-vivants de l'île brumeuse/Dregan Bones Acheron, the Necromancer 1.jpg"/></a>
+<h3>Dregan Bones Acheron, the Necromancer</h3>
+<p><strong>Prix : 5,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Earla, Queen of Shipwrecks.html" target="_blank"><img alt="Earla, Queen of Shipwrecks" src="1 Morts-vivants de l'île brumeuse/Earla, Queen of Shipwrecks 1.jpg"/></a>
+<h3>Earla, Queen of Shipwrecks</h3>
+<p><strong>Prix : 24,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Eldritch The Claw, Vycanthrope Hero.html" target="_blank"><img alt="Eldritch The Claw, Vycanthrope Hero" src="1 Morts-vivants de l'île brumeuse/Eldritch The Claw, Vycanthrope Hero 1.jpg"/></a>
+<h3>Eldritch The Claw, Vycanthrope Hero</h3>
+<p><strong>Prix : 12,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Elnora Nightwind Acheron on Undead Vamp Ray.html" target="_blank"><img alt="Elnora Nightwind Acheron on Undead Vamp Ray" src="1 Morts-vivants de l'île brumeuse/Elnora Nightwind Acheron on Undead Vamp Ray 1.jpg"/></a>
+<h3>Elnora Nightwind Acheron on Undead Vamp Ray</h3>
+<p><strong>Prix : 45,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Ghūl Etat-Major.html" target="_blank"><img alt="Ghūl Etat-Major" src="1 Morts-vivants de l'île brumeuse/Ghūl Etat-Major 1.jpg"/></a>
+<h3>Ghūl Etat-Major</h3>
+<p><strong>Prix : 9,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Ghūl x10.html" target="_blank"><img alt="Ghūl x10" src="1 Morts-vivants de l'île brumeuse/Ghūl x10 1.jpg"/></a>
+<h3>Ghūl x10</h3>
+<p><strong>Prix : 20,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Misty Island Gunners Etat-Major.html" target="_blank"><img alt="Misty Island Gunners Etat-Major" src="1 Morts-vivants de l'île brumeuse/Misty Island Gunners Etat-Major 1.jpg"/></a>
+<h3>Misty Island Gunners Etat-Major</h3>
+<p><strong>Prix : 5,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Misty Island Gunners x10.html" target="_blank"><img alt="Misty Island Gunners x10" src="1 Morts-vivants de l'île brumeuse/Misty Island Gunners x10 1.jpg"/></a>
+<h3>Misty Island Gunners x10</h3>
+<p><strong>Prix : 12,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Ozul, Ghūl King.html" target="_blank"><img alt="Ozul, Ghūl King" src="1 Morts-vivants de l'île brumeuse/Ozul, Ghūl King 1.jpg"/></a>
+<h3>Ozul, Ghūl King</h3>
+<p><strong>Prix : 8,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Red Knights Etat-Major.html" target="_blank"><img alt="Red Knights Etat-Major" src="1 Morts-vivants de l'île brumeuse/Red Knights Etat-Major 1.jpg"/></a>
+<h3>Red Knights Etat-Major</h3>
+<p><strong>Prix : 47,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Red Knights x5.html" target="_blank"><img alt="Red Knights x5" src="1 Morts-vivants de l'île brumeuse/Red Knights x5 1.jpg"/></a>
+<h3>Red Knights x5</h3>
+<p><strong>Prix : 49,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Shipwreck Maker.html" target="_blank"><img alt="Shipwreck Maker" src="1 Morts-vivants de l'île brumeuse/Shipwreck Maker 1.jpg"/></a>
+<h3>Shipwreck Maker</h3>
+<p><strong>Prix : 75,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Shipwreck screamers x3.html" target="_blank"><img alt="Shipwreck screamers x3" src="1 Morts-vivants de l'île brumeuse/Shipwreck screamers x3 1.jpg"/></a>
+<h3>Shipwreck screamers x3</h3>
+<p><strong>Prix : 24,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Skeleton Buccaneers Etat-Major.html" target="_blank"><img alt="Skeleton Buccaneers Etat-Major" src="1 Morts-vivants de l'île brumeuse/Skeleton Buccaneers Etat-Major 1.jpg"/></a>
+<h3>Skeleton Buccaneers Etat-Major</h3>
+<p><strong>Prix : 6,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Skeleton Buccaneers x10.html" target="_blank"><img alt="Skeleton Buccaneers x10" src="1 Morts-vivants de l'île brumeuse/Skeleton Buccaneers x10 1.jpg"/></a>
+<h3>Skeleton Buccaneers x10</h3>
+<p><strong>Prix : 4,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Skull Crab Swarms x3.html" target="_blank"><img alt="Skull Crab Swarms x3" src="1 Morts-vivants de l'île brumeuse/Skull Crab Swarms x3 1.jpg"/></a>
+<h3>Skull Crab Swarms x3</h3>
+<p><strong>Prix : 20,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Sunken Giant.html" target="_blank"><img alt="Sunken Giant" src="1 Morts-vivants de l'île brumeuse/Sunken Giant 1.jpg"/></a>
+<h3>Sunken Giant</h3>
+<p><strong>Prix : 32,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Trench Cannon.html" target="_blank"><img alt="Trench Cannon" src="1 Morts-vivants de l'île brumeuse/Trench Cannon 1.jpg"/></a>
+<h3>Trench Cannon</h3>
+<p><strong>Prix : 15,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Undead Ogre Etat-Major.html" target="_blank"><img alt="Undead Ogre Etat-Major" src="1 Morts-vivants de l'île brumeuse/Undead Ogre Etat-Major 1.jpg"/></a>
+<h3>Undead Ogre Etat-Major</h3>
+<p><strong>Prix : 15,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Undead Ogre x3.html" target="_blank"><img alt="Undead Ogre x3" src="1 Morts-vivants de l'île brumeuse/Undead Ogre x3 1.jpg"/></a>
+<h3>Undead Ogre x3</h3>
+<p><strong>Prix : 16,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Vycanthropes Looters x3.html" target="_blank"><img alt="Vycanthropes Looters x3" src="1 Morts-vivants de l'île brumeuse/Vycanthropes Looters x3 1.jpg"/></a>
+<h3>Vycanthropes Looters x3</h3>
+<p><strong>Prix : 12,00€</strong></p>
+</div>
+<div class="item">
+<a href="1 Morts-vivants de l'île brumeuse/Wigor “The bomber” Acheron.html" target="_blank"><img alt="Wigor “The bomber” Acheron" src="1 Morts-vivants de l'île brumeuse/Wigor “The bomber” Acheron 1.jpg"/></a>
+<h3>Wigor “The bomber” Acheron</h3>
+<p><strong>Prix : 4,00€</strong></p>
+</div>
+</section>
+</main><div id="footer-container"></div></body>
 </html>

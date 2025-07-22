@@ -1,108 +1,67 @@
 import os
-import re
+from bs4 import BeautifulSoup
 
-# Définir le nom du fichier modèle
-fichier_modele = "index.html"
+root_dir = '.'  # dossier racine
+index_path = os.path.join(root_dir, 'index.html')
 
-# Lire le contenu de la nav dans index.html
-with open(fichier_modele, "r", encoding="utf-8") as f:
-    contenu = f.read()
+# 1. Lire index.html
+with open(index_path, 'r', encoding='utf-8') as f:
+    index_html = f.read()
 
-# Extraire le bloc <nav class="sidebar"> ... </nav>
-pattern_nav = re.compile(r'<nav class="sidebar">.*?</nav>', re.DOTALL)
-nav_match = pattern_nav.search(contenu)
+soup_index = BeautifulSoup(index_html, 'html.parser')
 
-if not nav_match:
-    print("❌ Impossible de trouver le bloc <nav class=\"sidebar\"> dans index.html")
-    exit()
+# 2. Supprimer la balise <main> de index.html
+main_index = soup_index.find('main')
+if main_index:
+    main_index.extract()
+else:
+    print("⚠️ Pas de <main> dans index.html.")
 
-nouvelle_nav = nav_match.group(0)
+# Le contenu nettoyé sans <main>
+clean_index_html = soup_index
 
-# Bloc de script à ajouter avant </body>
-footer_script = '''
-<div id="footer-container"></div>
-<script>
-  fetch("includes/footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footer-container").innerHTML = data;
-    })
-    .catch(error => console.error("Erreur lors du chargement du pied de page :", error));
-</script>
+# 3. Extraire les fichiers listés dans <nav class="sidebar">
+nav_sidebar = BeautifulSoup(index_html, 'html.parser').find('nav', class_='sidebar')
+if not nav_sidebar:
+    print("❌ Erreur : pas de <nav class='sidebar'> dans index.html")
+    exit(1)
 
-	<script>
-  document.querySelectorAll('.sidebar a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
-  });
-</script>
-'''
+links = nav_sidebar.find_all('a')
+files_to_update = [link.get('href') for link in links if link.get('href')]
 
-# Bloc JS à insérer juste avant </head>
-header_script = '''
-<script>
-  function adjustHeaderHeight() {
-    const header = document.querySelector("header");
-    if (header) {
-      header.style.height = window.innerHeight + "px";
-      header.style.width = "100%"; // 🔥 Évite les bandes horizontales
-      header.style.overflowX = "hidden"; // bonus : empêche les scrolls horizontaux
-    }
-  }
+# 4. Pour chaque page cible
+for filename in files_to_update:
+    filepath = os.path.join(root_dir, filename)
+    if not os.path.isfile(filepath):
+        print(f"❌ Fichier {filename} non trouvé.")
+        continue
 
-  window.addEventListener("load", adjustHeaderHeight);
-  window.addEventListener("resize", adjustHeaderHeight);
-</script>
-'''
+    print(f"✅ Traitement de {filename} ...")
+    with open(filepath, 'r', encoding='utf-8') as f:
+        target_html = f.read()
 
-# Liste tous les fichiers HTML sauf index.html
-for fichier in os.listdir():
-    if fichier.endswith(".html") and fichier != fichier_modele:
-        with open(fichier, "r", encoding="utf-8") as f:
-            contenu_page = f.read()
+    soup_target = BeautifulSoup(target_html, 'html.parser')
 
-        modifie = False
+    # Extraire le <main> original de la page cible
+    main_target = soup_target.find('main')
+    if not main_target:
+        print(f"⚠️ Pas de <main> dans {filename}, on saute.")
+        continue
 
-        # Remplacer la nav si elle existe
-        if pattern_nav.search(contenu_page):
-            contenu_page = pattern_nav.sub(nouvelle_nav, contenu_page)
-            print(f"✅ Bloc <nav> remplacé dans : {fichier}")
-            modifie = True
-        else:
-            print(f"⚠️ Pas de bloc <nav class=\"sidebar\"> trouvé dans : {fichier}")
+    # Créer une copie du HTML d'index sans <main>
+    soup_copy = BeautifulSoup(str(clean_index_html), 'html.parser')
 
-        # Ajouter le bloc footer juste avant </body>
-        if "</body>" in contenu_page:
-            if "fetch(\"includes/footer.html\")" not in contenu_page:
-                contenu_page = contenu_page.replace("</body>", f"{footer_script}\n</body>")
-                print(f"➕ Pied de page ajouté dans : {fichier}")
-                modifie = True
-            else:
-                print(f"ℹ️ Pied de page déjà présent dans : {fichier}")
-        else:
-            print(f"❌ Pas de balise </body> trouvée dans : {fichier}")
+    # Ajouter <main> et <div id="footer-container"></div> à la fin du <body>
+    body = soup_copy.body
+    if body:
+        body.append(main_target)  # on garde le <main> original
+        body.append(soup_target.new_tag("div", id="footer-container"))
+    else:
+        print(f"⚠️ Pas de <body> dans {filename}, insertion impossible.")
+        continue
 
-        # Ajouter le script header juste avant </head>
-        if "</head>" in contenu_page:
-            if "function adjustHeaderHeight()" not in contenu_page:
-                contenu_page = contenu_page.replace("</head>", f"{header_script}\n</head>")
-                print(f"🧠 Script adjustHeaderHeight ajouté dans : {fichier}")
-                modifie = True
-            else:
-                print(f"ℹ️ Script adjustHeaderHeight déjà présent dans : {fichier}")
-        else:
-            print(f"❌ Pas de balise </head> trouvée dans : {fichier}")
+    # Sauvegarder la page modifiée
+    with open(filepath, 'w', encoding='utf-8') as f:
+        f.write(str(soup_copy))
 
-        # Écrire le fichier modifié si quelque chose a changé
-        if modifie:
-            with open(fichier, "w", encoding="utf-8") as f:
-                f.write(contenu_page)
-
+print("🎉 Terminé.")

@@ -1,23 +1,24 @@
-
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forteresse</title>
-  <link rel="stylesheet" href="css/style.css"> <!-- Lien vers le CSS global -->
-
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<title>Infinity3D - Accueil</title>
+<link href="css/style.css" rel="stylesheet"/> <!-- Lien vers ton CSS -->
+</head>
 <script>
   function adjustHeaderHeight() {
     const header = document.querySelector("header");
     if (header) {
       header.style.height = window.innerHeight + "px";
+      header.style.width = "100%"; // 🔥 Évite les bandes horizontales
+      header.style.overflowX = "hidden"; // bonus : empêche les scrolls horizontaux
     }
   }
 
   window.addEventListener("load", adjustHeaderHeight);
   window.addEventListener("resize", adjustHeaderHeight);
 </script>
-	<script>
+<script>
   document.querySelectorAll('.sidebar a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
@@ -31,176 +32,141 @@
     });
   });
 </script>
-
-</head>
-
 <body>
-  <header></header>
-  
-  <nav class="sidebar">
-    <a href="index.html">Accueil</a>
-    <div class="dropdown">
-        <a href="#figurines">Figurines</a>
-        <div class="dropdown-content">
-            <a href="0 Les anciens sauriens (Cuetzpal).html">Les anciens sauriens (Cuetzpal)</a>
-				<a href="0 Elfes Mori.html">Elfes Mori</a>
-				<a href="0 Royaume de Mercia.html">Royaume de Mercia</a>
-				<a href="0 Les nains de Niavellir.html">Les nains de Niavellir</a>
-				<a href="1 Nains Infernaux (Magmhorin).html">Nains Infernaux (Magmhorin)</a>
-				<a href="1 Elfes de la Nuit.html">Elfes de la nuit</a>
-				<a href="1 Dynasties immortelles.html">Dynasties immortelles</a>
-				<a href="1 Morts-vivants de l'île brumeuse.html">Morts-vivants de l'île brumeuse</a>
-				<a href="1 Guerriers des Dieux Sombres.html"> Guerriers des Dieux Sombres</a>
-				<a href="1 Mongobbo Alliés.html"> Mongobbo Alliés</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <a href="#decors">Decors</a>
-            <div class="dropdown-content">
-                <a href="3 Les anciens sauriens (Cuetzpal).html">Les anciens sauriens (Cuetzpal)</a>
-				<a href="3 Nains Infernaux (Magmhorin).html">Nains Infernaux (Magmhorin)</a>
-				<a href="3 Ruines de la ville.html">Ruines de la ville</a>
-				<a href="3 Ville en ruine.html">Ville en ruine</a>
-				<a href="3 Église en ruine.html">Église en ruine</a>
-				<a href="3 Village des pêcheurs.html">Village des pêcheurs</a>
-				<a href="3 Forteresse.html">Forteresse</a>
-				<a href="3 Colonie Naine.html">Colonie Naine</a>
-				<a href="3 La Cité des Intrigues.html">La Cité des Intrigues</a>
-				<a href="3 Camp d'orques.html">Camp d'orques</a>
-				<a href="3 Forêt Magique.html">Forêt Magique</a>
-				<a href="3 Scéniques.html">Scéniques</a>
-            </div>
-        </div>
-        <div class="dropdown">
-             <a href="#Figurines">Accessoires</a>
-            <div class="dropdown-content">
-			<div class="dropdown">
-                <a href="4 Socle rond.html">Socles rond</a>
-                <a href="4 Socle carré.html">Socles carré</a>
-				<a href="4 Plateau de mouvement rond.html">Plateau de mouvement Rond</a>
-				<a href="4 Plateau de mouvement carré.html">Plateau de mouvement Carré</a>
-				<a href="4 Marqueurs.html">Marqueurs</a>
-                <a href="4 Accessoire.html">Accessoires</a>
-				<a href="4 Rangement.html">Rangemens</a>
-				</div>
-            </div>
-        </div>
-    <a href="5 Galerie.html">Galerie</a>
-    <a href="6 Contact.html">Contact</a>
-  </nav>
-  
-  <main>
-	<section id="figurines-cuetzpal" class="gallery-Figurines">
-	
-  <div class="item">
-  <a href="3 Forteresse/Banner A.html" target="_blank"><img src="3 Forteresse/Fortress 1.jpg" alt="Banner A"></a>
-  <h3>Banner A</h3>
-  <p><strong>Prix : 0,50€</strong></p>
+<header></header>
+<nav class="sidebar">
+<a href="index.html">Accueil</a>
+<div class="dropdown">
+<a href="#figurines">Figurines</a>
+<div class="dropdown-content">
+<a href="0 Les anciens sauriens (Cuetzpal).html">Les anciens sauriens (Cuetzpal)</a>
+<a href="0 Elfes Mori.html">Elfes Mori</a>
+<a href="0 Royaume de Mercia.html">Royaume de Mercia</a>
+<a href="0 Les nains de Niavellir.html">Les nains de Niavellir</a>
+<a href="1 Nains Infernaux (Magmhorin).html">Nains Infernaux (Magmhorin)</a>
+<a href="1 Elfes de la Nuit.html">Elfes de la nuit</a>
+<a href="1 Dynasties immortelles.html">Dynasties immortelles</a>
+<a href="1 Morts-vivants de l'île brumeuse.html">Morts-vivants de l'île brumeuse</a>
+<a href="1 Guerriers des Dieux Sombres.html"> Guerriers des Dieux Sombres</a>
+<a href="1 Mongobbo Alliés.html"> Mongobbo Alliés</a>
 </div>
-
-<div class="item">
-  <a href="3 Forteresse/Banner B.html" target="_blank"><img src="3 Forteresse/Fortress 1.jpg" alt="Banner B"></a>
-  <h3>Banner B</h3>
-  <p><strong>Prix : 0,50€</strong></p>
 </div>
-
-<div class="item">
-  <a href="3 Forteresse/Banner C.html" target="_blank"><img src="3 Forteresse/Fortress 1.jpg" alt="Banner C"></a>
-  <h3>Banner C</h3>
-  <p><strong>Prix : 0,50€</strong></p>
+<div class="dropdown">
+<a href="#decors">Decors</a>
+<div class="dropdown-content">
+<a href="3 Les anciens sauriens (Cuetzpal).html">Les anciens sauriens (Cuetzpal)</a>
+<a href="3 Nains Infernaux (Magmhorin).html">Nains Infernaux (Magmhorin)</a>
+<a href="3 Ruines de la ville.html">Ruines de la ville</a>
+<a href="3 Ville en ruine.html">Ville en ruine</a>
+<a href="3 Église en ruine.html">Église en ruine</a>
+<a href="3 Village des pêcheurs.html">Village des pêcheurs</a>
+<a href="3 Forteresse.html">Forteresse</a>
+<a href="3 Colonie Naine.html">Colonie Naine</a>
+<a href="3 La Cité des Intrigues.html">La Cité des Intrigues</a>
+<a href="3 Camp d'orques.html">Camp d'orques</a>
+<a href="3 Forêt Magique.html">Forêt Magique</a>
+<a href="3 Scéniques.html">Scéniques</a>
 </div>
-
-<div class="item">
-  <a href="3 Forteresse/Corner A.html" target="_blank"><img src="3 Forteresse/Fortress 1.jpg" alt="Corner A"></a>
-  <h3>Corner A</h3>
-  <p><strong>Prix : 12,00€</strong></p>
 </div>
-
-<div class="item">
-  <a href="3 Forteresse/Corner Inner B.html" target="_blank"><img src="3 Forteresse/Fortress 1.jpg" alt="Corner Inner B"></a>
-  <h3>Corner Inner B</h3>
-  <p><strong>Prix : 11,00€</strong></p>
+<div class="dropdown">
+<a href="#Figurines">Accessoires</a>
+<div class="dropdown-content">
+<a href="4 Socle rond.html">Socles rond</a>
+<a href="4 Socle carré.html">Socles carré</a>
+<a href="4 Plateau de mouvement rond.html">Plateau de mouvement Rond</a>
+<a href="4 Plateau de mouvement carré.html">Plateau de mouvement Carré</a>
+<a href="4 Marqueurs.html">Marqueurs</a>
+<a href="4 Accessoire.html">Accessoires</a>
+<a href="4 Rangement.html">Rangemens</a>
 </div>
-
-<div class="item">
-  <a href="3 Forteresse/Corner Tower.html" target="_blank"><img src="3 Forteresse/Fortress 1.jpg" alt="Corner Tower"></a>
-  <h3>Corner Tower</h3>
-  <p><strong>Prix : 37,50€</strong></p>
 </div>
-
-<div class="item">
-  <a href="3 Forteresse/Destroyed Wall Corner Tower.html" target="_blank"><img src="3 Forteresse/Fortress 1.jpg" alt="Destroyed Wall Corner Tower"></a>
-  <h3>Destroyed Wall Corner Tower</h3>
-  <p><strong>Prix : 20,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="3 Forteresse/Destroyed Door.html" target="_blank"><img src="3 Forteresse/Fortress 1.jpg" alt="Destroyed Door"></a>
-  <h3>Destroyed Door</h3>
-  <p><strong>Prix : 11,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="3 Forteresse/Destroyed Wall Center.html" target="_blank"><img src="3 Forteresse/Fortress 1.jpg" alt="Destroyed Wall Center"></a>
-  <h3>Destroyed Wall Center</h3>
-  <p><strong>Prix : 10,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="3 Forteresse/Destroyed Wall Left.html" target="_blank"><img src="3 Forteresse/Fortress 1.jpg" alt="Destroyed Wall Left"></a>
-  <h3>Destroyed Wall Left</h3>
-  <p><strong>Prix : 9,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="3 Forteresse/Destroyed Wall Right.html" target="_blank"><img src="3 Forteresse/Fortress 1.jpg" alt="Destroyed Wall Right"></a>
-  <h3>Destroyed Wall Right</h3>
-  <p><strong>Prix : 6,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="3 Forteresse/Door A.html" target="_blank"><img src="3 Forteresse/Fortress 1.jpg" alt="Door A"></a>
-  <h3>Door A</h3>
-  <p><strong>Prix : 16,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="3 Forteresse/Wall A.html" target="_blank"><img src="3 Forteresse/Fortress 1.jpg" alt="Wall A"></a>
-  <h3>Wall A</h3>
-  <p><strong>Prix : 12,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="3 Forteresse/Wall B.html" target="_blank"><img src="3 Forteresse/Fortress 1.jpg" alt="Wall B"></a>
-  <h3>Wall B</h3>
-  <p><strong>Prix : 12,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="3 Forteresse/Wall C Artillery.html" target="_blank"><img src="3 Forteresse/Fortress 1.jpg" alt="Wall C Artillery"></a>
-  <h3>Wall C Artillery</h3>
-  <p><strong>Prix : 14,00€</strong></p>
-</div>
-
-<div class="item">
-  <a href="3 Forteresse/Wall D Stairs.html" target="_blank"><img src="3 Forteresse/Fortress 1.jpg" alt="Wall D Stairs"></a>
-  <h3>Wall D Stairs</h3>
-  <p><strong>Prix : 16,00€</strong></p>
-</div>
-
-	 
-    </section>
-  </main>
-
+<a href="5 Galerie.html">Galerie</a>
+<a href="6 Contact.html">Contact</a>
+</nav>
 <div id="footer-container"></div>
-<script>
-  fetch("includes/footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footer-container").innerHTML = data;
-    })
-    .catch(error => console.error("Erreur lors du chargement du pied de page :", error));
-</script>
-
-</body>
+<div id="footer-container"></div>
+<main>
+<section class="gallery-Figurines" id="figurines-cuetzpal">
+<div class="item">
+<a href="3 Forteresse/Banner A.html" target="_blank"><img alt="Banner A" src="3 Forteresse/Fortress 1.jpg"/></a>
+<h3>Banner A</h3>
+<p><strong>Prix : 0,50€</strong></p>
+</div>
+<div class="item">
+<a href="3 Forteresse/Banner B.html" target="_blank"><img alt="Banner B" src="3 Forteresse/Fortress 1.jpg"/></a>
+<h3>Banner B</h3>
+<p><strong>Prix : 0,50€</strong></p>
+</div>
+<div class="item">
+<a href="3 Forteresse/Banner C.html" target="_blank"><img alt="Banner C" src="3 Forteresse/Fortress 1.jpg"/></a>
+<h3>Banner C</h3>
+<p><strong>Prix : 0,50€</strong></p>
+</div>
+<div class="item">
+<a href="3 Forteresse/Corner A.html" target="_blank"><img alt="Corner A" src="3 Forteresse/Fortress 1.jpg"/></a>
+<h3>Corner A</h3>
+<p><strong>Prix : 12,00€</strong></p>
+</div>
+<div class="item">
+<a href="3 Forteresse/Corner Inner B.html" target="_blank"><img alt="Corner Inner B" src="3 Forteresse/Fortress 1.jpg"/></a>
+<h3>Corner Inner B</h3>
+<p><strong>Prix : 11,00€</strong></p>
+</div>
+<div class="item">
+<a href="3 Forteresse/Corner Tower.html" target="_blank"><img alt="Corner Tower" src="3 Forteresse/Fortress 1.jpg"/></a>
+<h3>Corner Tower</h3>
+<p><strong>Prix : 37,50€</strong></p>
+</div>
+<div class="item">
+<a href="3 Forteresse/Destroyed Wall Corner Tower.html" target="_blank"><img alt="Destroyed Wall Corner Tower" src="3 Forteresse/Fortress 1.jpg"/></a>
+<h3>Destroyed Wall Corner Tower</h3>
+<p><strong>Prix : 20,00€</strong></p>
+</div>
+<div class="item">
+<a href="3 Forteresse/Destroyed Door.html" target="_blank"><img alt="Destroyed Door" src="3 Forteresse/Fortress 1.jpg"/></a>
+<h3>Destroyed Door</h3>
+<p><strong>Prix : 11,00€</strong></p>
+</div>
+<div class="item">
+<a href="3 Forteresse/Destroyed Wall Center.html" target="_blank"><img alt="Destroyed Wall Center" src="3 Forteresse/Fortress 1.jpg"/></a>
+<h3>Destroyed Wall Center</h3>
+<p><strong>Prix : 10,00€</strong></p>
+</div>
+<div class="item">
+<a href="3 Forteresse/Destroyed Wall Left.html" target="_blank"><img alt="Destroyed Wall Left" src="3 Forteresse/Fortress 1.jpg"/></a>
+<h3>Destroyed Wall Left</h3>
+<p><strong>Prix : 9,00€</strong></p>
+</div>
+<div class="item">
+<a href="3 Forteresse/Destroyed Wall Right.html" target="_blank"><img alt="Destroyed Wall Right" src="3 Forteresse/Fortress 1.jpg"/></a>
+<h3>Destroyed Wall Right</h3>
+<p><strong>Prix : 6,00€</strong></p>
+</div>
+<div class="item">
+<a href="3 Forteresse/Door A.html" target="_blank"><img alt="Door A" src="3 Forteresse/Fortress 1.jpg"/></a>
+<h3>Door A</h3>
+<p><strong>Prix : 16,00€</strong></p>
+</div>
+<div class="item">
+<a href="3 Forteresse/Wall A.html" target="_blank"><img alt="Wall A" src="3 Forteresse/Fortress 1.jpg"/></a>
+<h3>Wall A</h3>
+<p><strong>Prix : 12,00€</strong></p>
+</div>
+<div class="item">
+<a href="3 Forteresse/Wall B.html" target="_blank"><img alt="Wall B" src="3 Forteresse/Fortress 1.jpg"/></a>
+<h3>Wall B</h3>
+<p><strong>Prix : 12,00€</strong></p>
+</div>
+<div class="item">
+<a href="3 Forteresse/Wall C Artillery.html" target="_blank"><img alt="Wall C Artillery" src="3 Forteresse/Fortress 1.jpg"/></a>
+<h3>Wall C Artillery</h3>
+<p><strong>Prix : 14,00€</strong></p>
+</div>
+<div class="item">
+<a href="3 Forteresse/Wall D Stairs.html" target="_blank"><img alt="Wall D Stairs" src="3 Forteresse/Fortress 1.jpg"/></a>
+<h3>Wall D Stairs</h3>
+<p><strong>Prix : 16,00€</strong></p>
+</div>
+</section>
+</main><div id="footer-container"></div></body>
 </html>

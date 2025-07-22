@@ -1,23 +1,24 @@
-<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galerie</title>
-  <link rel="stylesheet" href="css/style.css"> <!-- Lien vers le CSS global -->
-
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<title>Infinity3D - Accueil</title>
+<link href="css/style.css" rel="stylesheet"/> <!-- Lien vers ton CSS -->
+</head>
 <script>
   function adjustHeaderHeight() {
     const header = document.querySelector("header");
     if (header) {
       header.style.height = window.innerHeight + "px";
+      header.style.width = "100%"; // 🔥 Évite les bandes horizontales
+      header.style.overflowX = "hidden"; // bonus : empêche les scrolls horizontaux
     }
   }
 
   window.addEventListener("load", adjustHeaderHeight);
   window.addEventListener("resize", adjustHeaderHeight);
 </script>
-	<script>
+<script>
   document.querySelectorAll('.sidebar a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
@@ -31,181 +32,163 @@
     });
   });
 </script>
-
-</head>
 <body>
-  <header></header>
-  
-  <nav class="sidebar">
-    <a href="index.html">Accueil</a>
-    <div class="dropdown">
-        <a href="#figurines">Figurines</a>
-        <div class="dropdown-content">
-            <a href="0 Les anciens sauriens (Cuetzpal).html">Les anciens sauriens (Cuetzpal)</a>
-				<a href="0 Elfes Mori.html">Elfes Mori</a>
-				<a href="0 Royaume de Mercia.html">Royaume de Mercia</a>
-				<a href="0 Les nains de Niavellir.html">Les nains de Niavellir</a>
-				<a href="1 Nains Infernaux (Magmhorin).html">Nains Infernaux (Magmhorin)</a>
-				<a href="1 Elfes de la Nuit.html">Elfes de la nuit</a>
-				<a href="1 Dynasties immortelles.html">Dynasties immortelles</a>
-				<a href="1 Morts-vivants de l'île brumeuse.html">Morts-vivants de l'île brumeuse</a>
-				<a href="1 Guerriers des Dieux Sombres.html"> Guerriers des Dieux Sombres</a>
-				<a href="1 Mongobbo Alliés.html"> Mongobbo Alliés</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <a href="#decors">Decors</a>
-            <div class="dropdown-content">
-                <a href="3 Les anciens sauriens (Cuetzpal).html">Les anciens sauriens (Cuetzpal)</a>
-				<a href="3 Nains Infernaux (Magmhorin).html">Nains Infernaux (Magmhorin)</a>
-				<a href="3 Ruines de la ville.html">Ruines de la ville</a>
-				<a href="3 Ville en ruine.html">Ville en ruine</a>
-				<a href="3 Église en ruine.html">Église en ruine</a>
-				<a href="3 Village des pêcheurs.html">Village des pêcheurs</a>
-				<a href="3 Forteresse.html">Forteresse</a>
-				<a href="3 Colonie Naine.html">Colonie Naine</a>
-				<a href="3 La Cité des Intrigues.html">La Cité des Intrigues</a>
-				<a href="3 Camp d'orques.html">Camp d'orques</a>
-				<a href="3 Forêt Magique.html">Forêt Magique</a>
-				<a href="3 Scéniques.html">Scéniques</a>
-            </div>
-        </div>
-        <div class="dropdown">
-             <a href="#Figurines">Accessoires</a>
-            <div class="dropdown-content">
-			<div class="dropdown">
-                <a href="4 Socle rond.html">Socles rond</a>
-                <a href="4 Socle carré.html">Socles carré</a>
-				<a href="4 Plateau de mouvement rond.html">Plateau de mouvement Rond</a>
-				<a href="4 Plateau de mouvement carré.html">Plateau de mouvement Carré</a>
-				<a href="4 Marqueurs.html">Marqueurs</a>
-                <a href="4 Accessoire.html">Accessoires</a>
-				<a href="4 Rangement.html">Rangemens</a>
-				</div>
-            </div>
-        </div>
-    <a href="5 Galerie.html">Galerie</a>
-    <a href="6 Contact.html">Contact</a>
-  </nav>
-  
-  <main>
-    <section id="figurines-cuetzpal" class="gallery-Figurines">
-	
-  <div class="item">
-    <a href="5 Galerie/LienPhoto/20180820_171254.html" target="_blank"><img src="5 Galerie/20180820_171254.jpg" alt="Galerie"></a>
+<header></header>
+<nav class="sidebar">
+<a href="index.html">Accueil</a>
+<div class="dropdown">
+<a href="#figurines">Figurines</a>
+<div class="dropdown-content">
+<a href="0 Les anciens sauriens (Cuetzpal).html">Les anciens sauriens (Cuetzpal)</a>
+<a href="0 Elfes Mori.html">Elfes Mori</a>
+<a href="0 Royaume de Mercia.html">Royaume de Mercia</a>
+<a href="0 Les nains de Niavellir.html">Les nains de Niavellir</a>
+<a href="1 Nains Infernaux (Magmhorin).html">Nains Infernaux (Magmhorin)</a>
+<a href="1 Elfes de la Nuit.html">Elfes de la nuit</a>
+<a href="1 Dynasties immortelles.html">Dynasties immortelles</a>
+<a href="1 Morts-vivants de l'île brumeuse.html">Morts-vivants de l'île brumeuse</a>
+<a href="1 Guerriers des Dieux Sombres.html"> Guerriers des Dieux Sombres</a>
+<a href="1 Mongobbo Alliés.html"> Mongobbo Alliés</a>
 </div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/20180828_204842.html" target="_blank"><img src="5 Galerie/20180828_204842.jpg" alt="Galerie"></a>
 </div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/20240830_065738.html" target="_blank"><img src="5 Galerie/20240830_065738.jpg" alt="Galerie"></a>
+<div class="dropdown">
+<a href="#decors">Decors</a>
+<div class="dropdown-content">
+<a href="3 Les anciens sauriens (Cuetzpal).html">Les anciens sauriens (Cuetzpal)</a>
+<a href="3 Nains Infernaux (Magmhorin).html">Nains Infernaux (Magmhorin)</a>
+<a href="3 Ruines de la ville.html">Ruines de la ville</a>
+<a href="3 Ville en ruine.html">Ville en ruine</a>
+<a href="3 Église en ruine.html">Église en ruine</a>
+<a href="3 Village des pêcheurs.html">Village des pêcheurs</a>
+<a href="3 Forteresse.html">Forteresse</a>
+<a href="3 Colonie Naine.html">Colonie Naine</a>
+<a href="3 La Cité des Intrigues.html">La Cité des Intrigues</a>
+<a href="3 Camp d'orques.html">Camp d'orques</a>
+<a href="3 Forêt Magique.html">Forêt Magique</a>
+<a href="3 Scéniques.html">Scéniques</a>
 </div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/20241108_191500.html" target="_blank"><img src="5 Galerie/20241108_191500.jpg" alt="Galerie"></a>
 </div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/20241108_191745.html" target="_blank"><img src="5 Galerie/20241108_191745.jpg" alt="Galerie"></a>
+<div class="dropdown">
+<a href="#Figurines">Accessoires</a>
+<div class="dropdown-content">
+<a href="4 Socle rond.html">Socles rond</a>
+<a href="4 Socle carré.html">Socles carré</a>
+<a href="4 Plateau de mouvement rond.html">Plateau de mouvement Rond</a>
+<a href="4 Plateau de mouvement carré.html">Plateau de mouvement Carré</a>
+<a href="4 Marqueurs.html">Marqueurs</a>
+<a href="4 Accessoire.html">Accessoires</a>
+<a href="4 Rangement.html">Rangemens</a>
 </div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/20241211_191155.html" target="_blank"><img src="5 Galerie/20241211_191155.jpg" alt="Galerie"></a>
 </div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/20250625_222946.html" target="_blank"><img src="5 Galerie/20250625_222946.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/20250627_193939.html" target="_blank"><img src="5 Galerie/20250627_193939.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/Disney Mickey Mouse 2.html" target="_blank"><img src="5 Galerie/Disney Mickey Mouse 2.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/Drone Infinity3D 1.html" target="_blank"><img src="5 Galerie/Drone Infinity3D 1.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/DSC 0371.html" target="_blank"><img src="5 Galerie/DSC 0371.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/DSC 0378.html" target="_blank"><img src="5 Galerie/DSC 0378.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/DSC 0380.html" target="_blank"><img src="5 Galerie/DSC 0380.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/DSC 0385.html" target="_blank"><img src="5 Galerie/DSC 0385.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/DSC 0391.html" target="_blank"><img src="5 Galerie/DSC 0391.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/DSC 1308.html" target="_blank"><img src="5 Galerie/DSC 1308.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/FB_IMG_1726828934102.html" target="_blank"><img src="5 Galerie/FB_IMG_1726828934102.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/FB_IMG_1726829092252.html" target="_blank"><img src="5 Galerie/FB_IMG_1726829092252.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/FB_IMG_1726829094783.html" target="_blank"><img src="5 Galerie/FB_IMG_1726829094783.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/FB_IMG_1726829097265.html" target="_blank"><img src="5 Galerie/FB_IMG_1726829097265.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/FB_IMG_1726829099349.html" target="_blank"><img src="5 Galerie/FB_IMG_1726829099349.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/FB_IMG_1726829101142.html" target="_blank"><img src="5 Galerie/FB_IMG_1726829101142.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/FB_IMG_1726829102936.html" target="_blank"><img src="5 Galerie/FB_IMG_1726829102936.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/FB_IMG_1726829104596.html" target="_blank"><img src="5 Galerie/FB_IMG_1726829104596.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/FB_IMG_1726829107218.html" target="_blank"><img src="5 Galerie/FB_IMG_1726829107218.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/FB_IMG_1726829109556.html" target="_blank"><img src="5 Galerie/FB_IMG_1726829109556.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/Groot 1.html" target="_blank"><img src="5 Galerie/Groot 1.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/Halloween Citrouille 1.html" target="_blank"><img src="5 Galerie/Halloween Citrouille 1.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/IMG-20240928-WA0005(1) (1).html" target="_blank"><img src="5 Galerie/IMG-20240928-WA0005(1) (1).jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/IMG-20240928-WA0006.html" target="_blank"><img src="5 Galerie/IMG-20240928-WA0006.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/Noel.html" target="_blank"><img src="5 Galerie/Noel.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/Phosphorescent 1.html" target="_blank"><img src="5 Galerie/Phosphorescent 1.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/Screenshot_20240920_125727_Facebook.html" target="_blank"><img src="5 Galerie/Screenshot_20240920_125727_Facebook.jpg" alt="Galerie"></a>
-</div>
-<div class="item">
-    <a href="5 Galerie/LienPhoto/Screenshot_20240920_125755_Facebook.html" target="_blank"><img src="5 Galerie/Screenshot_20240920_125755_Facebook.jpg" alt="Galerie"></a>
-</div>
-  
-</section>
-  </main>
-
+<a href="5 Galerie.html">Galerie</a>
+<a href="6 Contact.html">Contact</a>
+</nav>
 <div id="footer-container"></div>
-<script>
-  fetch("includes/footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footer-container").innerHTML = data;
-    })
-    .catch(error => console.error("Erreur lors du chargement du pied de page :", error));
-</script>
-
-</body>
+<div id="footer-container"></div>
+<main>
+<section class="gallery-Figurines" id="figurines-cuetzpal">
+<div class="item">
+<a href="5 Galerie/LienPhoto/20180820_171254.html" target="_blank"><img alt="Galerie" src="5 Galerie/20180820_171254.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/20180828_204842.html" target="_blank"><img alt="Galerie" src="5 Galerie/20180828_204842.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/20240830_065738.html" target="_blank"><img alt="Galerie" src="5 Galerie/20240830_065738.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/20241108_191500.html" target="_blank"><img alt="Galerie" src="5 Galerie/20241108_191500.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/20241108_191745.html" target="_blank"><img alt="Galerie" src="5 Galerie/20241108_191745.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/20241211_191155.html" target="_blank"><img alt="Galerie" src="5 Galerie/20241211_191155.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/20250625_222946.html" target="_blank"><img alt="Galerie" src="5 Galerie/20250625_222946.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/20250627_193939.html" target="_blank"><img alt="Galerie" src="5 Galerie/20250627_193939.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/Disney Mickey Mouse 2.html" target="_blank"><img alt="Galerie" src="5 Galerie/Disney Mickey Mouse 2.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/Drone Infinity3D 1.html" target="_blank"><img alt="Galerie" src="5 Galerie/Drone Infinity3D 1.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/DSC 0371.html" target="_blank"><img alt="Galerie" src="5 Galerie/DSC 0371.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/DSC 0378.html" target="_blank"><img alt="Galerie" src="5 Galerie/DSC 0378.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/DSC 0380.html" target="_blank"><img alt="Galerie" src="5 Galerie/DSC 0380.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/DSC 0385.html" target="_blank"><img alt="Galerie" src="5 Galerie/DSC 0385.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/DSC 0391.html" target="_blank"><img alt="Galerie" src="5 Galerie/DSC 0391.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/DSC 1308.html" target="_blank"><img alt="Galerie" src="5 Galerie/DSC 1308.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/FB_IMG_1726828934102.html" target="_blank"><img alt="Galerie" src="5 Galerie/FB_IMG_1726828934102.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/FB_IMG_1726829092252.html" target="_blank"><img alt="Galerie" src="5 Galerie/FB_IMG_1726829092252.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/FB_IMG_1726829094783.html" target="_blank"><img alt="Galerie" src="5 Galerie/FB_IMG_1726829094783.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/FB_IMG_1726829097265.html" target="_blank"><img alt="Galerie" src="5 Galerie/FB_IMG_1726829097265.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/FB_IMG_1726829099349.html" target="_blank"><img alt="Galerie" src="5 Galerie/FB_IMG_1726829099349.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/FB_IMG_1726829101142.html" target="_blank"><img alt="Galerie" src="5 Galerie/FB_IMG_1726829101142.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/FB_IMG_1726829102936.html" target="_blank"><img alt="Galerie" src="5 Galerie/FB_IMG_1726829102936.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/FB_IMG_1726829104596.html" target="_blank"><img alt="Galerie" src="5 Galerie/FB_IMG_1726829104596.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/FB_IMG_1726829107218.html" target="_blank"><img alt="Galerie" src="5 Galerie/FB_IMG_1726829107218.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/FB_IMG_1726829109556.html" target="_blank"><img alt="Galerie" src="5 Galerie/FB_IMG_1726829109556.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/Groot 1.html" target="_blank"><img alt="Galerie" src="5 Galerie/Groot 1.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/Halloween Citrouille 1.html" target="_blank"><img alt="Galerie" src="5 Galerie/Halloween Citrouille 1.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/IMG-20240928-WA0005(1) (1).html" target="_blank"><img alt="Galerie" src="5 Galerie/IMG-20240928-WA0005(1) (1).jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/IMG-20240928-WA0006.html" target="_blank"><img alt="Galerie" src="5 Galerie/IMG-20240928-WA0006.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/Noel.html" target="_blank"><img alt="Galerie" src="5 Galerie/Noel.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/Phosphorescent 1.html" target="_blank"><img alt="Galerie" src="5 Galerie/Phosphorescent 1.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/Screenshot_20240920_125727_Facebook.html" target="_blank"><img alt="Galerie" src="5 Galerie/Screenshot_20240920_125727_Facebook.jpg"/></a>
+</div>
+<div class="item">
+<a href="5 Galerie/LienPhoto/Screenshot_20240920_125755_Facebook.html" target="_blank"><img alt="Galerie" src="5 Galerie/Screenshot_20240920_125755_Facebook.jpg"/></a>
+</div>
+</section>
+</main><div id="footer-container"></div></body>
 </html>
