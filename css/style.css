@@ -515,7 +515,7 @@ footer {
   body {
     width: 100%;
 	max-width: 1024px;
-	background-image: url('../images/01 Back1024.jpeg');
+	background-image: url('../images/01 Back1024.jpg');
     margin: 0 auto;
     min-height: 100vh;
     display: flex;
