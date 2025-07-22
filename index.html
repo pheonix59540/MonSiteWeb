@@ -4,20 +4,20 @@
   <meta charset="UTF-8">
   <title>Infinity3D - Accueil</title>
   <link rel="stylesheet" href="css/style.css"> <!-- Lien vers ton CSS -->
+</head>
 <script>
   function adjustHeaderHeight() {
     const header = document.querySelector("header");
     if (header) {
       header.style.height = window.innerHeight + "px";
+      header.style.width = "100%"; // 🔥 Évite les bandes horizontales
+      header.style.overflowX = "hidden"; // bonus : empêche les scrolls horizontaux
     }
   }
 
   window.addEventListener("load", adjustHeaderHeight);
   window.addEventListener("resize", adjustHeaderHeight);
 </script>
-</head>
-
-
 <body>	
   <header></header>
   

@@ -53,6 +53,8 @@ header_script = '''
     const header = document.querySelector("header");
     if (header) {
       header.style.height = window.innerHeight + "px";
+      header.style.width = "100%"; // 🔥 Évite les bandes horizontales
+      header.style.overflowX = "hidden"; // bonus : empêche les scrolls horizontaux
     }
   }
 
