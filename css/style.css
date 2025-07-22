@@ -13,7 +13,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: 1px solid red;
 }
 
 /* 🌍 Page entière */
@@ -135,33 +134,35 @@ footer {
 			margin: 0 10px; /* ajoute un petit espacement horizontal entre les menus */
         }
         .dropdown-content {
-			max-width: 100vw; /* Ne peut pas dépasser la largeur de l’écran */
-			box-sizing: border-box;
-			overflow-x: auto; /* permet de scroller horizontalement si trop large */
-            position: absolute;
-			top: 100%; /* place le menu déroulant sous le titre */
-            background-color: #666;
-            min-width: 150px;
-            z-index: 1;
+			/* propriétés existantes */
+			position: absolute;
+			top: calc(100% + 5px);
+			background-color: #666;
+			min-width: 140px;
+			z-index: 1;
 			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-			/* Animation */
 			opacity: 0;
 			transform: translateY(10px);
 			transition: opacity 0.5s ease, transform 0.3s ease;
 			pointer-events: none;
 			visibility: hidden;
+
+			/* ✅ Ajout pour espacement vertical adaptatif */
+			display: flex;
+			flex-direction: column;
+			gap: 10px; /* espace vertical entre les liens */
+			max-width: 120vw;
+			box-sizing: border-box;
+			overflow-x: auto;
         }
         .dropdown-content a {
 			white-space: normal; /* Permet le retour à la ligne */
 			word-wrap: break-word; /* Coupe les longs mots si besoin */
 			max-width: 100%; /* Empêche le lien de dépasser le menu */
 			padding: 10px 15px; /* espace autour du lien principal */
-            display: block;
-            color: white;
-            padding: 10px;
+			color: white;
             text-decoration: none;
-			white-space: nowrap; /* empêche le retour à la ligne dans le texte */
+			font-size: 16px; /* 👉 taille du texte */
         }
         .dropdown:hover .dropdown-content {
 			opacity: 1;
