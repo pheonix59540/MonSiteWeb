@@ -87,6 +87,7 @@ footer {
   background-repeat: repeat;          /* la texture se répète si elle est petite */
   background-size: auto;              /* ou try 'cover' / 'contain' selon le rendu souhaité */
   background-position: center center; /* optionnel : centre la texture */
+  font-size: 14px; /* 👉 taille du texte */
 }
 	
         .sidebar {
@@ -577,7 +578,7 @@ footer {
   footer {
     width: 100%;
     padding: 8px;
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
@@ -601,6 +602,7 @@ footer {
   header {
     background-image: url('../images/0 HeaderPortrait480.png');
     width: 100%;
+	max-width: 480px;
     height: 100vh;
     background-size: cover;
     background-position: center top;
@@ -648,7 +650,7 @@ footer {
   footer {
     width: 100%;
     padding: 8px;
-    font-size: 10px;
+    font-size: 6px;
   }
 }
 
