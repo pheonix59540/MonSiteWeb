@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Morts-vivants de l'île brumeuse</title>
   <link rel="stylesheet" href="css/style.css"> <!-- Lien vers le CSS global -->
+
+<script>
+  function adjustHeaderHeight() {
+    const header = document.querySelector("header");
+    if (header) {
+      header.style.height = window.innerHeight + "px";
+    }
+  }
+
+  window.addEventListener("load", adjustHeaderHeight);
+  window.addEventListener("resize", adjustHeaderHeight);
+</script>
+
 </head>
 <body>
   <header></header>

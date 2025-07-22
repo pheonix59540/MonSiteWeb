@@ -29,6 +29,36 @@ footer_script = '''
     })
     .catch(error => console.error("Erreur lors du chargement du pied de page :", error));
 </script>
+
+	<script>
+  document.querySelectorAll('.sidebar a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+</script>
+'''
+
+# Bloc JS à insérer juste avant </head>
+header_script = '''
+<script>
+  function adjustHeaderHeight() {
+    const header = document.querySelector("header");
+    if (header) {
+      header.style.height = window.innerHeight + "px";
+    }
+  }
+
+  window.addEventListener("load", adjustHeaderHeight);
+  window.addEventListener("resize", adjustHeaderHeight);
+</script>
 '''
 
 # Liste tous les fichiers HTML sauf index.html
@@ -58,7 +88,19 @@ for fichier in os.listdir():
         else:
             print(f"❌ Pas de balise </body> trouvée dans : {fichier}")
 
+        # Ajouter le script header juste avant </head>
+        if "</head>" in contenu_page:
+            if "function adjustHeaderHeight()" not in contenu_page:
+                contenu_page = contenu_page.replace("</head>", f"{header_script}\n</head>")
+                print(f"🧠 Script adjustHeaderHeight ajouté dans : {fichier}")
+                modifie = True
+            else:
+                print(f"ℹ️ Script adjustHeaderHeight déjà présent dans : {fichier}")
+        else:
+            print(f"❌ Pas de balise </head> trouvée dans : {fichier}")
+
         # Écrire le fichier modifié si quelque chose a changé
         if modifie:
             with open(fichier, "w", encoding="utf-8") as f:
                 f.write(contenu_page)
+
