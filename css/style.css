@@ -13,12 +13,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: 1px solid red;
 }
 
 /* 🌍 Page entière */
 html {
   width: 100%;
   max-width: 1920px;
+  overflow-x: hidden;
 }
 
 body {
@@ -37,7 +39,7 @@ body {
 
 /* 🧢 Header (plein écran) */
 header {
-  width: 100vw;
+  width: 100%;
   background-image: url('../images/0 Header.png');
   background-size: cover;
   background-position: center top;
@@ -51,7 +53,7 @@ header {
 .sidebar {
   position: sticky;
   top: 0;
-  width: 100vw;
+  width: 100%;
   background-color: rgba(30, 30, 30, 1);
   display: flex;
   justify-content: center;
@@ -79,7 +81,7 @@ main, .page-wrapper {
 
 /* 🦶 Pied de page */
 footer {
-  width: 100vw;
+	width: 100%;
   padding: 20px;
   text-align: center;
   background-image: url('../images/sidebar.png'); /* ou .png selon ton fichier */
@@ -91,7 +93,7 @@ footer {
 	
         .sidebar {
   position: sticky;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

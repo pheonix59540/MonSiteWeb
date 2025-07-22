@@ -5,7 +5,17 @@
   <title>Les nains de Niavellir</title>
   <link rel="stylesheet" href="css/style.css"> <!-- Lien vers le CSS global -->
 </head>
+<script>
+  function adjustHeaderHeight() {
+    const header = document.querySelector("header");
+    if (header) {
+      header.style.height = window.innerHeight + "px";
+    }
+  }
 
+  window.addEventListener("load", adjustHeaderHeight);
+  window.addEventListener("resize", adjustHeaderHeight);
+</script>
 <body>
   <header></header>
   
