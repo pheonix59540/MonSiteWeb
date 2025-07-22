@@ -513,6 +513,7 @@ footer {
   
   body {
     width: 100%;
+	max-width: 1024px;
     margin: 0 auto;
     min-height: 100vh;
     display: flex;
@@ -584,6 +585,7 @@ footer {
   
   body {
     width: 100%;
+	max-width: 480px;
     margin: 0 auto;
     min-height: 100vh;
     display: flex;
