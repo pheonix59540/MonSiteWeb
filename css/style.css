@@ -13,7 +13,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: 1px solid red;
 }
 
 /* 🌍 Page entière */
@@ -26,7 +25,6 @@ html {
 body {
   width: 100%;
   max-width: 1920px;
-  min-height: 100vh; /* s'étend au moins à la hauteur de l'écran */
   display: flex;
   flex-direction: column; /* empile header / sidebar / main / footer */
   font-family: 'Cinzel-Regular', sans-serif;
@@ -516,7 +514,6 @@ footer {
 	max-width: 1440px;
 	background-image: url('../images/01 Back1440.jpg');
     margin: 0 auto;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     font-family: 'Cinzel-Regular', sans-serif;
@@ -531,7 +528,6 @@ footer {
     background-image: url('../images/0 HeaderPortrait1440.png');
     width: 100%;
 	max-width: 1440px;
-    height: 100vh;
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
@@ -590,7 +586,6 @@ footer {
 	max-width: 1024px;
 	background-image: url('../images/01 Back1024.jpg');
     margin: 0 auto;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     font-family: 'Cinzel-Regular', sans-serif;
@@ -604,7 +599,6 @@ footer {
   header {
     background-image: url('../images/0 HeaderPortrait1024.png');
     width: 100%;
-    height: 100vh;
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
@@ -664,7 +658,6 @@ footer {
 	max-width: 480px;
 	background-image: url('../images/01 Back480.jpeg');
     margin: 0 auto;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     font-family: 'Cinzel-Regular', sans-serif;
@@ -679,7 +672,6 @@ footer {
     background-image: url('../images/0 HeaderPortrait480.png');
     width: 100%;
 	max-width: 480px;
-    height: 100vh;
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
