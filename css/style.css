@@ -515,6 +515,7 @@ footer {
   body {
     width: 100%;
 	max-width: 1024px;
+	background-image: url('../images/01 Back1024.jpeg');
     margin: 0 auto;
     min-height: 100vh;
     display: flex;
@@ -588,6 +589,7 @@ footer {
   body {
     width: 100%;
 	max-width: 480px;
+	background-image: url('../images/01 Back480.jpeg');
     margin: 0 auto;
     min-height: 100vh;
     display: flex;
