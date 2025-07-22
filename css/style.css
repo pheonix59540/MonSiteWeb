@@ -540,6 +540,7 @@ footer {
   }
 
   .sidebar {
+	position: sticky;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -613,6 +614,7 @@ footer {
   }
 
   .sidebar {
+	position: sticky;
     width: 100%;
     display: flex;
     justify-content: center;
