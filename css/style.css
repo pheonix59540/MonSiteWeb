@@ -18,12 +18,12 @@
 /* 🌍 Page entière */
 html {
   width: 100%;
-  max-width: 1536px;
+  max-width: 1920px;
 }
 
 body {
   width: 100%;
-  max-width: 1536px;
+  max-width: 1920px;
   min-height: 100vh; /* s'étend au moins à la hauteur de l'écran */
   display: flex;
   flex-direction: column; /* empile header / sidebar / main / footer */
@@ -69,7 +69,7 @@ header {
 /* 🧱 Contenu centré avec limites */
 main, .page-wrapper {
   width: 100%;
-  max-width: 1536px;
+  max-width: 1920px;
   flex-grow: 1; /* prend l’espace restant pour pousser le footer vers le bas */
   margin: 0 auto;
   padding: 20px;
@@ -507,7 +507,7 @@ footer {
   text-decoration: underline;
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1440px) {
+@media screen and (min-width: 1025px) and (max-width: 1440px) and (orientation: portrait) {
   
   body {
     width: 100%;
@@ -581,7 +581,7 @@ footer {
   }
 }
 
-@media screen and (min-width: 481px) and (max-width: 1024px) {
+@media screen and (min-width: 481px) and (max-width: 1024px) and (orientation: portrait) {
   
   body {
     width: 100%;
@@ -655,7 +655,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 480px) and (orientation: portrait) {
   
   body {
     width: 100%;
