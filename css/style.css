@@ -723,6 +723,10 @@ footer {
     border-radius: 10px;
     overflow-x: hidden;
   }
+  
+.gallery-Figurines{
+			margin: 5px;	
+}
  .gallery-Figurines .item h3 {
     font-size: 10px;
     margin: 10px 5px;
