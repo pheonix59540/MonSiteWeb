@@ -1,20 +1,22 @@
 from PIL import Image
 import os
 
-# Récupérer tous les fichiers à la racine
+# Parcours de tous les fichiers dans le dossier courant
 for filename in os.listdir('.'):
-    # Identifier les fichiers .JPG ou .JPEG
-    if filename.lower().endswith('.jpg') or filename.lower().endswith('.jpeg'):
-        with Image.open(filename) as img:
-            # Créer un nouveau nom de fichier en .jpg en minuscules
-            new_filename = os.path.splitext(filename)[0] + '.jpg'
+    if filename.lower().endswith(('.jpg', '.jpeg', '.JPG', '.JPEG')):
+        base_name, ext = os.path.splitext(filename)
+        new_filename = base_name + '.jpg'
 
-            # Sauvegarder l'image au bon format (JPEG)
-            img.convert('RGB').save(new_filename, 'JPEG')
-
-        # Si le nom original est différent du nouveau (ex: .JPG → .jpg), supprimer l'ancien
-        if filename != new_filename:
-            os.remove(filename)
-            print(f'Converti et remplacé : {filename} → {new_filename}')
-        else:
-            print(f'Pas besoin de renommer : {filename}')
+        try:
+            # Ouvre l'image avec Pillow
+            with Image.open(filename) as img:
+                # Convertit en mode RGB pour compatibilité JPG
+                rgb_image = img.convert('RGB')
+                # Sauvegarde sous nouveau fichier .jpg
+                rgb_image.save(new_filename, format='JPEG')
+            # Supprime l'ancien fichier
+            if filename != new_filename:
+                os.remove(filename)
+            print(f"✔️ Converti et corrigé : {filename} → {new_filename}")
+        except Exception as e:
+            print(f"⚠️ Erreur avec {filename} : {e}")
