@@ -715,15 +715,18 @@ footer {
     font-size: 12px;
   }
 
-  main, .page-wrapper {
+main, .page-wrapper {
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
     padding: 16px;
     border-radius: 10px;
     overflow-x: hidden;
-  }
-  
+}
+.gallery .item {
+  width: 45%;           /* Deux éléments par ligne */
+  padding: 5px;
+}
 .gallery-Figurines{
 	margin: 5px;	
 }
