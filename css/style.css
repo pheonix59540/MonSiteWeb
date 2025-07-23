@@ -137,7 +137,7 @@ footer {
 .dropdown-content {
     position: absolute;
     top: calc(100% + 5px);
-    background-color: #666;
+    background-color: #303030;
     min-width: 140px;
     z-index: 1;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -150,7 +150,6 @@ footer {
     /* ✅ Espacement vertical adaptatif */
     display: flex;
     flex-direction: column;
-    gap: 12px;
     max-width: 100vw;
     box-sizing: border-box;
     overflow-x: auto;
@@ -162,8 +161,10 @@ footer {
     white-space: normal;
     word-wrap: break-word;
     max-width: 100%;
+	border-top: 1px solid #0ABAB5; /* ligne  */
+	background: linear-gradient(to right, transparent, #008080, transparent);
 	
-    padding: 0px 5px;/* haut/bas = 0, gauche/droite = 40px */
+    padding: 5px 5px;/* haut/bas = 0, gauche/droite = 40px */
     line-height: 1.3; /* ✅ plus confortable en lecture */
     color: white;
     text-decoration: none;
