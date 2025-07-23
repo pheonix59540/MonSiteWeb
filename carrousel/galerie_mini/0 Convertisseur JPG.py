@@ -1,27 +1,34 @@
 from PIL import Image
 import os
 
-# Extensions d'images à prendre en charge
+# Extensions reconnues comme images
 valid_extensions = ['.png', '.bmp', '.jpeg', '.jpg', '.JPG']
 
-# Liste tous les fichiers du dossier courant
+# Parcours du dossier courant
 for filename in os.listdir('.'):
     name, ext = os.path.splitext(filename)
-    
-    if ext.lower() in valid_extensions:
+    ext = ext.lower()
+
+    if ext in valid_extensions:
         try:
-            # Ouvre l'image
+            # Ouvrir l'image
             with Image.open(filename) as img:
-                # Convertit en mode RGB si nécessaire (utile pour PNG avec transparence)
+                # Vérifie et convertit le mode (ex: PNG avec transparence)
                 if img.mode != 'RGB':
                     img = img.convert('RGB')
-                
-                # Nouveau nom avec extension .jpg
+
+                # Nouveau nom avec extension .jpg (vraie conversion)
                 new_name = name + '.jpg'
 
-                # Sauvegarde l'image convertie
+                # Sauvegarde en format JPEG
                 img.save(new_name, format='JPEG', quality=95)
 
-                print(f"✅ {filename} → {new_name}")
+            # Supprime l'ancienne image si son nom diffère (évite d'effacer une vraie .jpg déjà convertie)
+            if filename != new_name:
+                os.remove(filename)
+                print(f"✅ {filename} converti → {new_name} (et original supprimé)")
+            else:
+                print(f"✅ {filename} est déjà en .jpg, reconverti proprement")
+
         except Exception as e:
-            print(f"❌ Erreur avec {filename} : {e}")
+            print(f"❌ Erreur sur {filename} : {e}")
