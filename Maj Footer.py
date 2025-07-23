@@ -1,35 +1,62 @@
 import os
 from bs4 import BeautifulSoup
 
-root_dir = '.'  # Répertoire racine
-index_path = os.path.join(root_dir, 'index.html')
+# Charger index.html
+with open("index.html", "r", encoding="utf-8") as f:
+    index_soup = BeautifulSoup(f, "html.parser")
 
-# 1. Lire index.html pour obtenir les pages listées dans <nav class="sidebar">
-with open(index_path, 'r', encoding='utf-8') as f:
-    index_html = f.read()
+# Récupérer la balise <nav class="sidebar">
+nav = index_soup.find("nav", class_="sidebar")
+import os
+import re
 
-soup_index = BeautifulSoup(index_html, 'html.parser')
-nav = soup_index.find('nav', class_='sidebar')
-if not nav:
-    print("❌ <nav class='sidebar'> non trouvé dans index.html")
-    exit(1)
+# Identifiant pour l'insertion
+insertion_marker_start = "<!-- CONTENU PERSONNALISÉ DÉBUT -->"
+	<div id="footer-container"></div>
+	<script>
+		fetch("includes/footer.html")
+			.then(response => response.text())
+			.then(data => {
+			document.getElementById("footer-container").innerHTML = data;
+			})
+			.catch(error => console.error("Erreur lors du chargement du pied de page :", error));
+	</script>
+	
+insertion_marker_end = "<!-- CONTENU PERSONNALISÉ FIN -->"
 
-links = nav.find_all('a')
-files_to_update = [link.get('href') for link in links if link.get('href')]
+# Lire la référence (premier fichier trouvé avec le bloc entre </main> et </body>)
+reference_content = None
 
-# 2. Parcourir chaque page listée dans la <nav>
-for filename in files_to_update:
-    file_path = os.path.join(root_dir, filename)
-    if not os.path.isfile(file_path):
-        print(f"⚠️ Fichier {filename} introuvable.")
-        continue
+# Lister les fichiers HTML à la racine
+html_files = [f for f in os.listdir('.') if f.endswith('.html') and os.path.isfile(f)]
 
-    with open(file_path, 'r', encoding='utf-8') as f:
-        file_html = f.read()
+# Trouver un contenu de référence à insérer
+for file in html_files:
+    with open(file, 'r', encoding='utf-8') as f:
+        content = f.read()
+        match = re.search(r'</main>(.*?)</body>', content, re.DOTALL | re.IGNORECASE)
+        if match:
+            reference_content = match.group(1).strip()
+            break
 
-    soup = BeautifulSoup(file_html, 'html.parser')
-    main_tag = soup.find('main')
-    body_tag = soup.find('body')
+if reference_content is None:
+    print("Aucun contenu trouvé entre </main> et </body>.")
+else:
+    # Ajout des balises de repère pour insertion manuelle plus tard
+    custom_block = f"\n    {insertion_marker_start}\n    {reference_content}\n    {insertion_marker_end}\n"
 
-    if not main_tag or not body_tag:
-        print(f"⚠️
+    for file in html_files:
+        with open(file, 'r', encoding='utf-8') as f:
+            content = f.read()
+
+        # Vérifier s'il contient déjà un bloc personnalisé
+        if insertion_marker_start in content:
+            print(f"{file} contient déjà un bloc personnalisé. Ignoré.")
+            continue
+
+        # Insérer juste avant </body>
+        new_content = re.sub(r'(</body>)', custom_block + r'\n\1', content, flags=re.IGNORECASE)
+
+        with open(file, 'w', encoding='utf-8') as f:
+            f.write(new_content)
+            print(f"{file} mis à jour avec le contenu personnalisé.")
