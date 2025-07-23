@@ -354,7 +354,6 @@ footer {
 }
 .carousel-track {
   display: flex;
-  gap: 20px;
   align-items: center;
   animation: scroll-horizontal 300s linear infinite;
   width: max-content;
@@ -378,7 +377,7 @@ footer {
 .carousel-wrapper {
   max-width: 1000px;
   width: 90%;
-  margin: 20px auto;
+  margin:  auto;
   padding: 20px;
   border-radius: 10px;
 }
