@@ -154,6 +154,7 @@ footer {
     max-width: 100vw;
     box-sizing: border-box;
     overflow-x: auto;
+	
 }
 
 .dropdown-content a {
@@ -161,13 +162,19 @@ footer {
     white-space: normal;
     word-wrap: break-word;
     max-width: 100%;
-    padding: 15px 10px;
+	
+    padding: 0px 5px;/* haut/bas = 0, gauche/droite = 40px */
     line-height: 1.3; /* ✅ plus confortable en lecture */
     color: white;
     text-decoration: none;
     font-size: 16px;
-    text-align: left;
+    text-align: left;    
+	/* ✅ Supprimer toute hauteur fixe ou min-height */
+    height: auto;                /* Assure que la hauteur suit le contenu */
+    min-height: unset;
+    vertical-align: top; /* Alignement vertical si utilisé dans un contexte inline */
     /* ✅ on retire justify-content, align-items et min-height */
+	
 }
 .dropdown-content a:last-child {
   border-bottom: none;
@@ -194,7 +201,7 @@ footer {
         }
 		#accueil {
 			padding: 20 40px; /* haut/bas = 0, gauche/droite = 40px */
-		}
+}
 .gallery {
   display: flex;
   justify-content: space-evenly;
@@ -222,19 +229,20 @@ footer {
 }
 .gallery .item img:hover {
     transform: scale(1.1); /* Agrandit légèrement l'image au survol */
-}	
-		.gallery-Figurines{
+}
+	
+.gallery-Figurines{
 			display: flex; /*positionne les items en ligne*/
 			justify-content: space-evenly; /*espace égale entre les items*/
 			flex-wrap: wrap; /*permet de passer à la ligne suivante au besoin*/
 			gap: 20px; /*espace entre item*/
 			margin: 20px;	
-		}
+}
 .gallery-Figurines .item {
     text-align: center;
     width: 30%;
     background: rgba(255, 255, 255, 0.7);
-    padding: 10px;
+    padding: 10px 10px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden; /* ✅ Empêche l’image de déborder */
@@ -266,6 +274,7 @@ footer {
     transform: scale(1.05); /* Agrandit légèrement l'image au survol */
 }
 
+
 .gallery-details {
     display: flex; /* Positionne les images en ligne */
     justify-content: space-evenly; /* Espaces égaux entre les images */
@@ -285,6 +294,7 @@ footer {
 .gallery-details img:hover {
     transform: scale(1.05); /* Agrandit légèrement l'image au survol */
 }
+
 		
 .gallery-description {
     text-align: center; /* Centre le texte horizontalement */
@@ -311,6 +321,7 @@ footer {
 .gallery-description .gallery-details {
     margin-top: 20px; /* Ajoute de l'espace au-dessus de la galerie */
 }
+
 
 #partenaires .logos {
     display: flex;
@@ -710,6 +721,15 @@ footer {
     border-radius: 10px;
     overflow-x: hidden;
   }
+ .gallery-Figurines .item h3 {
+    font-size: 10pxrem;
+    margin: 10px 5px;
+}
+
+.gallery-Figurines .item p {
+    font-size: 10px;
+    color: #444;
+}
 
   footer {
     width: 100%;
