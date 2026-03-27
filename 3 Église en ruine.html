@@ -1,0 +1,139 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Église en ruine</title>
+  <link rel="stylesheet" href="css/style.css"> <!-- Lien vers le CSS global -->
+
+<script>
+  function adjustHeaderHeight() {
+    const header = document.querySelector("header");
+    if (header) {
+      header.style.height = window.innerHeight + "px";
+    }
+  }
+
+  window.addEventListener("load", adjustHeaderHeight);
+  window.addEventListener("resize", adjustHeaderHeight);
+</script>
+	<script>
+  document.querySelectorAll('.sidebar a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+</script>
+
+</head>
+<body>
+  <header></header>
+  
+  <nav class="sidebar">
+    <a href="index.html">Accueil</a>
+
+    <div class="dropdown">
+      <a href="#figurines">Figurines</a>
+      <div class="dropdown-content">
+        <a href="0 Les anciens sauriens (Cuetzpal).html">Les anciens sauriens (Cuetzpal)</a>
+        <a href="0 Elfes Mori.html">Elfes Mori</a>
+        <a href="0 Royaume de Mercia.html">Royaume de Mercia</a>
+        <a href="0 Les nains de Niavellir.html">Les nains de Niavellir</a>
+        <a href="1 Nains Infernaux (Magmhorin).html">Nains Infernaux (Magmhorin)</a>
+        <a href="1 Elfes de la Nuit.html">Elfes de la nuit</a>
+        <a href="1 Dynasties immortelles.html">Dynasties immortelles</a>
+        <a href="1 Morts-vivants de l'île brumeuse.html">Morts-vivants de l'île brumeuse</a>
+        <a href="1 Guerriers des Dieux Sombres.html">Guerriers des Dieux Sombres</a>
+        <a href="1 Mongobbo Alliés.html">Mongobbo Alliés</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="#decors">Décors</a>
+      <div class="dropdown-content">
+        <a href="3 Les anciens sauriens (Cuetzpal).html">Les anciens sauriens (Cuetzpal)</a>
+        <a href="3 Nains Infernaux (Magmhorin).html">Nains Infernaux (Magmhorin)</a>
+        <a href="3 Ruines de la ville.html">Ruines de la ville</a>
+        <a href="3 Ville en ruine.html">Ville en ruine</a>
+        <a href="3 Église en ruine.html">Église en ruine</a>
+        <a href="3 Village des pêcheurs.html">Village des pêcheurs</a>
+        <a href="3 Forteresse.html">Forteresse</a>
+        <a href="3 Colonie Naine.html">Colonie Naine</a>
+        <a href="3 La Cité des Intrigues.html">La Cité des Intrigues</a>
+        <a href="3 Camp d'orques.html">Camp d'orques</a>
+        <a href="3 Forêt Magique.html">Forêt Magique</a>
+        <a href="3 Scéniques.html">Scéniques</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="#accessoires">Accessoires</a>
+      <div class="dropdown-content">
+        <a href="4 Socle rond.html">Socles rond</a>
+        <a href="4 Socle carré.html">Socles carré</a>
+        <a href="4 Plateau de mouvement rond.html">Plateau de mouvement Rond</a>
+        <a href="4 Plateau de mouvement carré.html">Plateau de mouvement Carré</a>
+        <a href="4 Marqueurs.html">Marqueurs</a>
+        <a href="4 Accessoires.html">Accessoires</a>
+        <a href="4 Rangement.html">Rangements</a>
+      </div>
+    </div>
+
+    <a href="5 Galerie.html">Galerie</a>
+    <a href="6 Contact.html">Contact</a>
+  </nav>
+  
+  <main>
+    <section id="figurines-cuetzpal" class="gallery-Figurines">
+	
+  <div class="item">
+  <a href="3 Église en ruine/Cementery Ruins.html" target="_blank"><img src="3 Église en ruine/Cementery Ruins 1.jpg" alt="Cementery Ruins"></a>
+  <h3>Cementery Ruins</h3>
+  <p><strong>Prix : 29,00 €</strong></p>
+</div>
+<div class="item">
+  <a href="3 Église en ruine/Ruined Church.html" target="_blank"><img src="3 Église en ruine/Ruined Church 1.jpg" alt="Ruined Church"></a>
+  <h3>Ruined Church</h3>
+  <p><strong>Prix : 80,00 €</strong></p>
+</div>
+<div class="item">
+  <a href="3 Église en ruine/Church Corner.html" target="_blank"><img src="3 Église en ruine/Church Corner 1.jpg" alt="Church Corner"></a>
+  <h3>Church Corner</h3>
+  <p><strong>Prix : 9,00 €</strong></p>
+</div>
+<div class="item">
+  <a href="3 Église en ruine/Ruined Tower.html" target="_blank"><img src="3 Église en ruine/Ruined Tower 1.jpg" alt="Ruined Tower"></a>
+  <h3>Ruined Tower</h3>
+  <p><strong>Prix : 20,00 €</strong></p>
+</div>
+<div class="item">
+  <a href="3 Église en ruine/Ruined Walls.html" target="_blank"><img src="3 Église en ruine/Ruined Walls 1.jpg" alt="Ruined Walls"></a>
+  <h3>Ruined Walls</h3>
+  <p><strong>Prix : 27,00 €</strong></p>
+</div>
+
+  
+</section>
+  </main>
+
+<div id="footer-container"></div>
+<script>
+  fetch("includes/footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-container").innerHTML = data;
+    })
+    .catch(error => console.error("Erreur lors du chargement du pied de page :", error));
+</script>
+
+</body>
+</html>

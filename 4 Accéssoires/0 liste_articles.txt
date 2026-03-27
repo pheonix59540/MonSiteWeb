@@ -1,0 +1,100 @@
+<div class="item">
+  <a href="4 Accéssoires/Réglette 3 pouces en MDF.html" target="_blank"><img src="4 Accéssoires/Réglette 3 pouces en MDF 1.jpg" alt="Réglette 3 pouces en MDF"></a>
+  <h3>Réglette 3 pouces en MDF</h3>
+  <p><strong>Prix : 0,40 €</strong></p>
+</div>
+<div class="item">
+  <a href="4 Accéssoires/Réglette 3 pouces en MDF Magnétique.html" target="_blank"><img src="4 Accéssoires/Réglette 3 pouces en MDF Magnétique 1.jpg" alt="Réglette 3 pouces en MDF Magnétique"></a>
+  <h3>Réglette 3 pouces en MDF Magnétique</h3>
+  <p><strong>Prix : 1,05 €</strong></p>
+</div>
+<div class="item">
+  <a href="4 Accéssoires/Réglette 3 pouces en PMMA.html" target="_blank"><img src="4 Accéssoires/Réglette 3 pouces en PMMA 1.jpg" alt="Réglette 3 pouces en PMMA"></a>
+  <h3>Réglette 3 pouces en PMMA</h3>
+  <p><strong>Prix : 1,63 €</strong></p>
+</div>
+<div class="item">
+  <a href="4 Accéssoires/Réglette 6 pouces en MDF.html" target="_blank"><img src="4 Accéssoires/Réglette 6 pouces en MDF 1.jpg" alt="Réglette 6 pouces en MDF"></a>
+  <h3>Réglette 6 pouces en MDF</h3>
+  <p><strong>Prix : 0,80 €</strong></p>
+</div>
+<div class="item">
+  <a href="4 Accéssoires/Réglette 6 pouces en MDF Magnétique.html" target="_blank"><img src="4 Accéssoires/Réglette 6 pouces en MDF Magnétique 1.jpg" alt="Réglette 6 pouces en MDF Magnétique"></a>
+  <h3>Réglette 6 pouces en MDF Magnétique</h3>
+  <p><strong>Prix : 2,10 €</strong></p>
+</div>
+<div class="item">
+  <a href="4 Accéssoires/Réglette 6 pouces en PMMA.html" target="_blank"><img src="4 Accéssoires/Réglette 6 pouces en PMMA 1.jpg" alt="Réglette 6 pouces en PMMA"></a>
+  <h3>Réglette 6 pouces en PMMA</h3>
+  <p><strong>Prix : 2,37 €</strong></p>
+</div>
+<div class="item">
+  <a href="4 Accéssoires/Réglette 9 pouces en MDF.html" target="_blank"><img src="4 Accéssoires/Réglette 9 pouces en MDF 1.jpg" alt="Réglette 9 pouces en MDF"></a>
+  <h3>Réglette 9 pouces en MDF</h3>
+  <p><strong>Prix : 1,20 €</strong></p>
+</div>
+<div class="item">
+  <a href="4 Accéssoires/Réglette 9 pouces en MDF Magnétique.html" target="_blank"><img src="4 Accéssoires/Réglette 9 pouces en MDF Magnétique 1.jpg" alt="Réglette 9 pouces en MDF Magnétique"></a>
+  <h3>Réglette 9 pouces en MDF Magnétique</h3>
+  <p><strong>Prix : 3,15 €</strong></p>
+</div>
+<div class="item">
+  <a href="4 Accéssoires/Réglette 9 pouces en PMMA.html" target="_blank"><img src="4 Accéssoires/Réglette 9 pouces en PMMA 1.jpg" alt="Réglette 9 pouces en PMMA"></a>
+  <h3>Réglette 9 pouces en PMMA</h3>
+  <p><strong>Prix : 3,10 €</strong></p>
+</div>
+<div class="item">
+  <a href="4 Accéssoires/Réglette 12 pouces en MDF.html" target="_blank"><img src="4 Accéssoires/Réglette 12 pouces en MDF 1.jpg" alt="Réglette 12 pouces en MDF"></a>
+  <h3>Réglette 12 pouces en MDF</h3>
+  <p><strong>Prix : 2,00 €</strong></p>
+</div>
+<div class="item">
+  <a href="4 Accéssoires/Réglette 12 pouces en MDF Magnétique.html" target="_blank"><img src="4 Accéssoires/Réglette 12 pouces en MDF Magnétique 1.jpg" alt="Réglette 12 pouces en MDF Magnétique"></a>
+  <h3>Réglette 12 pouces en MDF Magnétique</h3>
+  <p><strong>Prix : 5,25 €</strong></p>
+</div>
+<div class="item">
+  <a href="4 Accéssoires/Dice Arena.html" target="_blank"><img src="4 Accéssoires/Dice Arena 1.jpg" alt="Dice Arena"></a>
+  <h3>Dice Arena</h3>
+  <p><strong>Prix : 32,00 €</strong></p>
+</div>
+<div class="item">
+  <a href="4 Accéssoires/Dice Arena Human.html" target="_blank"><img src="4 Accéssoires/Dice Arena Human 1.jpg" alt="Dice Arena Human"></a>
+  <h3>Dice Arena Human</h3>
+  <p><strong>Prix : 28,00 €</strong></p>
+</div>
+<div class="item">
+  <a href="4 Accéssoires/Dice Arena Orc.html" target="_blank"><img src="4 Accéssoires/Dice Arena Orc 1.jpg" alt="Dice Arena Orc"></a>
+  <h3>Dice Arena Orc</h3>
+  <p><strong>Prix : 28,00 €</strong></p>
+</div>
+<div class="item">
+  <a href="4 Accéssoires/Mini Dice Tower Human.html" target="_blank"><img src="4 Accéssoires/Mini Dice Tower Human 1.jpg" alt="Mini Dice Tower Human"></a>
+  <h3>Mini Dice Tower Human</h3>
+  <p><strong>Prix : 10,00 €</strong></p>
+</div>
+<div class="item">
+  <a href="4 Accéssoires/Mini Dice Tower Orc.html" target="_blank"><img src="4 Accéssoires/Mini Dice Tower Orc1.jpg" alt="Mini Dice Tower Orc"></a>
+  <h3>Mini Dice Tower Orc</h3>
+  <p><strong>Prix : 11,00 €</strong></p>
+</div>
+<div class="item">
+  <a href="4 Accéssoires/Chests D20.html" target="_blank"><img src="4 Accéssoires/Chests D20 1.jpg" alt="Chests D20"></a>
+  <h3>Chests D20</h3>
+  <p><strong>Prix : 22,00 €</strong></p>
+</div>
+<div class="item">
+  <a href="4 Accéssoires/Chests Normal.html" target="_blank"><img src="4 Accéssoires/Chests Normal 1.jpg" alt="Chests Normal"></a>
+  <h3>Chests Normal</h3>
+  <p><strong>Prix : 20,00 €</strong></p>
+</div>
+<div class="item">
+  <a href="4 Accéssoires/Chests Dungeon.html" target="_blank"><img src="4 Accéssoires/Chests Dungeon 1.jpg" alt="Chests Dungeon"></a>
+  <h3>Chests Dungeon</h3>
+  <p><strong>Prix : 22,00 €</strong></p>
+</div>
+<div class="item">
+  <a href="4 Accéssoires/Chests Legendary.html" target="_blank"><img src="4 Accéssoires/Chests Legendary 1.jpg" alt="Chests Legendary"></a>
+  <h3>Chests Legendary</h3>
+  <p><strong>Prix : 30,00 €</strong></p>
+</div>

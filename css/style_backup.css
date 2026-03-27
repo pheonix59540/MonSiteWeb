@@ -1,0 +1,721 @@
+@font-face {
+  font-family: 'Cinzel-Regular';
+  src: url('../images/Cinzel-Regular.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cinzel-Bold';
+  src: url('../images/Cinzel-Bold.otf') format('truetype');
+}
+
+/* 🔧 Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🌍 Page entière */
+html {
+  width: 100%;
+  max-width: 1920px;
+}
+
+body {
+  width: 100%;
+  max-width: 1920px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Cinzel-Regular', sans-serif;
+  background-image: url('../images/01 Back.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* ============================================================
+   🧢 HEADER — FIX : ratio d'aspect basé sur l'image réelle
+   Le JS adjustHeaderHeight() est supprimé, on utilise
+   padding-top en % pour conserver les proportions de l'image.
+   Remplace "56.25%" par le vrai ratio de ton image :
+     ex. image 1920×600 → 600/1920 × 100 = 31.25%
+     ex. image 1920×400 → 400/1920 × 100 = 20.83%
+   ============================================================ */
+header {
+  width: 100%;
+  /* 🔧 FIX : utilise padding-top pour forcer la hauteur selon le ratio de l'image */
+  padding-top: 31.25%; /* ← ADAPTE CE CHIFFRE au vrai ratio de ton image header */
+  position: relative;
+  background-image: url('../images/0 Header.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* ============================================================
+   📌 SIDEBAR — inchangée sauf suppression du doublon
+   ============================================================ */
+.sidebar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: rgba(30, 30, 30, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  z-index: 100; /* 🔧 FIX : z-index plus élevé pour passer au-dessus du contenu */
+  flex-wrap: wrap;
+  font-family: 'Cinzel-Bold', sans-serif;
+  background-image: url('../images/sidebar.png');
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: center center;
+}
+
+/* Conteneur de liens */
+.sidebar nav {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Liens individuels */
+.sidebar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 0 30px;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+  font-family: inherit;
+}
+
+/* Effet au survol */
+.sidebar a:hover {
+  transform: scale(1.1);
+  color: #ccc;
+}
+
+/* ============================================================
+   🔽 DROPDOWN — FIX principal : menu stable
+   Problème 1 : gap invisible entre le bouton et le dropdown
+                → résolu avec ::after pseudo-élément "pont"
+   Problème 2 : transition trop longue coupe le hover
+                → réduit à 0.2s
+   Problème 3 : dernier item coupé
+                → border-bottom ajouté au conteneur
+   ============================================================ */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+/* 🔧 FIX : pont invisible qui "comble" le gap entre bouton et menu */
+.dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 10px; /* même valeur que top: calc(100% + 5px) + marge */
+  background: transparent;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  background-color: #303030;
+  min-width: 180px; /* 🔧 légèrement plus large pour les longs noms */
+  z-index: 200;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+  /* 🔧 FIX : transition réduite pour éviter la disparition prématurée */
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease; /* était 0.5s, trop long */
+  pointer-events: none;
+  visibility: hidden;
+
+  display: flex;
+  flex-direction: column;
+  max-width: 280px;
+  box-sizing: border-box;
+
+  /* 🔧 FIX dernier item : border sur le conteneur lui-même */
+  border: 1px solid #0ABAB5;
+  border-radius: 0 0 4px 4px;
+}
+
+.dropdown-content a {
+  display: block;
+  white-space: normal;
+  word-wrap: break-word;
+  max-width: 100%;
+  border-top: 1px solid #0ABAB5;
+  background: linear-gradient(to right, transparent, #008080, transparent);
+  padding: 8px 10px; /* 🔧 un peu plus de padding pour faciliter le clic */
+  line-height: 1.3;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  text-align: left;
+  height: auto;
+  min-height: unset;
+  transition: background 0.15s ease;
+}
+
+.dropdown-content a:first-child {
+  border-top: none; /* le bord vient du conteneur */
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-content a:hover {
+  background: linear-gradient(to right, transparent, #00a89e, transparent);
+  color: #fff;
+}
+
+/* 🔧 FIX : on active sur hover du .dropdown entier (pas seulement du bouton)
+   Cela couvre le gap entre le bouton et le menu */
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  visibility: visible;
+}
+
+/* ============================================================
+   🧱 Contenu centré
+   ============================================================ */
+main, .page-wrapper {
+  width: 100%;
+  max-width: 1920px;
+  flex-grow: 1;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  overflow-x: hidden;
+}
+
+/* 🦶 Pied de page */
+footer {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  background-image: url('../images/sidebar.png');
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: center center;
+  font-size: 14px;
+}
+
+/* ============================================================
+   Sections
+   ============================================================ */
+.section {
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 18px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1920px;
+  width: 80%;
+  overflow: hidden;
+}
+
+#accueil {
+  padding: 20px 40px;
+}
+
+/* ============================================================
+   Galeries
+   ============================================================ */
+.gallery {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px;
+}
+
+.gallery .item {
+  text-align: center;
+  width: 30%;
+  padding: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery .item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+.gallery .item img:hover {
+  transform: scale(1.1);
+}
+
+.gallery-Figurines {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px;
+}
+
+.gallery-Figurines .item {
+  text-align: center;
+  width: 30%;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery-Figurines .item img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: transform 0.2s ease;
+}
+
+.gallery-Figurines .item h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.gallery-Figurines .item p {
+  font-size: 1rem;
+  color: #444;
+}
+
+.gallery-Figurines img:hover {
+  transform: scale(1.05);
+}
+
+.gallery-details {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.gallery-details img {
+  width: 40%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.gallery-details img:hover {
+  transform: scale(1.05);
+}
+
+.gallery-description {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-description h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.gallery-description p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+/* ============================================================
+   Partenaires
+   ============================================================ */
+#partenaires .logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+#partenaires img {
+  max-height: 250px;
+  max-width: 400px;
+  height: auto;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+/* ============================================================
+   Carrousel
+   ============================================================ */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  height: 300px;
+  margin: 0 auto;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.carousel-track {
+  display: flex;
+  align-items: center;
+  animation: scroll-horizontal 300s linear infinite;
+  width: max-content;
+}
+
+.carousel-track img {
+  height: 300px;
+  width: auto;
+  flex-shrink: 0;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.carousel-track img:hover {
+  transform: scale(1.3);
+}
+
+@keyframes scroll-horizontal {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.carousel-wrapper {
+  max-width: 1000px;
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* ============================================================
+   Pages produit
+   ============================================================ */
+.product-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.product-header h1 {
+  font-size: 2.8em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.gallery-article {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.price-article {
+  font-size: 2.5em;
+  color: #FFFFFF;
+  font-weight: bold;
+  background-color: #2F4F4F;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.descriptionSection {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #2F4F4F;
+  color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.compatibilitySection {
+  background-color: #191970;
+  color: #FFFFFF;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 8px;
+  border-left: 5px solid #4B0082;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.compatibilitySection h3 {
+  color: #FFFFFF;
+  margin-bottom: 15px;
+}
+
+.contact-cta {
+  background-color: #dff0d8;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.1em;
+  color: #3c763d;
+  border: 1px solid #d6e9c6;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.contact-cta a {
+  color: #3c763d;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact-cta a:hover {
+  text-decoration: underline;
+}
+
+.legal-notes {
+  font-size: 0.9em;
+  color: #777;
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+/* ============================================================
+   Footer site
+   ============================================================ */
+.site-footer {
+  background-color: #000;
+  color: #aaa;
+  font-size: 0.75rem;
+  padding: 30px 20px;
+  margin-top: 40px;
+}
+
+.site-footer a {
+  color: #ccc;
+  text-decoration: underline;
+}
+
+.site-footer a:hover {
+  color: #fff;
+}
+
+.site-footer .footer-content {
+  max-width: 1000px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+.site-footer h4,
+.site-footer h5 {
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-col a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================
+   📱 RESPONSIVE — Tablette paysage/portrait 1025–1440px
+   ============================================================ */
+@media screen and (min-width: 1025px) and (max-width: 1440px) and (orientation: portrait) {
+  body {
+    max-width: 1440px;
+    background-image: url('../images/01 Back1440.jpg');
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+
+  header {
+    background-image: url('../images/0 HeaderPortrait1440.png');
+    padding-top: 31.25%; /* 🔧 adapte au ratio de ton image Portrait 1440 */
+    max-width: 1440px;
+  }
+
+  .sidebar a {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .section {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  main, .page-wrapper {
+    padding: 16px;
+  }
+
+  footer {
+    padding: 8px;
+    font-size: 10px;
+  }
+}
+
+/* ============================================================
+   📱 RESPONSIVE — Tablette portrait 481–1024px
+   ============================================================ */
+@media screen and (min-width: 481px) and (max-width: 1024px) and (orientation: portrait) {
+  body {
+    max-width: 1024px;
+    background-image: url('../images/01 Back1024.jpg');
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+
+  header {
+    background-image: url('../images/0 HeaderPortrait1024.png');
+    padding-top: 31.25%; /* 🔧 adapte au ratio de ton image Portrait 1024 */
+  }
+
+  .sidebar {
+    font-size: 16px;
+  }
+
+  .sidebar a {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  /* 🔧 Sur tablette, le dropdown s'ouvre à gauche si pas assez de place */
+  .dropdown:last-of-type .dropdown-content {
+    left: auto;
+    right: 0;
+  }
+
+  .section {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  main, .page-wrapper {
+    padding: 16px;
+  }
+
+  footer {
+    padding: 8px;
+    font-size: 12px;
+  }
+}
+
+/* ============================================================
+   📱 RESPONSIVE — Mobile portrait ≤ 480px
+   ============================================================ */
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  body {
+    max-width: 480px;
+    background-image: url('../images/01 Back480.jpeg');
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+
+  header {
+    background-image: url('../images/0 HeaderPortrait480.png');
+    padding-top: 50%; /* 🔧 ratio plus carré sur mobile */
+    max-width: 480px;
+  }
+
+  .sidebar a {
+    font-size: 14px;
+    padding: 0 8px;
+  }
+
+  .dropdown-content a {
+    font-size: 12px;
+  }
+
+  .section {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  main, .page-wrapper {
+    padding: 16px;
+  }
+
+  .gallery .item {
+    width: 45%;
+    padding: 5px;
+  }
+
+  .gallery-Figurines {
+    margin: 5px;
+  }
+
+  .gallery-Figurines .item {
+    width: 45%;
+  }
+
+  .gallery-Figurines .item h3 {
+    font-weight: bold;
+    font-size: 10px;
+    margin: 10px 5px;
+  }
+
+  .gallery-Figurines .item p {
+    font-size: 10px;
+  }
+
+  footer {
+    padding: 8px;
+    font-size: 8px;
+  }
+}

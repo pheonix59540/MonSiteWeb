@@ -9,7 +9,7 @@
 }
 
 /* 🔧 Reset */
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -25,7 +25,7 @@ body {
   width: 100%;
   max-width: 1920px;
   display: flex;
-  flex-direction: column; /* empile header / sidebar / main / footer */
+  flex-direction: column;
   font-family: 'Cinzel-Regular', sans-serif;
   background-image: url('../images/01 Back.jpeg');
   background-size: cover;
@@ -34,19 +34,28 @@ body {
   background-repeat: no-repeat;
 }
 
-/* 🧢 Header (plein écran) */
+/* ============================================================
+   🧢 HEADER
+   Image 1920×1080 → ratio 1080/1920 × 100 = 56.25%
+   padding-top en % force la hauteur proportionnellement
+   à la largeur réelle de l'écran → image toujours complète.
+   La sidebar étant dans le flux normal (sticky top:0),
+   elle apparaît naturellement SOUS le header.
+   ============================================================ */
 header {
   width: 100%;
+  padding-top: 56.25%; /* 1080 ÷ 1920 × 100 — image 16:9 complète */
+  position: relative;
   background-image: url('../images/0 Header.png');
-  background-size: cover;
+  background-size: 100% 100%; /* étire exactement sur toute la zone */
   background-position: center top;
   background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
 }
 
-/* 📌 Barre de navigation */
+/* ============================================================
+   📌 SIDEBAR — inchangée sauf suppression du doublon
+   ============================================================ */
 .sidebar {
   position: sticky;
   top: 0;
@@ -56,56 +65,22 @@ header {
   justify-content: center;
   align-items: center;
   padding: 10px 0;
-  z-index: 10;
+  z-index: 100; /* 🔧 FIX : z-index plus élevé pour passer au-dessus du contenu */
   flex-wrap: wrap;
   font-family: 'Cinzel-Bold', sans-serif;
-  background-image: url('../images/sidebar.png'); /* ou .png selon ton fichier */
-  background-repeat: repeat;          /* la texture se répète si elle est petite */
-  background-size: auto;              /* ou try 'cover' / 'contain' selon le rendu souhaité */
-  background-position: center center; /* optionnel : centre la texture */
-}
-
-/* 🧱 Contenu centré avec limites */
-main, .page-wrapper {
-  width: 100%;
-  max-width: 1920px;
-  flex-grow: 1; /* prend l’espace restant pour pousser le footer vers le bas */
-  margin: 0 auto; /* Centre l’ensemble du contenu */
-  padding: 20px;
-  border-radius: 10px;
-  overflow-x: hidden; /* évite les scrolls parasites */
-}
-
-/* 🦶 Pied de page */
-footer {
-	width: 100%;
-  padding: 20px;
-  text-align: center;
-  background-image: url('../images/sidebar.png'); /* ou .png selon ton fichier */
-  background-repeat: repeat;          /* la texture se répète si elle est petite */
-  background-size: auto;              /* ou try 'cover' / 'contain' selon le rendu souhaité */
-  background-position: center center; /* optionnel : centre la texture */
-  font-size: 14px; /* 👉 taille du texte */
-}
-	
-        .sidebar {
-  position: sticky;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 0;
-  z-index: 10;
-  flex-wrap: wrap;
-  font-family: 'Cinzel-Bold', sans-serif; /* 👉 applique ta police */
+  background-image: url('../images/sidebar.png');
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: center center;
 }
 
 /* Conteneur de liens */
 .sidebar nav {
   display: flex;
-  justify-content: space-evenly; /* répartit l’espace uniformément entre TOUS les éléments */
-  width: 100%; /* important pour que le "space-evenly" prenne effet */
+  justify-content: space-evenly;
+  width: 100%;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 /* Liens individuels */
@@ -114,12 +89,12 @@ footer {
   align-items: center;
   justify-content: center;
   height: 50px;
-  padding: 0 30px; /* 👉 espace intérieur gauche/droite */
+  padding: 0 30px;
   color: white;
   text-decoration: none;
-  font-size: 20px; /* 👉 taille du texte */
+  font-size: 20px;
   transition: transform 0.3s ease;
-  font-family: inherit; /* 👉 hérite de .sidebar */
+  font-family: inherit;
 }
 
 /* Effet au survol */
@@ -128,81 +103,144 @@ footer {
   color: #ccc;
 }
 
-    .dropdown {
-    position: relative;
-    display: inline-block;
-    margin: 0 10px; /* ajoute un petit espacement horizontal entre les menus */
+/* ============================================================
+   🔽 DROPDOWN — FIX principal : menu stable
+   Problème 1 : gap invisible entre le bouton et le dropdown
+                → résolu avec ::after pseudo-élément "pont"
+   Problème 2 : transition trop longue coupe le hover
+                → réduit à 0.2s
+   Problème 3 : dernier item coupé
+                → border-bottom ajouté au conteneur
+   ============================================================ */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+/* 🔧 FIX : pont invisible qui "comble" le gap entre bouton et menu */
+.dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 10px; /* même valeur que top: calc(100% + 5px) + marge */
+  background: transparent;
 }
 
 .dropdown-content {
-    position: absolute;
-    top: calc(100% + 5px);
-    background-color: #303030;
-    min-width: 140px;
-    z-index: 1;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.5s ease, transform 0.3s ease;
-    pointer-events: none;
-    visibility: hidden;
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  background-color: #303030;
+  min-width: 180px; /* 🔧 légèrement plus large pour les longs noms */
+  z-index: 200;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 
-    /* ✅ Espacement vertical adaptatif */
-    display: flex;
-    flex-direction: column;
-    max-width: 100vw;
-    box-sizing: border-box;
-    overflow-x: auto;
-	
+  /* 🔧 FIX : transition réduite pour éviter la disparition prématurée */
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease; /* était 0.5s, trop long */
+  pointer-events: none;
+  visibility: hidden;
+
+  display: flex;
+  flex-direction: column;
+  max-width: 280px;
+  box-sizing: border-box;
+
+  /* 🔧 FIX dernier item : border sur le conteneur lui-même */
+  border: 1px solid #0ABAB5;
+  border-radius: 0 0 4px 4px;
 }
 
 .dropdown-content a {
-    display: block; /* ✅ remplace flex */
-    white-space: normal;
-    word-wrap: break-word;
-    max-width: 100%;
-	border-top: 1px solid #0ABAB5; /* ligne  */
-	background: linear-gradient(to right, transparent, #008080, transparent);
-	
-    padding: 5px 5px;/* haut/bas = 0, gauche/droite = 40px */
-    line-height: 1.3; /* ✅ plus confortable en lecture */
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    text-align: left;    
-	/* ✅ Supprimer toute hauteur fixe ou min-height */
-    height: auto;                /* Assure que la hauteur suit le contenu */
-    min-height: unset;
-    vertical-align: top; /* Alignement vertical si utilisé dans un contexte inline */
-    /* ✅ on retire justify-content, align-items et min-height */
-	
+  display: block;
+  white-space: normal;
+  word-wrap: break-word;
+  max-width: 100%;
+  border-top: 1px solid #0ABAB5;
+  background: linear-gradient(to right, transparent, #008080, transparent);
+  padding: 8px 10px; /* 🔧 un peu plus de padding pour faciliter le clic */
+  line-height: 1.3;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  text-align: left;
+  height: auto;
+  min-height: unset;
+  transition: background 0.15s ease;
 }
+
+.dropdown-content a:first-child {
+  border-top: none; /* le bord vient du conteneur */
+}
+
 .dropdown-content a:last-child {
   border-bottom: none;
 }
 
+.dropdown-content a:hover {
+  background: linear-gradient(to right, transparent, #00a89e, transparent);
+  color: #fff;
+}
 
+/* 🔧 FIX : on active sur hover du .dropdown entier (pas seulement du bouton)
+   Cela couvre le gap entre le bouton et le menu */
 .dropdown:hover .dropdown-content {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-    visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  visibility: visible;
 }
 
-        .section {
-			margin: 40px auto;
-            background: rgba(255, 255, 255, 0.7);
-            padding: 18px;
-            border-radius: 8px;
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Plus de profondeur */
-			max-width: 1920px; /* ou 90%, ou la taille que tu préfères */
-			width: 80%; /* Ajouté pour assurer la centration même en grand écran */
-			overflow: hidden; /* ajoute ça pour éviter tout débordement invisible */
-
-        }
-		#accueil {
-			padding: 20 40px; /* haut/bas = 0, gauche/droite = 40px */
+/* ============================================================
+   🧱 Contenu centré
+   ============================================================ */
+main, .page-wrapper {
+  width: 100%;
+  max-width: 1920px;
+  flex-grow: 1;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  overflow-x: hidden;
 }
+
+/* 🦶 Pied de page */
+footer {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  background-image: url('../images/sidebar.png');
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: center center;
+  font-size: 14px;
+}
+
+/* ============================================================
+   Sections
+   ============================================================ */
+.section {
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 18px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1920px;
+  width: 80%;
+  overflow: hidden;
+}
+
+#accueil {
+  padding: 20px 40px;
+}
+
+/* ============================================================
+   Galeries
+   ============================================================ */
 .gallery {
   display: flex;
   justify-content: space-evenly;
@@ -210,9 +248,10 @@ footer {
   gap: 20px;
   margin: 20px;
 }
+
 .gallery .item {
   text-align: center;
-  width: 30%;           /* trois éléments par ligne */
+  width: 30%;
   padding: 10px;
   border-radius: 8px;
   overflow: hidden;
@@ -226,138 +265,141 @@ footer {
   height: auto;
   display: block;
   border-radius: 6px;
-  transition: transform 0.2s ease; /* Effet de zoom au survol */
+  transition: transform 0.2s ease;
 }
+
 .gallery .item img:hover {
-    transform: scale(1.1); /* Agrandit légèrement l'image au survol */
+  transform: scale(1.1);
 }
-	
-.gallery-Figurines{
-			display: flex; /*positionne les items en ligne*/
-			justify-content: space-evenly; /*espace égale entre les items*/
-			flex-wrap: wrap; /*permet de passer à la ligne suivante au besoin*/
-			gap: 20px; /*espace entre item*/
-			margin: 20px;	
+
+.gallery-Figurines {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px;
 }
+
 .gallery-Figurines .item {
-    text-align: center;
-    width: 30%;
-    background: rgba(255, 255, 255, 0.7);
-    padding: 10px 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* ✅ Empêche l’image de déborder */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  text-align: center;
+  width: 30%;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .gallery-Figurines .item img {
-    max-width: 100%;
-    width: 100%; /* ✅ Assure que l’image suit la largeur du conteneur */
-    height: auto;
-    object-fit: contain; /* ✅ Garde les proportions sans déborder */
-    border-radius: 8px;
-    margin-bottom: 10px;
-    transition: transform 0.2s ease; /* Effet de zoom au survol */
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: transform 0.2s ease;
 }
 
 .gallery-Figurines .item h3 {
-    font-size: 1.2rem;
-    margin: 10px 0;
+  font-size: 1.2rem;
+  margin: 10px 0;
 }
 
 .gallery-Figurines .item p {
-    font-size: 1rem;
-    color: #444;
-}
-.gallery-Figurines img:hover {
-    transform: scale(1.05); /* Agrandit légèrement l'image au survol */
+  font-size: 1rem;
+  color: #444;
 }
 
+.gallery-Figurines img:hover {
+  transform: scale(1.05);
+}
 
 .gallery-details {
-    display: flex; /* Positionne les images en ligne */
-    justify-content: space-evenly; /* Espaces égaux entre les images */
-    flex-wrap: wrap; /* Permet de passer à une nouvelle ligne si nécessaire */
-    gap: 15px; /* Espace entre les images */
-    margin: 20px 0; /* Espacement autour de la galerie */
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
 }
 
 .gallery-details img {
-    width: 40%; /* Chaque image prend 40% de la largeur */
-    height: auto; /* Conserve le ratio de l'image */
-    border-radius: 8px; /* Coins arrondis */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
-    transition: transform 0.2s ease; /* Effet de zoom au survol */
+  width: 40%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
 }
 
 .gallery-details img:hover {
-    transform: scale(1.05); /* Agrandit légèrement l'image au survol */
+  transform: scale(1.05);
 }
 
-		
 .gallery-description {
-    text-align: center; /* Centre le texte horizontalement */
-    margin: 20px auto; /* Ajoute de l'espace autour de la section */
-    max-width: 1200px; /* Limite la largeur pour un rendu plus esthétique */
-	background: rgba(255, 255, 255, 0.7); /* Fond blanc semi-transparent */
-    padding: 20px; /* Ajoute de l'espace intérieur */
-    border-radius: 8px; /* Coins arrondis */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
+  text-align: center;
+  margin: 20px auto;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .gallery-description h1 {
-    font-size: 2rem; /* Ajuste la taille du titre */
-    margin-bottom: 10px; /* Espace sous le titre */
-	color: #222; /* Couleur du titre */
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #222;
 }
 
 .gallery-description p {
-    font-size: 1.1rem; /* Taille du texte */
-	color: #444; /* Couleur du titre */
-    margin-bottom: 15px; /* Espace sous chaque paragraphe */
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 15px;
 }
 
-.gallery-description .gallery-details {
-    margin-top: 20px; /* Ajoute de l'espace au-dessus de la galerie */
-}
-
-
+/* ============================================================
+   Partenaires
+   ============================================================ */
 #partenaires .logos {
-    display: flex;
-    flex-wrap: wrap;    /* Permet de passer à la ligne sur petits écrans */
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
 }
 
 #partenaires img {
-  max-height: 250px;    /* Limite la hauteur */
-  max-width: 400px;   /* Limite réelle de taille */
-  height: auto;         /* Garde le ratio */
+  max-height: 250px;
+  max-width: 400px;
+  height: auto;
   width: 100%;
-  object-fit: contain;  /* Image bien contenue */
-  border-radius: 5px;   /* Optionnel : coins arrondis sur images */
+  object-fit: contain;
+  border-radius: 5px;
 }
 
-
+/* ============================================================
+   Carrousel
+   ============================================================ */
 .carousel-container {
   position: relative;
   overflow: hidden;
   width: 100%;
-  max-width: 1200px; /* largeur de ta section */
+  max-width: 1200px;
   height: 300px;
   margin: 0 auto;
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
+
 .carousel-track {
   display: flex;
   align-items: center;
   animation: scroll-horizontal 300s linear infinite;
   width: max-content;
 }
+
 .carousel-track img {
   height: 300px;
   width: auto;
@@ -374,122 +416,139 @@ footer {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
 .carousel-wrapper {
   max-width: 1000px;
   width: 90%;
-  margin:  auto;
+  margin: auto;
   padding: 20px;
   border-radius: 10px;
 }
 
- /* Styles pour rendre la page plus attrayante (tu peux les intégrer dans style.css) */
-    .product-header {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .product-header h1 {
-      font-size: 2.8em; /* Plus grand pour le titre */
-      color: #333;
-      margin-bottom: 10px;
-    }
-	.gallery-article {
-    text-align: center; /* Centre le texte horizontalement */
-    margin: 20px auto; /* Ajoute de l'espace autour de la section */
-    max-width: 1200px; /* Limite la largeur pour un rendu plus esthétique */
-	background: rgba(255, 255, 255, 0.7); /* Fond blanc semi-transparent */
-    padding: 20px; /* Ajoute de l'espace intérieur */
-    border-radius: 8px; /* Coins arrondis */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
+/* ============================================================
+   Pages produit
+   ============================================================ */
+.product-header {
+  text-align: center;
+  margin-bottom: 30px;
 }
-    .price-article {
-      font-size: 2.5em; /* Grande taille pour le prix */
-      color: #FFFFFF; /* Un joli Vert foncé pour le prix */
-      font-weight: bold;
-      background-color: #2F4F4F; /* Un fond très sombre pour le prix pour le faire ressortir */
-      padding: 10px 20px;
-      border-radius: 8px;
-      display: inline-block;
-      margin-top: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    }
-    .descriptionSection {
-      margin-top: 20px;
-      padding: 20px;
-      background-color: #2F4F4F;
-      color: #FFFFFF; /* Un joli Vert foncé pour le prix */
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    }
-    .compatibilitySection {
-      background-color: #191970; /* Fond légèrement coloré pour la section compatibilité */
-      color: #FFFFFF; /* Un joli Vert foncé pour le prix */
-      padding: 20px;
-      margin-top: 30px;
-      border-radius: 8px;
-      border-left: 5px solid #4B0082; /* Bordure colorée */
-      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    }
-    .compatibilitySection h3 {
-      color: #FFFFFF;
-      margin-bottom: 15px;
-    }
-    .contact-cta {
-      background-color: #dff0d8; /* Vert clair pour le CTA */
-      padding: 20px;
-      margin-top: 30px;
-      border-radius: 8px;
-      text-align: center;
-      font-size: 1.1em;
-      color: #3c763d;
-      border: 1px solid #d6e9c6;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    }
-    .contact-cta a {
-      color: #3c763d;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .contact-cta a:hover {
-      text-decoration: underline;
-    }
-    .legal-notes {
-      font-size: 0.9em;
-      color: #777;
-      margin-top: 20px;
-      text-align: center;
-      padding-top: 10px;
-      border-top: 1px solid #eee;
-    }
-	
-	.site-footer {
-    background-color: #000; /* Noir */
-    color: #aaa; /* Gris clair pour le texte */
-    font-size: 0.75rem; /* Petite taille mais lisible */
-    padding: 30px 20px;
-    margin-top: 40px;
+
+.product-header h1 {
+  font-size: 2.8em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.gallery-article {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.price-article {
+  font-size: 2.5em;
+  color: #FFFFFF;
+  font-weight: bold;
+  background-color: #2F4F4F;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.descriptionSection {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #2F4F4F;
+  color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.compatibilitySection {
+  background-color: #191970;
+  color: #FFFFFF;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 8px;
+  border-left: 5px solid #4B0082;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.compatibilitySection h3 {
+  color: #FFFFFF;
+  margin-bottom: 15px;
+}
+
+.contact-cta {
+  background-color: #dff0d8;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.1em;
+  color: #3c763d;
+  border: 1px solid #d6e9c6;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.contact-cta a {
+  color: #3c763d;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact-cta a:hover {
+  text-decoration: underline;
+}
+
+.legal-notes {
+  font-size: 0.9em;
+  color: #777;
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+/* ============================================================
+   Footer site
+   ============================================================ */
+.site-footer {
+  background-color: #000;
+  color: #aaa;
+  font-size: 0.75rem;
+  padding: 30px 20px;
+  margin-top: 40px;
 }
 
 .site-footer a {
-    color: #ccc;
-    text-decoration: underline;
+  color: #ccc;
+  text-decoration: underline;
 }
 
 .site-footer a:hover {
-    color: #fff;
+  color: #fff;
 }
 
 .site-footer .footer-content {
-    max-width: 1000px;
-    margin: auto;
-    line-height: 1.6;
+  max-width: 1000px;
+  margin: auto;
+  line-height: 1.6;
 }
 
-.site-footer h4, .site-footer h5 {
-    color: #fff;
-    margin-top: 20px;
-    margin-bottom: 10px;
+.site-footer h4,
+.site-footer h5 {
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
-/* Footer en colonne */
+
 .footer-columns {
   display: flex;
   justify-content: space-between;
@@ -513,55 +572,27 @@ footer {
   text-decoration: underline;
 }
 
+/* ============================================================
+   📱 RESPONSIVE — Tablette paysage/portrait 1025–1440px
+   ============================================================ */
 @media screen and (min-width: 1025px) and (max-width: 1440px) and (orientation: portrait) {
-  
   body {
-    width: 100%;
-	max-width: 1440px;
-	background-image: url('../images/01 Back1440.jpg');
+    max-width: 1440px;
+    background-image: url('../images/01 Back1440.jpg');
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Cinzel-Regular', sans-serif;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
     overflow-x: hidden;
   }
 
   header {
     background-image: url('../images/0 HeaderPortrait1440.png');
-    width: 100%;
-	max-width: 1440px;
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .sidebar {
-	position: sticky;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0;
-    z-index: 10;
-    flex-wrap: wrap;
-    font-family: 'Cinzel-Bold', sans-serif;
-  }
-
-  .sidebar nav {
-    display: flex;
-    flex-wrap: wrap;
+    padding-top: 150%; /* 2160 ÷ 1440 × 100 — image portrait 2:3 complète */
+    max-width: 1440px;
+    background-size: 100% 100%;
   }
 
   .sidebar a {
     font-size: 14px;
-    padding: 5 10px;
+    padding: 0 10px;
   }
 
   .section {
@@ -570,70 +601,45 @@ footer {
   }
 
   main, .page-wrapper {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
     padding: 16px;
-    border-radius: 10px;
-    overflow-x: hidden;
   }
 
   footer {
-    width: 100%;
     padding: 8px;
-    font-size: 6px;
+    font-size: 10px;
   }
 }
 
+/* ============================================================
+   📱 RESPONSIVE — Tablette portrait 481–1024px
+   ============================================================ */
 @media screen and (min-width: 481px) and (max-width: 1024px) and (orientation: portrait) {
-  
   body {
-    width: 100%;
-	max-width: 1024px;
-	background-image: url('../images/01 Back1024.jpg');
+    max-width: 1024px;
+    background-image: url('../images/01 Back1024.jpg');
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Cinzel-Regular', sans-serif;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
     overflow-x: hidden;
   }
 
   header {
     background-image: url('../images/0 HeaderPortrait1024.png');
-    width: 100%;
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding-top: 150%; /* 1536 ÷ 1024 × 100 — image portrait 2:3 complète */
+    background-size: 100% 100%;
   }
 
   .sidebar {
-	position: sticky;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0;
-    z-index: 10;
-    flex-wrap: wrap;
-    font-family: 'Cinzel-Bold', sans-serif;
     font-size: 16px;
-  }
-
-  .sidebar nav {
-    display: flex;
-    flex-wrap: wrap;
   }
 
   .sidebar a {
     font-size: 16px;
-    padding: 5 10px;
+    padding: 0 10px;
+  }
+
+  /* 🔧 Sur tablette, le dropdown s'ouvre à gauche si pas assez de place */
+  .dropdown:last-of-type .dropdown-content {
+    left: auto;
+    right: 0;
   }
 
   .section {
@@ -642,111 +648,76 @@ footer {
   }
 
   main, .page-wrapper {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
     padding: 16px;
-    border-radius: 10px;
-    overflow-x: hidden;
   }
 
   footer {
-    width: 100%;
     padding: 8px;
     font-size: 12px;
   }
 }
 
+/* ============================================================
+   📱 RESPONSIVE — Mobile portrait ≤ 480px
+   ============================================================ */
 @media screen and (max-width: 480px) and (orientation: portrait) {
-  
   body {
-    width: 100%;
-	max-width: 480px;
-	background-image: url('../images/01 Back480.jpeg');
+    max-width: 480px;
+    background-image: url('../images/01 Back480.jpeg');
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Cinzel-Regular', sans-serif;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
     overflow-x: hidden;
   }
 
   header {
     background-image: url('../images/0 HeaderPortrait480.png');
-    width: 100%;
-	max-width: 480px;
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .sidebar {
-	position: sticky;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0;
-    z-index: 10;
-    flex-wrap: wrap;
-    font-family: 'Cinzel-Bold', sans-serif;
-  }
-
-  .sidebar nav {
-    display: flex;
-    flex-wrap: wrap;
+    padding-top: 150%; /* 720 ÷ 480 × 100 — image portrait 2:3 complète */
+    max-width: 480px;
+    background-size: 100% 100%;
   }
 
   .sidebar a {
     font-size: 14px;
-    padding: 5 10px;
+    padding: 0 8px;
   }
-.dropdown-content a {
-    font-size: 10px;
-}
+
+  .dropdown-content a {
+    font-size: 12px;
+  }
+
   .section {
     padding: 8px;
     font-size: 12px;
   }
 
-main, .page-wrapper {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
+  main, .page-wrapper {
     padding: 16px;
-    border-radius: 10px;
-    overflow-x: hidden;
-}
-.gallery .item {
-  width: 45%;           /* Deux éléments par ligne */
-  padding: 5px;
-}
-.gallery-Figurines{
-	margin: 5px;	
-}
-.gallery-Figurines .item {
+  }
+
+  .gallery .item {
     width: 45%;
-}
- .gallery-Figurines .item h3 {
-	font-weight: bold;
+    padding: 5px;
+  }
+
+  .gallery-Figurines {
+    margin: 5px;
+  }
+
+  .gallery-Figurines .item {
+    width: 45%;
+  }
+
+  .gallery-Figurines .item h3 {
+    font-weight: bold;
     font-size: 10px;
     margin: 10px 5px;
-}
+  }
 
-.gallery-Figurines .item p {
+  .gallery-Figurines .item p {
     font-size: 10px;
-}
+  }
 
   footer {
-    width: 100%;
     padding: 8px;
-    font-size: 6px;
+    font-size: 8px;
   }
 }
-
