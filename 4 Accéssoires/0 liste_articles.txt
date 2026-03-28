@@ -59,6 +59,11 @@
   <p><strong>Prix : 32,00 €</strong></p>
 </div>
 <div class="item">
+  <a href="4 Accéssoires/Dice Arena Double.html" target="_blank"><img src="4 Accéssoires/Dice Arena Double 1.jpg" alt="Dice Arena Double"></a>
+  <h3>Dice Arena Double</h3>
+  <p><strong>Prix : </strong></p>
+</div>
+<div class="item">
   <a href="4 Accéssoires/Dice Arena Human.html" target="_blank"><img src="4 Accéssoires/Dice Arena Human 1.jpg" alt="Dice Arena Human"></a>
   <h3>Dice Arena Human</h3>
   <p><strong>Prix : 28,00 €</strong></p>
