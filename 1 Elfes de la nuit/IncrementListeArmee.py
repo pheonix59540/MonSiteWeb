@@ -18,7 +18,7 @@ with open("0 export_articles.csv", newline='', encoding='utf-8') as csvfile:
 
             # Génération du bloc HTML
             bloc = f"""<div class="item">
-  <a href="1 Elfes de la nuit/{titre}.html" target="_blank"><img src="1 Elfes de la nuit/{photo1}.jpg" alt="{titre}"></a>
+  <a href="1 Elfes de la Nuit/{titre}.html" target="_blank"><img src="1 Elfes de la Nuit/{photo1}.jpg" alt="{titre}"></a>
   <h3>{titre}</h3>
   <p><strong>Prix : {prix}</strong></p>
 </div>
