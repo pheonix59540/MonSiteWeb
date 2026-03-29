@@ -6,31 +6,100 @@
   <title>contact</title>
   <link rel="stylesheet" href="css/style.css"> <!-- Lien vers le CSS global -->
 
-<script>
-  function adjustHeaderHeight() {
-    const header = document.querySelector("header");
-    if (header) {
-      header.style.height = window.innerHeight + "px";
-    }
+<style>
+  /* =============================================
+     Formulaire de contact
+     ============================================= */
+  .form-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 600px;
+    margin: 30px auto 0 auto;
   }
 
-  window.addEventListener("load", adjustHeaderHeight);
-  window.addEventListener("resize", adjustHeaderHeight);
-</script>
-	<script>
-  document.querySelectorAll('.sidebar a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
-  });
-</script>
+  .form-contact input[type="text"],
+  .form-contact input[type="email"],
+  .form-contact textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #0ABAB5;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.85);
+    font-family: 'Cinzel-Regular', sans-serif;
+    font-size: 15px;
+    color: #222;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+  }
+
+  .form-contact input[type="text"]:focus,
+  .form-contact input[type="email"]:focus,
+  .form-contact textarea:focus {
+    border-color: #008080;
+    box-shadow: 0 0 8px rgba(10, 186, 181, 0.4);
+  }
+
+  .form-contact textarea {
+    resize: vertical;
+    min-height: 140px;
+  }
+
+  .form-contact button[type="submit"] {
+    align-self: center;
+    padding: 12px 40px;
+    background-color: #2F4F4F;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Cinzel-Bold', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+
+  .form-contact button[type="submit"]:hover {
+    background-color: #008080;
+    transform: scale(1.05);
+  }
+
+  /* Titre de la section contact */
+  #contact h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #222;
+    margin-bottom: 10px;
+  }
+
+  #contact p.intro {
+    text-align: center;
+    color: #444;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  /* Notes légales */
+  .legal-notes-contact {
+    max-width: 600px;
+    margin: 30px auto 0 auto;
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.6;
+    border-top: 1px solid #ccc;
+    padding-top: 16px;
+  }
+
+  .legal-notes-contact a {
+    color: #008080;
+    text-decoration: underline;
+  }
+
+  .legal-notes-contact p {
+    margin-bottom: 8px;
+  }
+</style>
 
 </head>
 <body>
@@ -94,24 +163,25 @@
   
      <section id="contact" class="section">
             <h2>Contactez-nous</h2>
-            <form action="https://formsubmit.co/pheonix59540@gmail.com" method="POST">
+            <p class="intro">Une question, une commande spécifique ou une création personnalisée ? Écrivez-nous, nous vous répondrons dans les plus brefs délais !</p>
+            <form class="form-contact" action="https://formsubmit.co/pheonix59540@gmail.com" method="POST">
 				<input type="text" name="nom" placeholder="Votre nom" required>
-				<input type="email" name="email" placeholder="Votre email" required>
-				<textarea name="message" placeholder="Votre message" rows="5" required></textarea>
+				<input type="email" name="email" placeholder="Votre adresse email" required>
+				<textarea name="message" placeholder="Votre message..." rows="5" required></textarea>
 
-				<!-- Optionnel : rediriger après envoi -->
-				<input type="hidden" name="_next" value="https://tonsite.com/merci.html">
+				<!-- Redirection après envoi -->
+				<input type="hidden" name="_next" value="https://pheonix59540.github.io/MonSiteWeb/index.html">
   
-				<!-- Optionnel : éviter les robots -->
+				<!-- Anti-robot -->
 				<input type="hidden" name="_captcha" value="false">
 
-				<button type="submit">Envoyer</button>
+				<button type="submit">Envoyer le message</button>
 			</form>
 			<div class="legal-notes-contact">
 			<p>En soumettant ce formulaire, vous acceptez que les informations saisies soient utilisées pour répondre à votre demande. Vos données sont traitées de manière confidentielle et ne seront jamais partagées avec des tiers.</p>
 			<p>Pour plus d'informations sur la gestion de vos données personnelles et pour exercer vos droits, veuillez consulter notre <a href="POLITIQUE_CONFIDENTIALITE.html" target="_blank">Politique de Confidentialité</a>.</p>
-			<p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, de suppression et de portabilité de vos données. Pour toute question, n'hesitez pas.</p>
-</div>
+			<p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, de suppression et de portabilité de vos données. Pour toute question, n'hésitez pas à nous contacter.</p>
+			</div>
         </section>
 
   </main>
