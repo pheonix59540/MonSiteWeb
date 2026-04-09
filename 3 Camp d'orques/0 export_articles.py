@@ -1,6 +1,6 @@
 import os
 import re
-from bs4 import BeautifulSoup
+
 from odf.opendocument import OpenDocumentSpreadsheet
 from odf.table import Table, TableRow, TableCell
 from odf.text import P
