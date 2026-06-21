@@ -21,8 +21,8 @@ Legion of Skull - Infanterie x10;24,00 €;25x25 mm;32 mm;Legion of Skull - Infa
 Legion of Skull - Wolfs Infanterie Etat-Major ;6,00 €;25x25 mm;32 mm;Legion of Skull - Wolfs Infanterie Etat-Major 1;Legion of Skull - Wolfs Infanterie Etat-Major 2;Legion of Skull - Wolfs Infanterie Etat-Major 3;;;;
 Legion of Skull - Wolfs Infanterie x10 ;12,00 €;25x25 mm;32 mm;Legion of Skull - Wolfs Infanterie x10 1;Legion of Skull - Wolfs Infanterie x10 2;Legion of Skull - Wolfs Infanterie x10 3;Legion of Skull - Wolfs Infanterie x10 4;Legion of Skull - Wolfs Infanterie x10 5;Legion of Skull - Wolfs Infanterie x10 6;
 Legion of Skulls - Wolf Hero ;3,00 €;25x25 mm;32 mm;Legion of Skulls - Wolf Hero 1;Legion of Skulls - Wolf Hero 2;Legion of Skulls - Wolf Hero 3;;;;
-Legion of Skull - Wolfs Etat-Major ;15,00 €;40x40 mm;50 mm;Legion of Skull - Wolfs Etat-Major 1;Legion of Skull - Wolfs Etat-Major 2;Legion of Skull - Wolfs Etat-Major 3;;;;
-Legion of Skull - Wolfs x3 ;12,00 €;40x40 mm;50 mm;Legion of Skull - Wolfs x3 1;Legion of Skull - Wolfs x3 2;Legion of Skull - Wolfs x3 3;;;;
+Legion of Skull - Wolfs Etat-Major ;15,00 €;40x40 mm;40 ou 50 mm;Legion of Skull - Wolfs Etat-Major 1;Legion of Skull - Wolfs Etat-Major 2;Legion of Skull - Wolfs Etat-Major 3;;;;
+Legion of Skull - Wolfs x3 ;12,00 €;40x40 mm;40 ou 50 mm;Legion of Skull - Wolfs x3 1;Legion of Skull - Wolfs x3 2;Legion of Skull - Wolfs x3 3;Legion of Skull - Wolfs x3 4;Legion of Skull - Wolfs x3 5;Legion of Skull - Wolfs x3 6;Legion of Skull - Wolfs x3 7
 Legion of Skull - Altar;40,00 €;50x100 mm;120x92 mm;Legion of Skull - Altar 1;Legion of Skull - Altar 2;;;;;
 Legion of Skull - Brekolr;25,00 €;50x50 mm;65 mm;Legion of Skull - Brekolr 1;Legion of Skull - Brekolr 2;;;;;
 Legion of Skull - Brekolr Scenique;34,00 €;50x50 mm;65 mm;Legion of Skull - Brekolr 1;Legion of Skull - Brekolr 2;;;;;
@@ -70,12 +70,12 @@ Rotten Host - Infanterie Etat-Major alt 2 ;17,00 €;;;Rotten Host - Infanterie 
 Rotten Host - Infanterie x10 alt 2 ;17,00 €;;;Rotten Host - Infanterie x10 alt 2 1;Rotten Host - Infanterie x10 alt 2 2;Rotten Host - Infanterie x10 alt 2 3;Rotten Host - Infanterie x10 alt 2 4;Rotten Host - Infanterie x10 alt 2 5;Rotten Host - Infanterie x10 alt 2 6;
 Rotten Host - Hero;6,00 €;25x25 mm;32 mm;Rotten Host - Hero 1;Rotten Host - Hero 2;Rotten Host - Hero 3;Rotten Host - Hero 4;;;
 Rotten Host - Hero alt ;6,00 €;;;Rotten Host - Hero alt 1;Rotten Host - Hero alt 2;Rotten Host - Hero alt 3;;;;
-Rotten Host - Sorceress ;3,00 €;;;Rotten Host - Sorceress 1;Rotten Host - Sorceress 2;Rotten Host - Sorceress 3;;;;
+Rotten Host - Sorceress ;3,00 €;25x25 mm;32 mm;Rotten Host - Sorceress 1;Rotten Host - Sorceress 2;Rotten Host - Sorceress 3;Rotten Host - Sorceress 4;Rotten Host - Sorceress 5;Rotten Host - Sorceress 6;
 Rotten Host - Klous;35,00 €;100x150 mm;110x75 mm;Rotten Host - Klous 1;Rotten Host - Klous 2;;;;;
 Rotten Host - Klous Scenique;42,00 €;100x150 mm;110x75 mm;Rotten Host - Klous 1;Rotten Host - Klous 2;;;;;
 Rotten Host - Prince Demon;24,00 €;50x50 mm;65 mm;Rotten Host - Prince Demon 1;Rotten Host - Prince Demon 2;Rotten Host - Prince Demon 3;;;;
-Rotten Host - Trolls ;12,00 €;;;Rotten Host - Trolls 1;Rotten Host - Trolls 2;Rotten Host - Trolls 3;;;;
-Rotten Host - Trolls Etat-Major ;15,00 €;;;Rotten Host - Trolls Etat-Major 1;Rotten Host - Trolls Etat-Major 2;Rotten Host - Trolls Etat-Major 3;;;;
+Rotten Host - Trolls ;12,00 €;40x40 mm;40 ou 50 mm;Rotten Host - Trolls 1;Rotten Host - Trolls 2;Rotten Host - Trolls 3;Rotten Host - Trolls 4;Rotten Host - Trolls 5;Rotten Host - Trolls 6;Rotten Host - Trolls 7
+Rotten Host - Trolls Etat-Major ;15,00 €;40x40 mm;40 ou 50 mm;Rotten Host - Trolls Etat-Major 1;Rotten Host - Trolls Etat-Major 2;Rotten Host - Trolls Etat-Major 3;;;;
 Rotten Host - Volnir;20,00 €;50x75 mm;90x52 mm;Rotten Host - Volnir 1;Rotten Host - Volnir 2;Rotten Host - Volnir 3;Rotten Host - Volnir 4;;;
 Rotten Host - Wolfs;38,00 €;25x50 mm;60x35 mm;Rotten Host - Wolfs 1;;;;;;
 Rotten Host - Shrine ;20,00 €;;;Rotten Host - Shrine 1;Rotten Host - Shrine 2;Rotten Host - Shrine 3;Rotten Host - Shrine 4;;;
@@ -107,7 +107,7 @@ Transfiguration Forces - SupremeSorcerer;6,00 €;25x25 mm;32 mm;Transfiguration
 Transfiguration Forces - SupremeSorcerer Scenique;8,00 €;25x25 mm;32 mm;Transfiguration Forces - SupremeSorcerer 1;Transfiguration Forces - SupremeSorcerer 2;Transfiguration Forces - SupremeSorcerer 3;;;;
 Warriors of the Dark God - Warriors Etat-Major ;4,00 €;;;Warriors of the Dark God - Warriors Etat-Major 1;Warriors of the Dark God - Warriors Etat-Major 2;Warriors of the Dark God - Warriors Etat-Major 3;;;;
 Warriors of the Dark God - Warriors x10 ;12,00 €;;;Warriors of the Dark God - Warriors x10 1;Warriors of the Dark God - Warriors x10 2;Warriors of the Dark God - Warriors x10 3;Warriors of the Dark God - Warriors x10 4;Warriors of the Dark God - Warriors x10 5;Warriors of the Dark God - Warriors x10 6;
-Warriors of the Dark God - Warrior Hero ;3,00 €;;;Warriors of the Dark God - Warrior Hero 1;Warriors of the Dark God - Warrior Hero 2;Warriors of the Dark God - Warrior Hero 3;;;;
+Warriors of the Dark God - Warrior Hero ;3,00 €;25x25 mm;32 mm;Warriors of the Dark God - Warrior Hero 1;Warriors of the Dark God - Warrior Hero 2;Warriors of the Dark God - Warrior Hero 3;Warriors of the Dark God - Warrior Hero 4;Warriors of the Dark God - Warrior Hero 5;Warriors of the Dark God - Warrior Hero 6;Warriors of the Dark God - Warrior Hero 7
 Warriors of the Dark God - Forsworn - Etat-Major;23,00 €;40x40 mm;50 mm;Warriors of the Dark God - Forsworn - Etat-Major 1;Warriors of the Dark God - Forsworn - Etat-Major 2;;;;;
 Warriors of the Dark God - Forsworn x3;21,00 €;40x40 mm;50 mm;Warriors of the Dark God - Forsworn x3 1;Warriors of the Dark God - Forsworn x3 2;;;;;
 Warriors of the Dark God - Infanterie Etat-Major;6,00 €;25x25 mm;32 mm;Warriors of the Dark God - Infanterie Etat-Major 1;Warriors of the Dark God - Infanterie Etat-Major 2;;;;;
