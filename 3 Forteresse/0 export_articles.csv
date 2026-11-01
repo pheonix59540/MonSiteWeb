@@ -1,17 +1,17 @@
-Titre;Prix;Dimension;Photo 1;Photo 2;Photo 3;Photo 4;Photo 5;Photo 6
-Banner A;0,50 €;;Fortress 1;Fortress 2;Fortress 3;Fortress 4;Fortress 5;Fortress 6
-Banner B;0,50 €;;Fortress 1;Fortress 2;Fortress 3;Fortress 4;Fortress 5;Fortress 6
-Banner C;0,50 €;;Fortress 1;Fortress 2;Fortress 3;Fortress 4;Fortress 5;Fortress 6
-Corner A;12,00 €;10x10 cm;Fortress 1;Fortress 2;Fortress 3;Fortress 4;Fortress 5;Fortress 6
-Corner Inner B;11,00 €;9,5x9,5 cm ;Fortress 1;Fortress 2;Fortress 3;Fortress 4;Fortress 5;Fortress 6
-Corner Tower;37,50 €;12,5x12,5 cm ;Fortress 1;Fortress 2;Fortress 3;Fortress 4;Fortress 5;Fortress 6
-Destroyed Wall Corner Tower;20,00 €;16x16 cm  ;Fortress 1;Fortress 2;Fortress 3;Fortress 4;Fortress 5;Fortress 6
-Destroyed Door;11,00 €;14x12 cm  ;Fortress 1;Fortress 2;Fortress 3;Fortress 4;Fortress 5;Fortress 6
-Destroyed Wall Center;10,00 €;14x14 cm ;Fortress 1;Fortress 2;Fortress 3;Fortress 4;Fortress 5;Fortress 6
-Destroyed Wall Left;9,00 €;15x10 cm  ;Fortress 1;Fortress 2;Fortress 3;Fortress 4;Fortress 5;Fortress 6
-Destroyed Wall Right;6,00 €;12x9 cm  ;Fortress 1;Fortress 2;Fortress 3;Fortress 4;Fortress 5;Fortress 6
-Door A;16,00 €;14x9 cm  ;Fortress 1;Fortress 2;Fortress 3;Fortress 4;Fortress 5;Fortress 6
-Wall A;12,00 €;14x5,5 cm  ;Fortress 1;Fortress 2;Fortress 3;Fortress 4;Fortress 5;Fortress 6
-Wall B;12,00 €;14x5,5 cm ;Fortress 1;Fortress 2;Fortress 3;Fortress 4;Fortress 5;Fortress 6
-Wall C Artillery;14,00 €;14x10 cm  ;Fortress 1;Fortress 2;Fortress 3;Fortress 4;Fortress 5;Fortress 6
-Wall D Stairs;16,00 €;14x9 cm ;Fortress 1;Fortress 2;Fortress 3;Fortress 4;Fortress 5;Fortress 6
+Titre;Prix;Dimension;Photo 1;Photo 2;Photo 3;Photo 4;Photo 5;Photo 6;Photo 7
+Banner A;0,50 €;;Fortress 1;Fortress 2;Fortress 3;Fortress 4;Fortress 1;Fortress 3;
+Banner B;0,50 €;;Fortress 1;Fortress 2;Fortress 3;Fortress 4;Fortress 1;Fortress 3;
+Banner C;0,50 €;;Fortress 1;Fortress 2;Fortress 3;Fortress 4;Fortress 1;Fortress 3;
+Corner A ;12,00 €;10x10 cm;Corner A 1;Corner A 2;Corner A 3;Corner A 4;Fortress 1;Fortress 3;
+Corner Inner B ;11,00 €;9,5x9,5 cm ;Corner Inner B 1;Corner Inner B 2;Corner Inner B 3;Corner Inner B 4;Fortress 1;Fortress 3;Corner Inner B 5
+Corner Tower ;37,50 €;12,5x12,5 cm ;Corner Tower 1;Corner Tower 2;Corner Tower 3;Corner Tower 4;Fortress 1;Fortress 3;
+Door A;16,00 €;14x9 cm  ;Fortress 1;Fortress 2;Fortress 3;Fortress 4;Fortress 1;Fortress 3;
+Wall A;12,00 €;14x5,5 cm  ;Fortress 1;Fortress 2;Fortress 3;Fortress 4;Fortress 1;Fortress 3;
+Wall B ;12,00 €;14x5,5 cm ;Wall B 1;Wall B 2;Wall B 3;Wall B 4;Fortress 1;Fortress 3;
+Wall C Artillery ;14,00 €;14x10 cm  ;Wall C Artillery 1;Wall C Artillery 2;Wall C Artillery 3;Wall C Artillery 4;Fortress 1;Fortress 3;
+Wall D Stairs ;16,00 €;14x9 cm ;Wall D Stairs 1;Wall D Stairs 2;Wall D Stairs 3;Wall D Stairs 4;Fortress 1;Fortress 3;Wall D Stairs 5
+Destroyed Wall Corner Tower ;20,00 €;16x16 cm  ;Destroyed Wall Corner Tower 1;Destroyed Wall Corner Tower 2;Destroyed Wall Corner Tower 3;Destroyed Wall Corner Tower 4;Fortress 1;Fortress 3;
+Destroyed Door ;11,00 €;14x12 cm  ;Destroyed Door 1;Destroyed Door 2;Destroyed Door 3;Destroyed Door 4;Fortress 1;Fortress 3;
+Destroyed Wall Center ;10,00 €;14x14 cm ;Destroyed Wall Center 1;Destroyed Wall Center 2;Destroyed Wall Center 3;Destroyed Wall Center 4;Fortress 1;Fortress 3;
+Destroyed Wall Left ;9,00 €;15x10 cm  ;Destroyed Wall Left 1;Destroyed Wall Left 2;Destroyed Wall Left 3;Destroyed Wall Left 4;Fortress 1;Fortress 3;
+Destroyed Wall Right ;6,00 €;12x9 cm  ;Destroyed Wall Right 1;Destroyed Wall Right 2;Destroyed Wall Right 3;Destroyed Wall Right 4;Fortress 1;Fortress 3;
