@@ -36,7 +36,7 @@ def create_photo_link_file(photo_name):
     print(f"Fichier image simple généré : {nom_fichier}")
 
 # Lecture du fichier CSV
-with open("0 export_articles.csv", newline='', encoding='cp1252') as csvfile:
+with open("0 export_articles.csv", newline='', encoding='utf-8') as csvfile:
     reader = csv.DictReader(csvfile, delimiter=';')
     compteur = 0
     for row in reader:

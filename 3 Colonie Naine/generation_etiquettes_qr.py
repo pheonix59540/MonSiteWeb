@@ -14,7 +14,7 @@ from reportlab.lib.utils import ImageReader
 FICHIER_CSV     = "0 export_articles.csv"
 FICHIER_PDF     = "etiquettes_qr.pdf"
 SEPARATEUR_CSV  = ";"
-ENCODAGE        = "cp1252"
+ENCODAGE        = "utf-8"
 
 # URL de base de ton site — chaque article sera à BASE_URL + nom_fichier
 BASE_URL = "https://pheonix59540.github.io/MonSiteWeb/"

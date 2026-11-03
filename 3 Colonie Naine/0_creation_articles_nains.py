@@ -86,7 +86,7 @@ def generate_html(data):
     print(f"Fichier généré : {chemin}")
 
 # Lecture du fichier CSV
-with open("0 export_articles.csv", newline='', encoding='cp1252') as csvfile:
+with open("0 export_articles.csv", newline='', encoding='utf-8') as csvfile:
     reader = csv.DictReader(csvfile, delimiter=';')
     for ligne in reader:
         generate_html(ligne)

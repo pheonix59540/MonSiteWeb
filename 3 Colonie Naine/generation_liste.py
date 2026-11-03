@@ -18,7 +18,7 @@ DOSSIER = os.path.basename(os.getcwd())
 # ============================================================
 lignes_generees = 0
 
-with open(FICHIER_CSV, newline='', encoding='cp1252') as csvfile:
+with open(FICHIER_CSV, newline='', encoding='utf-8') as csvfile:
     reader = csv.DictReader(csvfile, delimiter=SEPARATEUR_CSV)
 
     with open(FICHIER_SORTIE, "w", encoding="utf-8") as sortie:
