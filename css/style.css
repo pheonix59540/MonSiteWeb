@@ -470,14 +470,41 @@ footer {
   box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
+
 .compatibilitySection {
   background-color: #191970;
   color: #FFFFFF;
   padding: 20px;
   margin-top: 30px;
   border-radius: 8px;
-  border-left: 5px solid #4B0082;
+  border-left: 5px solid #191970;
   box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.compatibilitySectionPhoto {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+
+    background-color: #191970;
+    color: #FFFFFF;
+
+    padding: 20px;
+    margin-top: 30px;
+
+    border-radius: 8px;
+    border-left: 5px solid #191970;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.compatibilitySectionPhoto .compatibilitySection {
+    flex: 1;
+}
+
+.compatibilitySectionPhoto img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
 }
 
 .compatibilitySection h3 {

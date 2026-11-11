@@ -1,0 +1,18 @@
+Couleur	Code
+Bleu nuit très foncé	#0B1F3A
+Bleu marine	#000080
+Bleu foncé classique	#003366
+Bleu profond	#0047AB
+Bleu ardoise foncé	#1E3A5F
+Ton actuel	#191970
+
+🌲 Vert forêt très foncé	#0B3D2E	Fond sombre
+🌲 Vert forêt	#145A32	Fond / encadré
+🟢 Vert foncé	#1B5E20	Bordure / titre
+🟢 Vert classique	#2E7D32	Vert principal
+🍃 Vert moyen	#388E3C	Éléments secondaires
+🌿 Vert naturel	#4CAF50	Accent
+🌱 Vert clair	#66BB6A	Accent léger
+🟩 Vert pastel	#81C784	Fond clair
+🌾 Vert sauge	#8FAF8F	Fond doux
+🍋 Vert très clair	#C8E6C9	Fond d'information
