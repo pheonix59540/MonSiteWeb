@@ -502,9 +502,10 @@ footer {
 }
 
 .compatibilitySectionPhoto img {
-    width: 300px;
-    height: auto;
+    width: 100px;
+    height: 100%;
     border-radius: 10px;
+	
 }
 
 .compatibilitySection h3 {
