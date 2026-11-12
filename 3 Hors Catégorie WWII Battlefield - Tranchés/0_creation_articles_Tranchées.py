@@ -2,7 +2,7 @@ import os
 import csv
 
 def clean_filename(name):
-    return name.replace(" ", " ").replace(",", ",").replace("’", "").replace("'", "").replace("é", "e").replace("à", "a")
+    return name.replace(" ", " ").replace(",", ",").replace("’", "").replace("'", "").replace("é", "é").replace("à", "a")
 
 def generate_html(data):
     if not data.get('Titre'):  # Ignore les lignes vides
