@@ -378,6 +378,58 @@ footer {
   object-fit: contain;
   border-radius: 5px;
 }
+#partenaires .logos a {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+#partenaires .logos a:hover {
+  transform: scale(1.05);
+}
+
+/* ============================================================
+   🌐 Réseaux sociaux
+   ============================================================ */
+#reseaux .reseaux-liens {
+  display: flex;
+  flex-wrap: wrap;            /* passe à la ligne si l'écran est étroit */
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+#reseaux .reseaux-liens a {
+  display: inline-block;
+  line-height: 0;             /* supprime l'espace blanc sous l'image */
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+#reseaux .reseaux-liens img {
+  display: block;
+  height: 100px;               /* même hauteur pour tous les logos */
+  width: auto;                /* largeur proportionnelle */
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+#reseaux .reseaux-liens a:hover,
+#reseaux .reseaux-liens a:focus-visible {
+  transform: scale(1.12);
+  filter: brightness(1.1);
+}
+
+/* Petits écrans */
+@media screen and (max-width: 600px) {
+  #reseaux .reseaux-liens {
+    gap: 20px;
+  }
+
+  #reseaux .reseaux-liens img {
+    height: 52px;
+  }
+}
 
 /* ============================================================
    Carrousel
