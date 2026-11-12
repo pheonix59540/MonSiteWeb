@@ -582,7 +582,7 @@ footer {
 .compatibilitySectionPhoto > img,
 .compatibilitySectionPhoto > a {
     flex: 0 0 auto;
-    width: clamp(90px, 22%, 200px);
+    width: clamp(90px, 22%, 100px);
 }
 
 .compatibilitySectionPhoto > img {
@@ -610,7 +610,7 @@ footer {
 
     .compatibilitySectionPhoto > img,
     .compatibilitySectionPhoto > a {
-        width: min(55%, 180px);
+        width: min(55%, 100px);
     }
 
     .compatibilitySectionPhoto .compatibilitySection {
