@@ -7,17 +7,7 @@
   <link rel="stylesheet" href="css/style.css"> <!-- Lien vers le CSS global -->
 
 <script>
-  function adjustHeaderHeight() {
-    const header = document.querySelector("header");
-    if (header) {
-      header.style.height = window.innerHeight + "px";
-    }
-  }
-
-  window.addEventListener("load", adjustHeaderHeight);
-  window.addEventListener("resize", adjustHeaderHeight);
-</script>
-	<script>
+  document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.sidebar a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
@@ -29,6 +19,7 @@
         });
       }
     });
+  });
   });
 </script>
 
@@ -112,9 +103,6 @@
                 </div>
 
 	
-<html lang='fr'>
-<head><meta charset='UTF-8'><title>5 Tac Tik Portable</title></head>
-<body>
 
 		
     <section id="figurines-cuetzpal" class="gallery-Figurines">
@@ -175,7 +163,8 @@
 			
 			<div class="compatibilitySection">
 			<h2>📐 Caractéristiques</h2>
-				<p><strong>Dimensions :</strong> 30 × 30 cmFabrication : impression 3D + MDF découpé au laser</p>
+				<p><strong>Dimensions :</strong> 30 × 30 cm</p>
+				<p><strong>Fabrication :</strong> impression 3D + MDF découpé au laser</p>
 				<p><strong>Maintien des pions :</strong> système magnétique</p>
 				<p><strong>Fermeture :</strong> fermeture magnétique</p>
 				<p><strong>Rangement :</strong> intégré directement dans le jeu</p>

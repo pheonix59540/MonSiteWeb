@@ -35,20 +35,19 @@ body {
 }
 
 /* ============================================================
-   🧢 HEADER — FIX : ratio d'aspect basé sur l'image réelle
-   Le JS adjustHeaderHeight() est supprimé, on utilise
-   padding-top en % pour conserver les proportions de l'image.
-   Remplace "56.25%" par le vrai ratio de ton image :
-     ex. image 1920×600 → 600/1920 × 100 = 31.25%
-     ex. image 1920×400 → 400/1920 × 100 = 20.83%
+   🧢 HEADER
+   Image 1920×1080 → ratio 1080/1920 × 100 = 56.25%
+   padding-top en % force la hauteur proportionnellement
+   à la largeur réelle de l'écran → image toujours complète.
+   La sidebar étant dans le flux normal (sticky top:0),
+   elle apparaît naturellement SOUS le header.
    ============================================================ */
 header {
   width: 100%;
-  /* 🔧 FIX : utilise padding-top pour forcer la hauteur selon le ratio de l'image */
-  padding-top: 31.25%; /* ← ADAPTE CE CHIFFRE au vrai ratio de ton image header */
+  padding-top: 56.25%; /* 1080 ÷ 1920 × 100 — image 16:9 complète */
   position: relative;
   background-image: url('../images/0 Header.png');
-  background-size: cover;
+  background-size: 100% 100%; /* étire exactement sur toute la zone */
   background-position: center top;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -471,14 +470,42 @@ footer {
   box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
+
 .compatibilitySection {
   background-color: #191970;
   color: #FFFFFF;
   padding: 20px;
   margin-top: 30px;
   border-radius: 8px;
-  border-left: 5px solid #4B0082;
+  border-left: 5px solid #191970;
   box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.compatibilitySectionPhoto {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+
+    background-color: #191970;
+    color: #FFFFFF;
+
+    padding: 20px;
+    margin-top: 30px;
+
+    border-radius: 8px;
+    border-left: 5px solid #191970;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.compatibilitySectionPhoto .compatibilitySection {
+    flex: 1;
+}
+
+.compatibilitySectionPhoto img {
+    width: 100px;
+    height: 100%;
+    border-radius: 10px;
+	
 }
 
 .compatibilitySection h3 {
@@ -586,8 +613,9 @@ footer {
 
   header {
     background-image: url('../images/0 HeaderPortrait1440.png');
-    padding-top: 31.25%; /* 🔧 adapte au ratio de ton image Portrait 1440 */
+    padding-top: 150%; /* 2160 ÷ 1440 × 100 — image portrait 2:3 complète */
     max-width: 1440px;
+    background-size: 100% 100%;
   }
 
   .sidebar a {
@@ -623,7 +651,8 @@ footer {
 
   header {
     background-image: url('../images/0 HeaderPortrait1024.png');
-    padding-top: 31.25%; /* 🔧 adapte au ratio de ton image Portrait 1024 */
+    padding-top: 150%; /* 1536 ÷ 1024 × 100 — image portrait 2:3 complète */
+    background-size: 100% 100%;
   }
 
   .sidebar {
@@ -669,8 +698,9 @@ footer {
 
   header {
     background-image: url('../images/0 HeaderPortrait480.png');
-    padding-top: 50%; /* 🔧 ratio plus carré sur mobile */
+    padding-top: 150%; /* 720 ÷ 480 × 100 — image portrait 2:3 complète */
     max-width: 480px;
+    background-size: 100% 100%;
   }
 
   .sidebar a {
