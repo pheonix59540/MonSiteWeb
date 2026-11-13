@@ -366,17 +366,76 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 20px;
   margin-top: 20px;
 }
 
+#partenaires .logos a {
+  display: inline-block;
+  line-height: 0;             /* supprime l'espace blanc sous l'image */
+  transition: transform 0.2s ease;
+}
+
 #partenaires img {
+	
+  display: block;
   max-height: 250px;
-  max-width: 400px;
-  height: auto;
-  width: 100%;
+  max-width: 300px;
+  height: 200px;
+  width: auto;
   object-fit: contain;
   border-radius: 5px;
+}
+
+#partenaires .logos a:hover 
+#partenaires .logos a:focus-visible {
+  transform: scale(1.12);
+  filter: brightness(1.1);
+}
+
+/* ============================================================
+   🌐 Réseaux sociaux
+   ============================================================ */
+#reseaux .reseaux-liens {
+  display: flex;
+  flex-wrap: wrap;            /* passe à la ligne si l'écran est étroit */
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+#reseaux .reseaux-liens a {
+  display: inline-block;
+  line-height: 0;             /* supprime l'espace blanc sous l'image */
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+#reseaux .reseaux-liens img {
+  display: block;
+  height: 100px;               /* même hauteur pour tous les logos */
+  width: auto;                /* largeur proportionnelle */
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+#reseaux .reseaux-liens a:hover,
+#reseaux .reseaux-liens a:focus-visible {
+  transform: scale(1.12);
+  filter: brightness(1.1);
+}
+
+/* Petits écrans */
+@media screen and (max-width: 600px) {
+  #reseaux .reseaux-liens {
+    gap: 20px;
+  }
+
+  #reseaux .reseaux-liens img {
+    height: 52px;
+  }
 }
 
 /* ============================================================
@@ -481,31 +540,82 @@ footer {
   box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
+/* ============================================================
+   🃏 Bloc règle : texte à gauche, photo de la carte à droite
+   Le bloc extérieur porte seul le fond, le cadre et l'ombre ;
+   le .compatibilitySection imbriqué devient "transparent".
+   ============================================================ */
 .compatibilitySectionPhoto {
     display: flex;
-    align-items: stretch;
+    flex-direction: row-reverse;   /* photo (1er dans le HTML) passe à droite */
+    align-items: center;
     gap: 20px;
 
     background-color: #191970;
     color: #FFFFFF;
+    text-align: left;
 
     padding: 20px;
     margin-top: 30px;
 
     border-radius: 8px;
-    border-left: 5px solid #191970;
+    border-left: 5px solid #4B0082;
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
+/* Le bloc texte ne redessine plus une 2e boîte dans la 1ère */
 .compatibilitySectionPhoto .compatibilitySection {
-    flex: 1;
+    flex: 1 1 0;
+    min-width: 0;                  /* évite que le texte force le débordement */
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
 }
 
-.compatibilitySectionPhoto img {
-    width: 100px;
-    height: 100%;
+.compatibilitySectionPhoto .compatibilitySection h2 {
+    margin-top: 0;
+}
+
+/* Photo (ou lien contenant la photo, ex. icône PDF) */
+.compatibilitySectionPhoto > img,
+.compatibilitySectionPhoto > a {
+    flex: 0 0 auto;
+    width: clamp(90px, 22%, 100px);
+}
+
+.compatibilitySectionPhoto > img {
+    display: block;
+    height: auto;                  /* garde les proportions de la carte */
+    object-fit: contain;
     border-radius: 10px;
-	
+}
+
+/* Cas du lien (icône PDF) : l'image remplit le lien */
+.compatibilitySectionPhoto > a img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Petits écrans : photo centrée au-dessus du texte */
+@media screen and (max-width: 600px) {
+    .compatibilitySectionPhoto {
+        flex-direction: column;
+        align-items: center;
+        padding: 14px;
+    }
+
+    .compatibilitySectionPhoto > img,
+    .compatibilitySectionPhoto > a {
+        width: min(55%, 100px);
+    }
+
+    .compatibilitySectionPhoto .compatibilitySection {
+        width: 100%;
+    }
 }
 
 .compatibilitySection h3 {

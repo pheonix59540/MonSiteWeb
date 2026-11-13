@@ -101,15 +101,21 @@
 
   <main>
 
-    <section id="accueil" class="section">
-      <h2>Bienvenue chez Infinity3D : Votre Univers en 3D Prend Vie !</h2>
-      <p>Passionnés par l'art et la technologie de l'<strong>impression 3D</strong>, chez <strong>Infinity3D</strong>,
+    <section id="accueil" class="section" class="item">
+      
+		<div class="descriptionSection">
+		<h2><p><strong>Bienvenue chez Infinity3D : Votre Univers en 3D Prend Vie !</strong></p></h2>
+		<p>Passionnés par l'art et la technologie de l'<strong>impression 3D</strong>, chez <strong>Infinity3D</strong>,
         nous donnons forme à vos rêves les plus audacieux. Nous sommes fiers de vous offrir une gamme complète de services
         et de produits pour enrichir vos passions et concrétiser vos projets.</p>
+		</div>
 
-      <p><strong>Notre Expertise au Service de Vos Créations</strong></p>
-      <p>Que vous soyez un joueur acharné, un modéliste méticuleux ou simplement à la recherche
+		<div class="descriptionSection">
+		<h2><p><strong>Notre Expertise au Service de Vos Créations</strong></p></h2>
+		<p>Que vous soyez un joueur acharné, un modéliste méticuleux ou simplement à la recherche
         d'une pièce unique, nous sommes là pour vous. Nous nous spécialisons dans :</p>
+		</div>
+      
       <ul>
         <li><strong>Figurines en Résine</strong> : Découvrez des détails d'une finesse incroyable pour vos jeux de rôle, vos wargames ou vos collections.
           Chaque figurine est imprimée avec une précision inégalée pour des résultats époustouflants.</li>
@@ -203,24 +209,159 @@
 
 
     <script>
-      // Carrousel des figurines
-      fetch("includes/carousel_figurines.html")
-        .then(r => r.text())
-        .then(data => document.getElementById("carousel-container").innerHTML = data)
-        .catch(err => console.error("Erreur carrousel figurines :", err));
+/* ============================================================
+   🎞️ Sliders de l'accueil (3 images par 3)
+   Les photos sont toujours lues dans tes fichiers includes/carousel_*.html :
+   rien à refaire de ce côté-là.
+   ============================================================ */
+(function () {
 
-      // Carrousel des décors
-      fetch("includes/carousel_decors.html")
-        .then(r => r.text())
-        .then(data => document.getElementById("carousel-decors-container").innerHTML = data)
-        .catch(err => console.error("Erreur carrousel décors :", err));
+  // Quand le dossier d'une photo n'a pas EXACTEMENT le même nom que sa page,
+  // on l'indique ici : "nom du dossier": "page à ouvrir".
+  // À vérifier / compléter selon tes noms de pages.
+  const LIENS_EXCEPTIONS = {
+    "0 Cuetzpal Empire Remastered": "0 L'Empire Cuetzpal Remastered.html",
+    "4 Accéssoires": "4 Accessoires.html",
+    "4 Socles carré": "4 Socle carré.html"
+  };
 
-      // Carrousel de la galerie
-      fetch("includes/carousel_galerie.html")
-        .then(r => r.text())
-        .then(data => document.getElementById("carousel-galerie-container").innerHTML = data)
-        .catch(err => console.error("Erreur carrousel galerie :", err));
-    </script>
+  // Un clic sur une photo ouvre la page de sa catégorie :
+  // photo "1 Elfes de la Nuit/xxx.jpg"  ->  page "1 Elfes de la Nuit.html"
+  function lienCategorie(src) {
+    const parties = src.split("/");
+    if (parties.length < 2) return null;
+    let dossier = parties[0];
+    try { dossier = decodeURIComponent(dossier); } catch (e) {}
+    if (LIENS_EXCEPTIONS[dossier]) return LIENS_EXCEPTIONS[dossier];
+    if (dossier === "images") return null;
+    return dossier + ".html";
+  }
+
+  function construire(items) {
+    const slider = document.createElement("div");
+    slider.className = "slider";
+
+    const prev = document.createElement("button");
+    prev.type = "button";
+    prev.className = "slider-btn slider-prev";
+    prev.setAttribute("aria-label", "Images précédentes");
+    prev.textContent = "‹";
+
+    const next = document.createElement("button");
+    next.type = "button";
+    next.className = "slider-btn slider-next";
+    next.setAttribute("aria-label", "Images suivantes");
+    next.textContent = "›";
+
+    const viewport = document.createElement("div");
+    viewport.className = "slider-viewport";
+    viewport.tabIndex = 0;
+    viewport.setAttribute("role", "region");
+    viewport.setAttribute("aria-label", "Diaporama d'images");
+
+    const compteur = document.createElement("p");
+    compteur.className = "slider-compteur";
+    compteur.setAttribute("aria-live", "polite");
+
+    items.forEach(function (it) {
+      const slide = document.createElement(it.href ? "a" : "div");
+      slide.className = "slider-slide";
+      if (it.href) slide.href = it.href;
+
+      const img = document.createElement("img");
+      img.setAttribute("src", it.src);
+      img.alt = it.alt;
+      img.loading = "lazy";
+      img.decoding = "async";
+      img.draggable = false;
+
+      slide.appendChild(img);
+      viewport.appendChild(slide);
+    });
+
+    slider.append(prev, viewport, next, compteur);
+
+    function parPage() {
+      return parseInt(getComputedStyle(slider).getPropertyValue("--par-page"), 10) || 3;
+    }
+    function pas() {
+      const gap = parseFloat(getComputedStyle(viewport).columnGap) || 0;
+      return viewport.clientWidth + gap;
+    }
+    function miseAJour() {
+      const pages = Math.ceil(items.length / parPage());
+      const debut = viewport.scrollLeft <= 2;
+      const fin = viewport.scrollLeft + viewport.clientWidth >= viewport.scrollWidth - 2;
+
+      prev.disabled = debut;
+      next.disabled = fin;
+
+      const unique = pages <= 1;
+      prev.hidden = next.hidden = compteur.hidden = unique;
+
+      const courante = fin ? pages : Math.min(pages, Math.round(viewport.scrollLeft / pas()) + 1);
+      compteur.textContent = "Page " + courante + " / " + pages;
+    }
+
+    let attente = false;
+    viewport.addEventListener("scroll", function () {
+      if (attente) return;
+      attente = true;
+      requestAnimationFrame(function () { attente = false; miseAJour(); });
+    });
+    window.addEventListener("resize", miseAJour);
+
+    prev.addEventListener("click", function () { viewport.scrollBy({ left: -pas() }); });
+    next.addEventListener("click", function () { viewport.scrollBy({ left: pas() }); });
+    viewport.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { viewport.scrollBy({ left: pas() }); e.preventDefault(); }
+      if (e.key === "ArrowLeft")  { viewport.scrollBy({ left: -pas() }); e.preventDefault(); }
+    });
+
+    requestAnimationFrame(miseAJour);
+    return slider;
+  }
+
+  // options.lienFixe : même page pour toutes les photos (ex. la Galerie)
+  async function creerSlider(urlInclude, idConteneur, options) {
+    options = options || {};
+    const conteneur = document.getElementById(idConteneur);
+    if (!conteneur) return;
+
+    try {
+      const rep = await fetch(urlInclude);
+      if (!rep.ok) throw new Error("HTTP " + rep.status);
+      const doc = new DOMParser().parseFromString(await rep.text(), "text/html");
+
+      const vus = new Set();
+      const items = [];
+      doc.querySelectorAll("img").forEach(function (img) {
+        const src = img.getAttribute("src");
+        if (!src || vus.has(src)) return;   // l'ancien carrousel doublait les images : on les dédoublonne
+        vus.add(src);
+
+        const lienFichier = img.closest("a");
+        items.push({
+          src: src,
+          alt: img.getAttribute("alt") || "",
+          href: options.lienFixe || lienCategorie(src) || (lienFichier && lienFichier.getAttribute("href")) || null
+        });
+      });
+
+      if (!items.length) return;
+      conteneur.innerHTML = "";
+      conteneur.appendChild(construire(items));
+    } catch (err) {
+      console.error("Erreur slider (" + urlInclude + ") :", err);
+    }
+  }
+
+  creerSlider("includes/carousel_figurines.html", "carousel-container");
+  creerSlider("includes/carousel_decors.html", "carousel-decors-container");
+  creerSlider("includes/carousel_galerie.html", "carousel-galerie-container", { lienFixe: "5 Galerie.html" });
+
+})();
+</script>
 
   </main>
 
