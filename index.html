@@ -115,40 +115,55 @@
 		<p>Que vous soyez un joueur acharné, un modéliste méticuleux ou simplement à la recherche
         d'une pièce unique, nous sommes là pour vous. Nous nous spécialisons dans :</p>
 		</div>
-      
-      <ul>
-        <li><strong>Figurines en Résine</strong> : Découvrez des détails d'une finesse incroyable pour vos jeux de rôle, vos wargames ou vos collections.
-          Chaque figurine est imprimée avec une précision inégalée pour des résultats époustouflants.</li>
-        <li><strong>Décors en Plastique</strong> : Donnez vie à vos tables de jeu et à vos dioramas avec nos décors robustes et détaillés.
-          Des ruines antiques aux paysages futuristes, nos créations transforment n'importe quel champ de bataille.</li>
-        <li><strong>Accessoires et Composants Divers</strong> : Au-delà des figurines et des décors, notre expertise s'étend à la conception
-          et à la production d'une panoplie d'accessoires personnalisés, de pièces sur mesure et de composants pour vos projets les plus variés.</li>
-      </ul>
-
-      <p><strong>La Technologie au Cœur de Notre Passion</strong></p>
-      <p>Pour garantir la plus haute qualité, Infinity3D utilise une suite d'outils de pointe :</p>
-      <ul>
-        <li><strong>Imprimantes 3D de dernière génération</strong> : Que ce soit pour la finesse de la résine ou la solidité du plastique,
+		
+		<div class="descriptionSection">
+		<h2><p><strong>La Technologie au Cœur de Notre Passion</strong></p></h2>
+		<p>Pour garantir la plus haute qualité, Infinity3D utilise une suite d'outils de pointe :</p>
+		<li><strong>Imprimantes 3D de dernière génération</strong> : Que ce soit pour la finesse de la résine ou la solidité du plastique,
           nos machines sont choisies pour leur performance et leur fiabilité.</li>
         <li><strong>Découpeuses Laser variées</strong> : Pour des découpes précises, des gravures délicates et la création de pièces
           complexes avec une finition parfaite.</li>
-      </ul>
-      <p>Chez Infinity3D, chaque projet est traité avec le plus grand soin et une attention particulière aux détails.
-        Explorez notre catalogue et laissez votre imagination prendre le dessus !</p>
+		</div>
+	  
+		<div class="descriptionSection">
+		<h2><p><strong style="font-size: 24px; color: #81C784;">Chez Infinity3D, chaque projet est traité avec le plus grand soin et une attention particulière aux détails.
+        Explorez notre catalogue et laissez votre imagination prendre le dessus !</strong></p></h2>
+		</div>
+		
+      
     </section>
 
     <section id="figurines" class="section">
-      <h2>Nos Figurines</h2>
+		<div class="descriptionSection">
+		<h2><p><strong>Figurines en Résine :</strong></p></h2>
+		<p>Découvrez des détails d'une finesse incroyable pour vos jeux de rôle, vos wargames ou vos collections.
+          Chaque figurine est imprimée avec une précision inégalée pour des résultats époustouflants.</p>
+		</div>
       <div id="carousel-container" class="carousel-wrapper"></div>
     </section>
 
     <section id="decors" class="section">
-      <h2>Nos Décors</h2>
+		<div class="descriptionSection">
+		<h2><p><strong>Décors en Plastique :</strong></p></h2>
+		<p>Donnez vie à vos tables de jeu et à vos dioramas avec nos décors robustes et détaillés.
+          Des ruines antiques aux paysages futuristes, nos créations transforment n'importe quel champ de bataille.</p>
+		</div>
       <div id="carousel-decors-container" class="carousel-wrapper"></div>
+    </section>
+	
+	<section id="accessoires" class="section">
+		<div class="descriptionSection">
+		<h2><p><strong>Accessoires et Composants Divers :</strong></p></h2>
+		<p>Au-delà des figurines et des décors, notre expertise s'étend à la conception
+          et à la production d'une panoplie d'accessoires personnalisés, de pièces sur mesure et de composants pour vos projets les plus variés.</p>
+		</div>
+     <div id="carousel-accessoires-container" class="carousel-wrapper"></div>
     </section>
 
     <section id="galerie" class="section">
-      <h2>Galerie</h2>
+		<div class="descriptionSection">
+		<h2><p><strong>Galerie :</strong></p></h2>
+		</div>
       <div id="carousel-galerie-container" class="carousel-wrapper"></div>
     </section>
 
@@ -208,35 +223,18 @@
 
 
 
-    <script>
+ <script>
 /* ============================================================
    🎞️ Sliders de l'accueil (3 images par 3)
-   Les photos sont toujours lues dans tes fichiers includes/carousel_*.html :
-   rien à refaire de ce côté-là.
+   Les photos et leurs liens viennent des fichiers includes/carousel_*.html,
+   générés par Maj_Carrousels.py à partir du fichier "0 carrousels.csv".
    ============================================================ */
 (function () {
 
-  // Quand le dossier d'une photo n'a pas EXACTEMENT le même nom que sa page,
-  // on l'indique ici : "nom du dossier": "page à ouvrir".
-  // À vérifier / compléter selon tes noms de pages.
-  const LIENS_EXCEPTIONS = {
-    "0 Cuetzpal Empire Remastered": "0 L'Empire Cuetzpal Remastered.html",
-    "4 Accéssoires": "4 Accessoires.html",
-    "4 Socles carré": "4 Socle carré.html"
-  };
+  // ---------- RÉGLAGES ----------
+  const DELAI_AUTO = 2000;   // millisecondes entre deux pages (2000 = 2 s). Mettre 0 pour couper le défilement auto.
 
-  // Un clic sur une photo ouvre la page de sa catégorie :
-  // photo "1 Elfes de la Nuit/xxx.jpg"  ->  page "1 Elfes de la Nuit.html"
-  function lienCategorie(src) {
-    const parties = src.split("/");
-    if (parties.length < 2) return null;
-    let dossier = parties[0];
-    try { dossier = decodeURIComponent(dossier); } catch (e) {}
-    if (LIENS_EXCEPTIONS[dossier]) return LIENS_EXCEPTIONS[dossier];
-    if (dossier === "images") return null;
-    return dossier + ".html";
-  }
-
+  // ---------- CONSTRUCTION D'UN SLIDER ----------
   function construire(items) {
     const slider = document.createElement("div");
     slider.className = "slider";
@@ -261,7 +259,7 @@
 
     const compteur = document.createElement("p");
     compteur.className = "slider-compteur";
-    compteur.setAttribute("aria-live", "polite");
+    compteur.setAttribute("aria-live", "off");
 
     items.forEach(function (it) {
       const slide = document.createElement(it.href ? "a" : "div");
@@ -288,19 +286,23 @@
       const gap = parseFloat(getComputedStyle(viewport).columnGap) || 0;
       return viewport.clientWidth + gap;
     }
+    function enFin() {
+      return viewport.scrollLeft + viewport.clientWidth >= viewport.scrollWidth - 2;
+    }
+    function pages() {
+      return Math.ceil(items.length / parPage());
+    }
+
     function miseAJour() {
-      const pages = Math.ceil(items.length / parPage());
-      const debut = viewport.scrollLeft <= 2;
-      const fin = viewport.scrollLeft + viewport.clientWidth >= viewport.scrollWidth - 2;
+      const nbPages = pages();
+      prev.disabled = viewport.scrollLeft <= 2;
+      next.disabled = enFin();
 
-      prev.disabled = debut;
-      next.disabled = fin;
-
-      const unique = pages <= 1;
+      const unique = nbPages <= 1;
       prev.hidden = next.hidden = compteur.hidden = unique;
 
-      const courante = fin ? pages : Math.min(pages, Math.round(viewport.scrollLeft / pas()) + 1);
-      compteur.textContent = "Page " + courante + " / " + pages;
+      const courante = enFin() ? nbPages : Math.min(nbPages, Math.round(viewport.scrollLeft / pas()) + 1);
+      compteur.textContent = "Page " + courante + " / " + nbPages;
     }
 
     let attente = false;
@@ -311,8 +313,61 @@
     });
     window.addEventListener("resize", miseAJour);
 
-    prev.addEventListener("click", function () { viewport.scrollBy({ left: -pas() }); });
-    next.addEventListener("click", function () { viewport.scrollBy({ left: pas() }); });
+    // ---------- DÉFILEMENT AUTOMATIQUE ----------
+    const reduit = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const etat = { survol: false, visible: false, onglet: true, touche: false };
+    let minuteur = null;
+
+    function avancer() {
+      if (enFin()) viewport.scrollTo({ left: 0 });   // retour au début
+      else viewport.scrollBy({ left: pas() });
+    }
+    function arreter() {
+      clearInterval(minuteur);
+      minuteur = null;
+    }
+    function majAuto() {
+      const doitTourner = DELAI_AUTO > 0 && !reduit && pages() > 1 &&
+        etat.visible && etat.onglet && !etat.survol && !etat.touche;
+      if (doitTourner && !minuteur) minuteur = setInterval(avancer, DELAI_AUTO);
+      if (!doitTourner && minuteur) arreter();
+    }
+    function relancer() {      // après un clic sur une flèche : on repart de zéro
+      arreter();
+      majAuto();
+    }
+
+    // Pause quand la souris est dessus ou que le clavier y est
+    slider.addEventListener("mouseenter", function () { etat.survol = true; majAuto(); });
+    slider.addEventListener("mouseleave", function () { etat.survol = false; majAuto(); });
+    slider.addEventListener("focusin",    function () { etat.survol = true; majAuto(); });
+    slider.addEventListener("focusout",   function () { etat.survol = false; majAuto(); });
+
+    // Pause pendant un balayage au doigt, reprise 4 s après
+    let reprise = null;
+    slider.addEventListener("touchstart", function () {
+      clearTimeout(reprise);
+      etat.touche = true; majAuto();
+    }, { passive: true });
+    slider.addEventListener("touchend", function () {
+      reprise = setTimeout(function () { etat.touche = false; majAuto(); }, 4000);
+    }, { passive: true });
+
+    // Pause si l'onglet est caché ou si le slider n'est pas à l'écran
+    document.addEventListener("visibilitychange", function () {
+      etat.onglet = !document.hidden; majAuto();
+    });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entrees) {
+        etat.visible = entrees[0].isIntersecting; majAuto();
+      }, { threshold: 0.2 }).observe(slider);
+    } else {
+      etat.visible = true;
+    }
+
+    // ---------- FLÈCHES ET CLAVIER ----------
+    prev.addEventListener("click", function () { viewport.scrollBy({ left: -pas() }); relancer(); });
+    next.addEventListener("click", function () { viewport.scrollBy({ left: pas() }); relancer(); });
     viewport.addEventListener("keydown", function (e) {
       if (e.key === "ArrowRight") { viewport.scrollBy({ left: pas() }); e.preventDefault(); }
       if (e.key === "ArrowLeft")  { viewport.scrollBy({ left: -pas() }); e.preventDefault(); }
@@ -322,11 +377,12 @@
     return slider;
   }
 
-  // options.lienFixe : même page pour toutes les photos (ex. la Galerie)
+  // ---------- CHARGEMENT D'UN INCLUDE ----------
+  // options.lienFixe : page utilisée pour les photos qui n'ont pas de lien dans le CSV
   async function creerSlider(urlInclude, idConteneur, options) {
     options = options || {};
     const conteneur = document.getElementById(idConteneur);
-    if (!conteneur) return;
+    if (!conteneur) return;                      // section absente de la page : on ne fait rien
 
     try {
       const rep = await fetch(urlInclude);
@@ -337,14 +393,14 @@
       const items = [];
       doc.querySelectorAll("img").forEach(function (img) {
         const src = img.getAttribute("src");
-        if (!src || vus.has(src)) return;   // l'ancien carrousel doublait les images : on les dédoublonne
+        if (!src || vus.has(src)) return;        // pas de doublon
         vus.add(src);
 
-        const lienFichier = img.closest("a");
+        const lien = img.closest("a");
         items.push({
           src: src,
           alt: img.getAttribute("alt") || "",
-          href: options.lienFixe || lienCategorie(src) || (lienFichier && lienFichier.getAttribute("href")) || null
+          href: (lien && lien.getAttribute("href")) || options.lienFixe || null
         });
       });
 
@@ -356,9 +412,12 @@
     }
   }
 
-  creerSlider("includes/carousel_figurines.html", "carousel-container");
-  creerSlider("includes/carousel_decors.html", "carousel-decors-container");
-  creerSlider("includes/carousel_galerie.html", "carousel-galerie-container", { lienFixe: "5 Galerie.html" });
+  // ---------- LES SLIDERS DE LA PAGE ----------
+  // (fichier includes à lire, id de l'emplacement dans index.html)
+  creerSlider("includes/carousel_figurines.html",   "carousel-container");
+  creerSlider("includes/carousel_decors.html",      "carousel-decors-container");
+  creerSlider("includes/carousel_accessoires.html", "carousel-accessoires-container");
+  creerSlider("includes/carousel_galerie.html",     "carousel-galerie-container", { lienFixe: "5 Galerie.html" });
 
 })();
 </script>
