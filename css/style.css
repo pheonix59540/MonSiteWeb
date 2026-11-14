@@ -36,22 +36,45 @@ body {
 
 /* ============================================================
    🧢 HEADER
-   Image 1920×1080 → ratio 1080/1920 × 100 = 56.25%
-   padding-top en % force la hauteur proportionnellement
-   à la largeur réelle de l'écran → image toujours complète.
-   La sidebar étant dans le flux normal (sticky top:0),
-   elle apparaît naturellement SOUS le header.
+   Image desktop/tablette : 1920 × 400 px   (ratio 4,8 : 1)
+   Image téléphone        : 1200 × 600 px   (ratio 2 : 1, voir plus bas)
+
+   - aspect-ratio : la hauteur suit automatiquement la largeur de l'écran
+   - background-size: cover : l'image remplit toujours la zone SANS être
+     déformée (si le format ne colle pas exactement, un peu de bord est coupé)
+   - min-height : évite un bandeau trop fin quand l'écran est étroit
+   Le menu (sidebar) est dans le flux normal : il s'affiche juste SOUS le header.
    ============================================================ */
 header {
   width: 100%;
-  padding-top: 56.25%; /* 1080 ÷ 1920 × 100 — image 16:9 complète */
-  position: relative;
+  aspect-ratio: 1920 / 400;
+  min-height: 150px;
   background-image: url('../images/0 Header.png');
-  background-size: 100% 100%; /* étire exactement sur toute la zone */
-  background-position: center top;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
 }
+
+/* ------------------------------------------------------------
+   OPTIONNEL : image dédiée au téléphone
+   Quand tu auras créé  images/0 HeaderMobile.png  (1200 × 600 px),
+   active le bloc ci-dessous en supprimant sa ligne d'ouverture de commentaire
+   (la ligne seule juste avant @media) et sa ligne de fermeture (la ligne seule
+   juste après la dernière accolade).
+   En attendant, le header 1920 × 400 est utilisé partout : sur téléphone
+   ses bords sont simplement coupés, donc garde le logo / le texte important
+   dans la zone CENTRALE (environ la moitié du milieu de l'image).
+   ------------------------------------------------------------ */
+/*
+@media screen and (max-width: 600px) {
+  header {
+    aspect-ratio: 2 / 1;
+    min-height: 0;
+    background-image: url('../images/0 HeaderMobile.png');
+  }
+}
+*/
 
 /* ============================================================
    📌 SIDEBAR — inchangée sauf suppression du doublon
@@ -677,12 +700,6 @@ footer {
     overflow-x: hidden;
   }
 
-  header {
-    background-image: url('../images/0 HeaderPortrait1440.png');
-    padding-top: 150%; /* 2160 ÷ 1440 × 100 — image portrait 2:3 complète */
-    max-width: 1440px;
-    background-size: 100% 100%;
-  }
 
   .sidebar a {
     font-size: 14px;
@@ -715,11 +732,6 @@ footer {
     overflow-x: hidden;
   }
 
-  header {
-    background-image: url('../images/0 HeaderPortrait1024.png');
-    padding-top: 150%; /* 1536 ÷ 1024 × 100 — image portrait 2:3 complète */
-    background-size: 100% 100%;
-  }
 
   .sidebar {
     font-size: 16px;
@@ -762,12 +774,6 @@ footer {
     overflow-x: hidden;
   }
 
-  header {
-    background-image: url('../images/0 HeaderPortrait480.png');
-    padding-top: 150%; /* 720 ÷ 480 × 100 — image portrait 2:3 complète */
-    max-width: 480px;
-    background-size: 100% 100%;
-  }
 
   .sidebar a {
     font-size: 14px;
