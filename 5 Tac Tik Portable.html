@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tac Tik Portable</title>
-  <link rel="stylesheet" href="css/style.css"> <!-- Lien vers le CSS global -->
+  <meta charset="UTF-8">
+  <title>Infinity3D - Accueil</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="d52ada3c-3992-4af1-acc3-1a005ca32e39"></script>
+</head>
+
+<!-- 🔧 FIX : le JS adjustHeaderHeight() est supprimé.
+     La hauteur du header est maintenant gérée en CSS avec padding-top en %
+     ce qui conserve automatiquement le ratio de l'image selon la largeur. -->
 
 <script>
+  /* Défilement doux vers les ancres */
   document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.sidebar a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
+    document.querySelectorAll('.sidebar a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
     });
-  });
   });
 </script>
 
@@ -311,6 +315,19 @@
 		<h2>Règle</h2>
 			Vous pouvez télécharger les règles en cliquant sur l'icone PDF.
 		
+			</div>
+		</div>
+		
+		<div class="compatibilitySectionPhoto">
+				<a href="https://makerworld.com/fr/models/3617176-tac-tik#profileId-4146137" target="_blank" rel="noopener noreferrer" aria-label="bambulabs">
+				<img src="images/logo-bambulabs.png" alt="bambulabs">
+				</a>
+				<a href="https://cults3d.com/fr/mod%C3%A8le-3d/jeu/tac-tik-pheonix59540" target="_blank" rel="noopener noreferrer" aria-label="cults">
+				<img src="images/logo-cults.png" alt="cults">
+				</a>	
+			<div class="compatibilitySection">
+			<h2>Vous imprimez en 3D ?</h2>
+			Les modèles sont disponible sur Makerworld et Cult3D En cliquant ici =>
 			</div>
 		</div>
 
