@@ -6,19 +6,6 @@
   <link rel="stylesheet" href="css/style.css"> <!-- Lien vers le CSS global -->
   <script defer src="https://cloud.umami.is/script.js" data-website-id="d52ada3c-3992-4af1-acc3-1a005ca32e39"></script>
 </head>
-<script>
-  function adjustHeaderHeight() {
-    const header = document.querySelector("header");
-    if (header) {
-      header.style.height = window.innerHeight + "px";
-      header.style.width = "100%"; // 🔥 Évite les bandes horizontales
-      header.style.overflowX = "hidden"; // bonus : empêche les scrolls horizontaux
-    }
-  }
-
-  window.addEventListener("load", adjustHeaderHeight);
-  window.addEventListener("resize", adjustHeaderHeight);
-</script>
 <body>
   <header></header>
   
@@ -26,7 +13,7 @@
     <a href="index.html">Accueil</a>
 
     <div class="dropdown">
-      <a href="#figurines">Figurines</a>
+      <a href="index.html#figurines">Figurines</a>
       <div class="dropdown-content">
         <a href="0 Les anciens sauriens (Cuetzpal).html">Les anciens sauriens (Cuetzpal)</a>
 		<a href="0 L'Empire Cuetzpal Remastered.html">L'Empire Cuetzpal Remastered</a>
@@ -45,7 +32,7 @@
     </div>
 
     <div class="dropdown">
-      <a href="#decors">Décors</a>
+      <a href="index.html#decors">Décors</a>
       <div class="dropdown-content">
         <a href="3 Les anciens sauriens (Cuetzpal).html">Les anciens sauriens (Cuetzpal)</a>
         <a href="3 Nains Infernaux (Magmhorin).html">Nains Infernaux (Magmhorin)</a>
@@ -64,7 +51,7 @@
     </div>
 
     <div class="dropdown">
-      <a href="#accessoires">Accessoires</a>
+      <a href="index.html#accessoires">Accessoires</a>
       <div class="dropdown-content">
         <a href="4 Socle rond.html">Socles rond</a>
         <a href="4 Socle carré.html">Socles carré</a>
@@ -79,7 +66,7 @@
     </div>
 	
 	<div class="dropdown">
-    <a href="#Jeux De Sociétés">Jeux De Sociétés</a>
+    <a href="index.html#Jeux De Sociétés">Jeux De Sociétés</a>
 		<div class="dropdown-content">
 			<a href="5 Tac Tik Portable.html">Tac Tik Portable</a>
       </div>
@@ -243,15 +230,6 @@
 </section>
   </main>
 
-<div id="footer-container"></div>
-<script>
-  fetch("includes/footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footer-container").innerHTML = data;
-    })
-    .catch(error => console.error("Erreur lors du chargement du pied de page :", error));
-</script>
 
 <script>
   document.querySelectorAll('.sidebar a[href^="#"]').forEach(anchor => {
@@ -267,5 +245,15 @@
     });
   });
 </script>
+
+  <div id="footer-container"></div>
+
+  <script>
+    fetch("includes/footer.html")
+      .then(r => r.text())
+      .then(data => document.getElementById("footer-container").innerHTML = data)
+      .catch(err => console.error("Erreur footer :", err));
+  </script>
+
 </body>
 </html>
