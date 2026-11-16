@@ -53,10 +53,15 @@ def generate_html(data):
         </ul>
       </div>
 
-      <div class="contact-cta">
-        <p>Envie de découvrir plus de créations issues de l'univers des <strong>Nains de Niavellir</strong> par The Lost Kingdom Miniatures, ou d'autres figurines fantastiques en résine ?</p>
-        <p>👉 <a href="../6 Contact.html">Contactez-nous directement</a> pour des demandes spécifiques ou des créations personnalisées !</p>
-      </div>
+      <a class="commande-cta" href="../6 Contact.html">
+            <img class="commande-cta__icone" src="../images/enveloppe.svg" alt="" width="88" height="88">
+            <span class="commande-cta__texte">
+            <strong>Cet article vous plaît ?</strong>
+            <span>Pour commander, écrivez-nous en précisant le nom de ou des articles et la quantité souhaitée.</span>
+            </span>
+            <span class="commande-cta__bouton">Nous contacter</span>
+      </a>
+
 """
 
     if photos:

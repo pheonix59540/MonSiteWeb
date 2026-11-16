@@ -54,10 +54,14 @@ def generate_html(data):
         </ul>
       </div>
 
-      <div class="contact-cta">
-        <p>Vous avez un besoin spécifique ? Un accessoire sur mesure aux dimensions particulières, aux couleurs de votre armée ou adapté à un jeu précis ?</p>
-        <p>👉 <a href="../6 Contact.html">Contactez-nous directement</a> pour des demandes personnalisées, on adore relever les défis !</p>
-      </div>
+      <a class="commande-cta" href="../6 Contact.html">
+            <img class="commande-cta__icone" src="../images/enveloppe.svg" alt="" width="88" height="88">
+            <span class="commande-cta__texte">
+            <strong>Cet article vous plaît ?</strong>
+            <span>Pour commander, écrivez-nous en précisant le nom de ou des articles et la quantité souhaitée.</span>
+            </span>
+            <span class="commande-cta__bouton">Nous contacter</span>
+      </a>
 
       
 """

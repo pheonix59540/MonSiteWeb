@@ -23,6 +23,7 @@ with open("0 export_articles.csv", newline='', encoding='utf-8') as csvfile:
   <p><strong>Prix : {prix}</strong></p>
 </div>
 
+
 """
             f_out.write(bloc)
 
